@@ -1,4 +1,4 @@
-
+const lawQuestions = [
         { section: "1. Introduction to Law", id: 1, questionText: "Which two of the following terms are associated with current criminal law in Ireland?\n(1) Community Service\n(2) Pleadings\n(3) The Attorney General\n(4) Rehabilitation", options: { A: "(1) and (2)", B: "(1) and (4)", C: "(2) and (3)", D: "(3) and (4)" }, correctAnswer: "B" },
         { section: "1. Introduction to Law", id: 2, questionText: "Which two of the following terms are associated with civil law in Ireland?\n(1) Pleadings\n(2) Injunctions\n(3) Probation orders\n(4) Indictment", options: { A: "(1) and (2)", B: "(2) and (3)", C: "(3) and (4)", D: "(1) and (4)" }, correctAnswer: "A" },
         { section: "1. Introduction to Law", id: 3, questionText: "Which one of the following describes the burden of proof in civil law matters?", options: { A: "The burden is the balance of probabilities", B: "The burden lies on the prosecution", C: "The burden lies with the plaintiff/claimant", D: "The burden is tested based on a belief beyond all reasonable doubt" }, correctAnswer: "C" },
@@ -745,4 +745,4 @@
         { section: "3.6 Industry-Specific Legislation", id: 740, questionText: "Which one of the following is not a ground for appealing a case from the Disciplinary Tribunal to the Appeals Tribunal?", options: { A: "That the finding is wrong", B: "That the order is excessive", C: "That new evidence has been unearthed", D: "That the proceedings of the Disciplinary Tribunal were flawed" }, correctAnswer: "C" },
         { section: "3.6 Industry-Specific Legislation", id: 741, questionText: "Regarding the regulation of Chartered Accountants Ireland, are the following statements true or false?  \n\nHearings before the Disciplinary Tribunal and Appeals Tribunal are generally held in private.", options: { A: "True", B: "False"}, correctAnswer: "B" },
         { section: "3.6 Industry-Specific Legislation", id: 742, questionText: "Regarding the regulation of Chartered Accountants Ireland, are the following statements true or false?  \n\nSanctions can be imposed without convening a sitting of the Disciplinary Tribunal where the member consents to the imposition of an expulsion or suspension order.", options: { A: "True", B: "False"}, correctAnswer: "A" }
-        
+        };
