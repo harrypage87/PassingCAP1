@@ -492,8 +492,8 @@
 <!-- Question bank scripts -->
 <script src="law_question_bank.js"></script>
 <script src="tax_mock_2026.js"></script>
-<script src="tax_sample_paper_1.js"></script>
-<script src="tax_sample_paper_2.js"></script>
+<!-- <script src="tax_sample_paper_1.js"></script> -->
+<!-- <script src="tax_sample_paper_2.js"></script> -->
 
 <script>
 // ═══════════════════════════════════════════════════════
@@ -501,7 +501,12 @@
 // ═══════════════════════════════════════════════════════
 const allTopicData = {
     law:     typeof lawQuestions     !== 'undefined' ? lawQuestions     : [],
-    tax:     typeof taxQuestions     !== 'undefined' ? taxQuestions     : [],
+    tax: [
+        ...(typeof taxMock2026     !== 'undefined' ? taxMock2026     : []),
+        ...(typeof taxSamplePaper1 !== 'undefined' ? taxSamplePaper1 : []),
+        ...(typeof taxSamplePaper2 !== 'undefined' ? taxSamplePaper2 : []),
+        ...(typeof taxSamplePaper3 !== 'undefined' ? taxSamplePaper3 : []),
+    ],
     finance: typeof financeQuestions !== 'undefined' ? financeQuestions : [],
     facctg:  typeof facctgQuestions  !== 'undefined' ? facctgQuestions  : [],
 };
