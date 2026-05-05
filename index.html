@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c0ed5ca17dd7401e9737cef0f9fe7019"}'></script><!-- End Cloudflare Web Analytics -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Proficiency 1 Study Toolkit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #0056b3;
+            --light-gray: #f0f2f5;
+            --border-color: #ddd;
+            --correct-bg: #d4edda;
+            --incorrect-bg: #f8d7da;
+            --correct-text: #155724;
+            --incorrect-text: #721c24;
+            --accent: #C8A951;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: var(--light-gray);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .hidden { display: none !important; }
+
+        /* ─── TOPIC SELECT SCREEN ─── */
+        #topic-select-container .hero-section {
+            background: linear-gradient(135deg, #001f3f 0%, #003366 60%, #004080 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 30px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        #topic-select-container .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 200px; height: 200px;
+            background: rgba(200,169,81,0.12);
+            border-radius: 50%;
+        }
+        #topic-select-container .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; left: -30px;
+            width: 250px; height: 250px;
+            background: rgba(200,169,81,0.08);
+            border-radius: 50%;
+        }
+        .hero-eyebrow {
+            font-size: 0.78em;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin: 0 0 14px;
+        }
+        #topic-select-container .hero-section h1 {
+            font-size: 2.2em;
+            margin: 0 0 12px;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+        }
+        #topic-select-container .hero-section p {
+            margin: 0;
+            font-size: 1.05em;
+            color: rgba(255,255,255,0.75);
+            position: relative;
+            z-index: 1;
+        }
+        .topic-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            padding: 30px;
+        }
+        .topic-card {
+            background: #fff;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 28px 22px 22px;
+            cursor: pointer;
+            transition: all 0.22s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .topic-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--card-accent, var(--primary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+        }
+        .topic-card:hover {
+            border-color: var(--card-accent, var(--primary-color));
+            box-shadow: 0 6px 20px rgba(0,51,102,0.12);
+            transform: translateY(-3px);
+        }
+        .topic-card:hover::before { transform: scaleX(1); }
+        .topic-card--law    { --card-accent: #003366; }
+        .topic-card--tax    { --card-accent: #1a6e3c; }
+        .topic-card--finance { --card-accent: #6b2d8b; }
+        .topic-card--facctg { --card-accent: #b5451b; }
+        .topic-icon {
+            font-size: 2.4em;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .topic-card h3 {
+            margin: 0 0 8px;
+            font-size: 1.15em;
+            color: var(--primary-color);
+        }
+        .topic-card p {
+            margin: 0;
+            font-size: 0.88em;
+            color: #777;
+            line-height: 1.45;
+        }
+        .topic-card .topic-count {
+            margin-top: 14px;
+            font-size: 0.78em;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--card-accent, #555);
+            text-transform: uppercase;
+        }
+        .topic-card--coming-soon {
+            opacity: 0.6;
+            cursor: default;
+        }
+        .topic-card--coming-soon:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: var(--border-color);
+        }
+        .topic-card--coming-soon:hover::before { transform: scaleX(0); }
+        .coming-badge {
+            display: inline-block;
+            margin-top: 10px;
+            background: #f0f2f5;
+            color: #888;
+            font-size: 0.72em;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+        @media (max-width: 540px) {
+            .topic-grid { grid-template-columns: 1fr; }
+            #topic-select-container .hero-section h1 { font-size: 1.6em; }
+        }
+
+        /* ─── MAIN MENU (existing, lightly upgraded) ─── */
+        .hero-section {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px 20px 25px;
+        }
+        .hero-section h2 {
+            margin: 0 0 6px;
+            font-size: 1.6em;
+        }
+        .hero-section p {
+            margin: 0;
+            font-size: 1em;
+            color: rgba(255,255,255,0.8);
+        }
+        .topic-banner {
+            background: var(--accent);
+            color: #1a1200;
+            text-align: center;
+            padding: 8px 20px;
+            font-size: 0.82em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .topic-banner button {
+            background: rgba(0,0,0,0.15);
+            border: none;
+            color: #1a1200;
+            font-size: 0.85em;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .topic-banner button:hover { background: rgba(0,0,0,0.25); }
+        .menu-options {
+            display: flex;
+            gap: 20px;
+            padding: 30px;
+        }
+        .menu-option {
+            flex: 1;
+            background-color: #f9f9f9;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .menu-option svg { width: 48px; height: 48px; margin-bottom: 15px; color: var(--primary-color); }
+        .menu-option h3 { margin: 0 0 10px; font-size: 1.3em; color: var(--primary-color); }
+        .menu-option p { margin: 0 0 20px; color: #666; flex-grow: 1; }
+        .btn {
+            padding: 15px;
+            font-size: 1.05em;
+            font-weight: 700;
+            color: white;
+            background-color: var(--secondary-color);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-family: inherit;
+        }
+        .btn:hover { background-color: var(--primary-color); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+        @media (max-width: 600px) { .menu-options { flex-direction: column; } }
+
+        /* ─── CHAPTER SELECT ─── */
+        .main-content { padding: 30px; }
+        .chapter-select-container h2 { text-align: center; margin-bottom: 25px; color: var(--primary-color); }
+        .btn-container { display: flex; flex-direction: column; gap: 15px; }
+        .chapter-btn {
+            padding: 18px; font-size: 1.05em; font-weight: 600;
+            background-color: #fff; color: var(--primary-color);
+            border: 1px solid var(--border-color); border-radius: 8px;
+            cursor: pointer; text-align: left; transition: background-color 0.2s;
+        }
+        .chapter-btn:hover { background-color: #f0f2f5; }
+        .btn-secondary { background-color: #6c757d; }
+        .btn-secondary:hover { background-color: #5a6268; }
+        .btn-danger { background-color: #dc3545; }
+        .btn-danger:hover { background-color: #c82333; }
+
+        /* ─── QUIZ ─── */
+        #quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        #question-number { font-size: 0.9em; font-weight: bold; color: #555; }
+        #timer { font-size: 1.2em; font-weight: bold; color: var(--primary-color); background-color: #e9ecef; padding: 5px 10px; border-radius: 5px; }
+        #question-text { font-size: 1.15em; margin-bottom: 20px; white-space: pre-wrap; line-height: 1.6; }
+        .option-btn { display: block; width: 100%; padding: 15px; font-size: 1em; text-align: left; background-color: #f9f9f9; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; transition: background-color 0.2s, border-color 0.2s; margin-bottom: 10px; }
+        .option-btn:hover:not(:disabled) { background-color: #e9e9e9; border-color: var(--primary-color); }
+        .option-btn:disabled { cursor: not-allowed; }
+        .option-btn.correct { background-color: var(--correct-bg); border-color: #c3e6cb; color: var(--correct-text); font-weight: bold; }
+        .option-btn.incorrect { background-color: var(--incorrect-bg); border-color: #f5c6cb; color: var(--incorrect-text); font-weight: bold; }
+        .option-btn.selected { border-color: var(--secondary-color); background-color: #e7f1ff; border-width: 2px; }
+        #feedback-container { margin-top: 15px; font-size: 1.1em; font-weight: bold; padding: 10px; border-radius: 5px; }
+        #feedback-container.correct { color: var(--correct-text); }
+        #feedback-container.incorrect { color: var(--incorrect-text); }
+        #quiz-footer-buttons { display: flex; gap: 10px; margin-top: 20px; }
+        #quiz-footer-buttons .btn { flex: 1; }
+
+        /* ─── RESULTS ─── */
+        #results-container h2 { text-align: center; color: var(--primary-color); }
+        #score-text { text-align: center; font-size: 1.4em; font-weight: bold; margin-bottom: 10px; }
+        #final-feedback { text-align: center; font-size: 1.1em; margin-bottom: 30px; }
+        #results-details { max-height: 400px; overflow-y: auto; border-top: 1px solid #eee; margin-top: 20px; padding-top: 20px; }
+        .result-item { border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; margin-bottom: 15px; }
+        .result-item p { margin: 0 0 10px; }
+        .result-item-q { font-weight: bold; white-space: pre-wrap; }
+        .result-correct { border-left: 5px solid var(--correct-text); }
+        .result-incorrect { border-left: 5px solid var(--incorrect-text); }
+        .user-answer { color: var(--incorrect-text); }
+        .correct-answer { color: var(--correct-text); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ══════════════════════════════════════ -->
+    <!--  SCREEN 0 — Topic Selection           -->
+    <!-- ══════════════════════════════════════ -->
+    <div id="topic-select-container">
+        <div class="hero-section">
+            <p class="hero-eyebrow">CA Proficiency 1</p>
+            <h1>Study Toolkit</h1>
+            <p>Choose a subject to begin practising</p>
+        </div>
+        <div class="topic-grid">
+            <div class="topic-card topic-card--law" onclick="selectTopic('law')">
+                <span class="topic-icon">⚖️</span>
+                <h3>Law for Accountants</h3>
+                <p>Company law, contract, tort, and industry-specific legislation</p>
+                <div class="topic-count" id="law-count">Loading…</div>
+            </div>
+            <div class="topic-card topic-card--tax topic-card--coming-soon">
+                <span class="topic-icon">🧾</span>
+                <h3>Taxation</h3>
+                <p>Income tax, corporation tax, VAT, and capital gains</p>
+                <div class="coming-badge">Coming Soon</div>
+            </div>
+            <div class="topic-card topic-card--finance topic-card--coming-soon">
+                <span class="topic-icon">📊</span>
+                <h3>Finance</h3>
+                <p>Financial management, investment appraisal, and risk</p>
+                <div class="coming-badge">Coming Soon</div>
+            </div>
+            <div class="topic-card topic-card--facctg topic-card--coming-soon">
+                <span class="topic-icon">📒</span>
+                <h3>Financial Accounting</h3>
+                <p>Preparation of financial statements and standards</p>
+                <div class="coming-badge">Coming Soon</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════ -->
+    <!--  SCREEN 1 — Main Menu                 -->
+    <!-- ══════════════════════════════════════ -->
+    <div id="menu-container" class="hidden">
+        <div class="hero-section">
+            <h2 id="menu-subject-title">Law for Accountants</h2>
+            <p>Your interactive study tool for the CA Proficiency 1 exam.</p>
+        </div>
+        <div class="topic-banner" id="topic-banner">
+            <span id="topic-banner-label">📚 Law for Accountants</span>
+            <button onclick="showTopicSelect()">Change Subject</button>
+        </div>
+        <div class="menu-options">
+            <div class="menu-option">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
+                </svg>
+                <h3>Practice Questions</h3>
+                <p>Study chapter by chapter with instant feedback after every question.</p>
+                <button id="practice-btn" class="btn">Start Practice</button>
+            </div>
+            <div class="menu-option">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5z"/>
+                    <path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"/>
+                </svg>
+                <h3>Mock Exam</h3>
+                <p>A timed, 50-question exam simulation. Results are shown at the end.</p>
+                <button id="mock-exam-btn" class="btn">Start Mock Exam</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter Select Screen -->
+    <div id="chapter-select-container" class="main-content hidden">
+        <h2>Select a Chapter</h2>
+        <div id="chapter-list" class="btn-container"></div>
+        <button id="back-to-menu-btn" class="btn btn-secondary" style="margin-top: 15px;">Back to Menu</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-container" class="main-content hidden">
+        <div id="quiz-header">
+            <div id="question-number"></div>
+            <div id="timer" class="hidden"></div>
+        </div>
+        <div id="question-text"></div>
+        <div id="options-container"></div>
+        <div id="feedback-container"></div>
+        <div id="quiz-footer-buttons">
+            <button id="quit-btn" class="btn btn-secondary">Main Menu</button>
+            <button id="next-btn" class="btn">Next</button>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-container" class="main-content hidden">
+        <h2>Quiz Complete!</h2>
+        <p id="score-text"></p>
+        <p id="final-feedback"></p>
+        <div id="results-details"></div>
+        <button id="menu-return-btn" class="btn">Back to Main Menu</button>
+    </div>
+
+</div>
+
+<script>
+    // ─── QUESTION BANKS ───────────────────────────────────────────────────────
+
+    const allTopicData = {
+
+        law: [
+            { section: "1. Introduction to Law", id: 1, questionText: "Which two of the following terms are associated with current criminal law in Ireland?\n(1) Community Service\n(2) Pleadings\n(3) The Attorney General\n(4) Rehabilitation", options: { A: "(1) and (2)", B: "(1) and (4)", C: "(2) and (3)", D: "(3) and (4)" }, correctAnswer: "B" },
+            { section: "1. Introduction to Law", id: 2, questionText: "Which two of the following terms are associated with civil law in Ireland?\n(1) Pleadings\n(2) Injunctions\n(3) Probation orders\n(4) Indictment", options: { A: "(1) and (2)", B: "(2) and (3)", C: "(3) and (4)", D: "(1) and (4)" }, correctAnswer: "A" },
+            { section: "1. Introduction to Law", id: 3, questionText: "Which one of the following describes the burden of proof in civil law matters?", options: { A: "The burden is the balance of probabilities", B: "The burden lies on the prosecution", C: "The burden lies with the plaintiff/claimant", D: "The burden is tested based on a belief beyond all reasonable doubt" }, correctAnswer: "C" },
+            { section: "1. Introduction to Law", id: 4, questionText: "Which ONE of the following describes the standard of proof in criminal law matters?", options: { A: "The standard must be proven by the plaintiff/claimant", B: "The standard is tested based on a belief of guilt beyond all reasonable doubt", C: "The standard is based on the balance of probabilities", D: "The standard must be met by the prosecution" }, correctAnswer: "B" },
+            { section: "1. Introduction to Law", id: 5, questionText: "Which one of the following is not an objective of civil law?", options: { A: "To award the injured party compensation for losses sustained from the actions of the wrongdoer", B: "To compel the wrongdoer to cease their unwanted or prohibited actions", C: "To compel the wrongdoer to comply with their legal obligations", D: "To punish the wrongdoer for their unwanted or prohibited actions" }, correctAnswer: "D" },
+            { section: "1. Introduction to Law", id: 6, questionText: "Which one of the following is not an objective of criminal law?", options: { A: "To deter the wrongdoer from engaging in a prohibited act", B: "To compel the wrongdoer to comply with their legal obligations", C: "To punish the wrongdoer for their unwanted or prohibited actions", D: "To rehabilitate the wrongdoer" }, correctAnswer: "B" },
+            { section: "3.6 Industry-Specific Legislation", id: 739, questionText: "Which one of the following is not a right of a respondent when a case is being heard before the Disciplinary Tribunal of Chartered Accountants Ireland?", options: { A: "To request that the hearing is heard in public", B: "To be represented by a solicitor or Chartered Accountant", C: "To call witnesses who can give evidence on their behalf", D: "To attend and be heard at the hearing of the formal complaint" }, correctAnswer: "A" },
+            { section: "3.6 Industry-Specific Legislation", id: 740, questionText: "Which one of the following is not a ground for appealing a case from the Disciplinary Tribunal to the Appeals Tribunal?", options: { A: "That the finding is wrong", B: "That the order is excessive", C: "That new evidence has been unearthed", D: "That the proceedings of the Disciplinary Tribunal were flawed" }, correctAnswer: "C" },
+            { section: "3.6 Industry-Specific Legislation", id: 741, questionText: "Regarding the regulation of Chartered Accountants Ireland, are the following statements true or false?  \n\nHearings before the Disciplinary Tribunal and Appeals Tribunal are generally held in private.", options: { A: "True", B: "False" }, correctAnswer: "B" },
+            { section: "3.6 Industry-Specific Legislation", id: 742, questionText: "Regarding the regulation of Chartered Accountants Ireland, are the following statements true or false?  \n\nSanctions can be imposed without convening a sitting of the Disciplinary Tribunal where the member consents to the imposition of an expulsion or suspension order.", options: { A: "True", B: "False" }, correctAnswer: "A" }
+        ],
+
+        // ── ADD TAX QUESTIONS HERE ──────────────────────────────────────────
+        tax: [
+            // { section: "1. Income Tax", id: 1, questionText: "...", options: { A: "...", B: "..." }, correctAnswer: "A" },
+        ],
+
+        // ── ADD FINANCE QUESTIONS HERE ──────────────────────────────────────
+        finance: [
+            // { section: "1. Financial Management", id: 1, questionText: "...", options: { A: "...", B: "..." }, correctAnswer: "A" },
+        ],
+
+        // ── ADD FINANCIAL ACCOUNTING QUESTIONS HERE ─────────────────────────
+        facctg: [
+            // { section: "1. Financial Statements", id: 1, questionText: "...", options: { A: "...", B: "..." }, correctAnswer: "A" },
+        ],
+    };
+
+    const topicMeta = {
+        law:     { label: "⚖️ Law for Accountants",   title: "Law for Accountants"   },
+        tax:     { label: "🧾 Taxation",               title: "Taxation"               },
+        finance: { label: "📊 Finance",                title: "Finance"                },
+        facctg:  { label: "📒 Financial Accounting",   title: "Financial Accounting"   },
+    };
+
+    // ─── STATE ────────────────────────────────────────────────────────────────
+
+    const MOCK_EXAM_QUESTION_COUNT = 50;
+    const MOCK_EXAM_DURATION_MINUTES = 90;
+
+    let currentTopic   = null;
+    let quizData       = [];
+    let currentMode    = '';
+    let currentQuestionIndex = 0;
+    let score          = 0;
+    let activeQuestions = [];
+    let timerInterval;
+
+    // ─── DOM REFS ─────────────────────────────────────────────────────────────
+
+    const topicSelectContainer  = document.getElementById('topic-select-container');
+    const menuContainer         = document.getElementById('menu-container');
+    const chapterSelectContainer = document.getElementById('chapter-select-container');
+    const quizContainer         = document.getElementById('quiz-container');
+    const resultsContainer      = document.getElementById('results-container');
+    const chapterListEl         = document.getElementById('chapter-list');
+    const questionNumberEl      = document.getElementById('question-number');
+    const timerEl               = document.getElementById('timer');
+    const questionTextEl        = document.getElementById('question-text');
+    const optionsContainerEl    = document.getElementById('options-container');
+    const feedbackContainerEl   = document.getElementById('feedback-container');
+    const nextBtn               = document.getElementById('next-btn');
+    const quitBtn               = document.getElementById('quit-btn');
+    const scoreTextEl           = document.getElementById('score-text');
+    const finalFeedbackEl       = document.getElementById('final-feedback');
+    const resultsDetailsEl      = document.getElementById('results-details');
+
+    // ─── TOPIC SELECTION ─────────────────────────────────────────────────────
+
+    // Populate question counts on the topic cards
+    document.getElementById('law-count').textContent =
+        allTopicData.law.length + ' questions available';
+
+    function selectTopic(topicKey) {
+        if (allTopicData[topicKey].length === 0) return; // coming soon guard
+        currentTopic = topicKey;
+        quizData = allTopicData[topicKey];
+
+        const meta = topicMeta[topicKey];
+        document.getElementById('menu-subject-title').textContent = meta.title;
+        document.getElementById('topic-banner-label').textContent = meta.label;
+
+        showMenu();
+    }
+
+    function showTopicSelect() {
+        if (timerInterval) clearInterval(timerInterval);
+        showScreen(topicSelectContainer);
+    }
+
+    // ─── NAVIGATION ──────────────────────────────────────────────────────────
+
+    function showScreen(screen) {
+        [topicSelectContainer, menuContainer, chapterSelectContainer, quizContainer, resultsContainer]
+            .forEach(c => c.classList.add('hidden'));
+        screen.classList.remove('hidden');
+    }
+
+    function showMenu() {
+        showScreen(menuContainer);
+        timerEl.classList.add('hidden');
+        timerEl.style.color = 'var(--primary-color)';
+        resetQuitButtonState();
+    }
+
+    function showChapterSelection() {
+        chapterListEl.innerHTML = '';
+        const chapters = [...new Set(quizData.map(q => q.section))];
+        chapters.forEach(chapter => {
+            const button = document.createElement('button');
+            button.innerText = chapter;
+            button.classList.add('chapter-btn');
+            button.addEventListener('click', () => startPractice(chapter));
+            chapterListEl.appendChild(button);
+        });
+        showScreen(chapterSelectContainer);
+    }
+
+    // ─── QUIZ LOGIC (unchanged) ───────────────────────────────────────────────
+
+    document.getElementById('practice-btn').addEventListener('click', showChapterSelection);
+    document.getElementById('mock-exam-btn').addEventListener('click', startMockExam);
+    document.getElementById('back-to-menu-btn').addEventListener('click', showMenu);
+    document.getElementById('menu-return-btn').addEventListener('click', showMenu);
+    nextBtn.addEventListener('click', handleNextClick);
+
+    let isConfirmingQuit = false;
+    let quitConfirmTimeout;
+
+    function resetQuitButtonState() {
+        isConfirmingQuit = false;
+        quitBtn.innerText = 'Main Menu';
+        quitBtn.classList.remove('btn-danger');
+        clearTimeout(quitConfirmTimeout);
+    }
+
+    quitBtn.addEventListener('click', () => {
+        if (isConfirmingQuit) {
+            if (timerInterval) clearInterval(timerInterval);
+            showMenu();
+        } else {
+            isConfirmingQuit = true;
+            quitBtn.innerText = 'Are you sure?';
+            quitBtn.classList.add('btn-danger');
+            quitConfirmTimeout = setTimeout(resetQuitButtonState, 3000);
+        }
+    });
+
+    function startPractice(chapterName) {
+        currentMode = 'practice';
+        const chapterQuestions = quizData.filter(q => q.section === chapterName);
+        startQuiz(chapterQuestions);
+    }
+
+    function startMockExam() {
+        currentMode = 'mock';
+        const shuffled = [...quizData].sort(() => 0.5 - Math.random());
+        const questionCount = Math.min(MOCK_EXAM_QUESTION_COUNT, shuffled.length);
+        const mockQuestions = shuffled.slice(0, questionCount);
+        startQuiz(mockQuestions);
+        startTimer(MOCK_EXAM_DURATION_MINUTES * 60);
+    }
+
+    function startQuiz(questions) {
+        activeQuestions = questions.map(q => ({...q, userAnswer: null}));
+        currentQuestionIndex = 0;
+        score = 0;
+        showScreen(quizContainer);
+        displayQuestion();
+    }
+
+    function displayQuestion() {
+        resetQuestionState();
+        const question = activeQuestions[currentQuestionIndex];
+        questionNumberEl.innerText = `Question ${currentQuestionIndex + 1} of ${activeQuestions.length}`;
+        questionTextEl.innerText = question.questionText;
+
+        for (const [key, value] of Object.entries(question.options)) {
+            const button = document.createElement('button');
+            button.innerText = `${key}. ${value}`;
+            button.classList.add('option-btn');
+            button.dataset.key = key;
+            button.addEventListener('click', () => handleAnswer(key, button));
+            optionsContainerEl.appendChild(button);
+        }
+        if (currentMode === 'mock') nextBtn.classList.remove('hidden');
+    }
+
+    function resetQuestionState() {
+        optionsContainerEl.innerHTML = '';
+        feedbackContainerEl.innerHTML = '';
+        feedbackContainerEl.className = 'feedback-container';
+        nextBtn.classList.add('hidden');
+    }
+
+    function handleAnswer(selectedKey, button) {
+        const correctKey = activeQuestions[currentQuestionIndex].correctAnswer;
+        activeQuestions[currentQuestionIndex].userAnswer = selectedKey;
+
+        if (currentMode === 'practice') {
+            const isCorrect = selectedKey === correctKey;
+            if (isCorrect) {
+                score++;
+                feedbackContainerEl.innerText = 'Correct!';
+                feedbackContainerEl.classList.add('correct');
+            } else {
+                feedbackContainerEl.innerText = `Incorrect. The correct answer is ${correctKey}.`;
+                feedbackContainerEl.classList.add('incorrect');
+            }
+            Array.from(optionsContainerEl.children).forEach(btn => {
+                if (btn.dataset.key === correctKey) btn.classList.add('correct');
+                else if (btn.dataset.key === selectedKey) btn.classList.add('incorrect');
+                btn.disabled = true;
+            });
+            nextBtn.classList.remove('hidden');
+        } else {
+            Array.from(optionsContainerEl.children).forEach(btn => btn.classList.remove('selected'));
+            button.classList.add('selected');
+        }
+    }
+
+    function handleNextClick() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < activeQuestions.length) {
+            displayQuestion();
+        } else {
+            showResults();
+        }
+    }
+
+    function startTimer(duration) {
+        timerEl.classList.remove('hidden');
+        let timer = duration;
+        timerInterval = setInterval(() => {
+            let minutes = parseInt(timer / 60, 10);
+            let seconds = parseInt(timer % 60, 10);
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            timerEl.textContent = minutes + ":" + seconds;
+            if (--timer < 0) { clearInterval(timerInterval); showResults(); }
+            if (timer < 60) timerEl.style.color = 'var(--incorrect-text)';
+        }, 1000);
+    }
+
+    function showResults() {
+        if (timerInterval) clearInterval(timerInterval);
+        let correctAnswers = 0;
+        activeQuestions.forEach(q => { if (q.userAnswer === q.correctAnswer) correctAnswers++; });
+        showScreen(resultsContainer);
+
+        if (currentMode === 'mock') {
+            const finalScore = correctAnswers * 2;
+            const totalPossibleScore = MOCK_EXAM_QUESTION_COUNT * 2;
+            scoreTextEl.innerText = `Your Score: ${finalScore} / ${totalPossibleScore} (${finalScore}%)`;
+            finalFeedbackEl.innerText = finalScore >= 50 ? "Congratulations, you passed!" : "Keep practising, you'll get there!";
+        } else {
+            const scorePercent = Math.round((correctAnswers / activeQuestions.length) * 100);
+            scoreTextEl.innerText = `Your Score: ${correctAnswers} out of ${activeQuestions.length} (${scorePercent}%)`;
+            finalFeedbackEl.innerText = scorePercent === 100 ? "Excellent work!" : "Practice complete!";
+        }
+
+        resultsDetailsEl.innerHTML = '';
+        if (currentMode === 'mock') {
+            activeQuestions.forEach((question, index) => {
+                const isCorrect = question.userAnswer === question.correctAnswer;
+                const resultItem = document.createElement('div');
+                resultItem.classList.add('result-item', isCorrect ? 'result-correct' : 'result-incorrect');
+                let answerDetails = '';
+                if (!isCorrect) {
+                    const userAnswerText = question.userAnswer ? `${question.userAnswer}. ${question.options[question.userAnswer]}` : 'Not answered';
+                    const correctAnswerText = `${question.correctAnswer}. ${question.options[question.correctAnswer]}`;
+                    answerDetails = `<p>Your answer: <span class="user-answer">${userAnswerText}</span></p><p>Correct answer: <span class="correct-answer">${correctAnswerText}</span></p>`;
+                }
+                resultItem.innerHTML = `<p><b>Question ${index + 1}: ${isCorrect ? 'Correct' : 'Incorrect'}</b></p><p class="result-item-q">${question.questionText}</p>${answerDetails}`;
+                resultsDetailsEl.appendChild(resultItem);
+            });
+        }
+    }
+
+    // ─── INIT ─────────────────────────────────────────────────────────────────
+    showScreen(topicSelectContainer);
+</script>
+</body>
+</html>
