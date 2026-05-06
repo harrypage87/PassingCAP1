@@ -1261,7 +1261,7 @@ function renderNumeric(q) {
     $('options-container').appendChild(hint);
     const wrap = document.createElement('div'); wrap.className = 'numeric-input-wrap';
     const inp = document.createElement('input');
-    inp.type = 'number'; inp.className = 'numeric-input'; inp.placeholder = 'Your answer...';
+    inp.type = 'text'; inp.inputMode = 'decimal'; inp.className = 'numeric-input'; inp.placeholder = 'Your answer...';
     const sb = document.createElement('button');
     sb.textContent = 'Submit'; sb.className = 'btn numeric-submit';
     wrap.appendChild(inp); wrap.appendChild(sb);
@@ -1311,7 +1311,8 @@ function renderMultiNumeric(q) {
         row.className = 'multi-numeric-row';
 
         const inp = document.createElement('input');
-        inp.type = 'number';
+        inp.type = 'text';
+        inp.inputMode = 'decimal';
         inp.className = 'multi-numeric-input';
         inp.placeholder = 'Your answer...';
         inp.dataset.partIndex = i;
