@@ -108,7 +108,17 @@ const taxSamplePaper3 = [
     type: "single",
     marks: 2,
     questionText:
-      "Using the same information from Question 5 (Caroline, salary €5,000/month, signing-on bonus €8,500, pension €400/month, PHI €70/month, cumulative taxable salary to 29 Feb €7,200, tax deducted to date €774, monthly tax credit €333, monthly SRCOP €3,667, month number 2):\n\n" +
+      "Caroline is 39 years old and single. She left her job at the end of February 2025 where she earned €8,000 in total in January and February.\n\n" +
+      "She started a new job on 1 March 2025. Her new salary is €5,000 per month. She also received a signing-on bonus from her new employer on 1 March 2025 of €8,500.\n\n" +
+      "Caroline has always made a monthly payment of €400 into her pension scheme and this will continue in her new employment.\n\n" +
+      "Caroline also took out a permanent health insurance (PHI) policy on starting her new employment on 1 March 2025. A monthly premium of €70 is deducted through payroll.\n\n" +
+      "Caroline is taxed on the cumulative basis. Caroline's RPN year to date to 29 February 2025 is as follows:\n\n" +
+      "Gross salary to date: €8,000\n" +
+      "Taxable salary to date: €7,200\n" +
+      "Income tax deducted: €774\n" +
+      "Monthly tax credit: €333\n" +
+      "Monthly SRCOP: €3,667\n" +
+      "Month number: 2\n\n" +
       "Calculate the PAYE to be deducted from Caroline's salary for March 2025.",
     options: {
       A: "€4,119",
@@ -148,7 +158,8 @@ const taxSamplePaper3 = [
     type: "single",
     marks: 2,
     questionText:
-      "Using the same CARMA Cakery Limited information from Question 7:\n\n" +
+      "Carma Cakery Limited (CARMA) operates a bakery in Meath. The company has been very profitable in the past but due to increases in the cost of raw materials, the company made its first trading loss in many years in 2025.\n\n" +
+      "The company's recent results are as follows:\n\n" +
       "                              Year ended 31/10/2024    Year ended 31/10/2025\n" +
       "Adjusted Trading Profit/(Loss)    €240,000                 (€390,000)\n" +
       "Interest on Government Stocks     €3,000                   €5,000\n" +
