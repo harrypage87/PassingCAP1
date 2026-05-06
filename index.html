@@ -93,6 +93,8 @@
         .paper-btn { padding:18px 20px; font-size:1em; font-weight:600; background:var(--white); color:var(--primary); border:1.5px solid var(--border); border-radius:10px; cursor:pointer; text-align:left; transition:background .15s,border-color .15s; font-family:inherit; display:flex; justify-content:space-between; align-items:center; }
         .paper-btn:hover { background:var(--bg); border-color:var(--tax-green); }
         .paper-btn .paper-meta { font-size:.78em; font-weight:700; color:var(--tax-green); text-transform:uppercase; letter-spacing:.05em; }
+        .paper-btn.disabled { opacity:.5; cursor:default; }
+        .paper-btn.disabled:hover { border-color:var(--border); background:var(--white); transform:none; }
 
         /* ── QUIZ ── */
         #quiz-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px; }
@@ -334,157 +336,11 @@
 <div id="cheatsheet-modal" class="modal-overlay hidden" onclick="handleModalClick(event)">
     <div class="modal-sheet">
         <div class="modal-header">
-            <h2>📋 Tax Cheat Sheet — Rates & Formulae</h2>
+            <h2>📋 Tax Reference Material 2025</h2>
             <button class="modal-close" onclick="closeCheatSheet()">✕</button>
         </div>
-        <div class="modal-body">
-
-            <div class="modal-placeholder">
-                <span class="placeholder-icon">🚧</span>
-                <h3>Coming Soon</h3>
-                <p>The official CA Proficiency 1 Tax Reference Material will be added here shortly.<br>This will include income tax bands, USC rates, tax credits, CGT rates, VAT rates, capital allowance rates, and key formulae.</p>
-            </div>
-
-            <!-- ── PLACEHOLDER CONTENT (replace with real content when available) ── -->
-            <div class="cs-section">
-                <h3>Income Tax Rates 2025</h3>
-                <table class="cs-table">
-                    <thead><tr><th>Band</th><th>Single</th><th>Married (one income)</th><th>Rate</th></tr></thead>
-                    <tbody>
-                        <tr><td>Standard rate band</td><td>Up to €44,000</td><td>Up to €53,000</td><td>20%</td></tr>
-                        <tr><td>Higher rate</td><td>Balance</td><td>Balance</td><td>40%</td></tr>
-                    </tbody>
-                </table>
-                <p class="cs-note">* Placeholder figures — replace with official Finance Act 2024 figures</p>
-            </div>
-
-            <div class="cs-section">
-                <h3>Tax Credits 2025</h3>
-                <table class="cs-table">
-                    <thead><tr><th>Credit</th><th>Amount</th></tr></thead>
-                    <tbody>
-                        <tr><td>Single Person</td><td>€2,000</td></tr>
-                        <tr><td>Married Person</td><td>€4,000</td></tr>
-                        <tr><td>Employee (PAYE)</td><td>€2,000</td></tr>
-                        <tr><td>Earned Income Credit</td><td>€2,000</td></tr>
-                        <tr><td>Age Credit (Single)</td><td>€245</td></tr>
-                        <tr><td>Age Credit (Married)</td><td>€490</td></tr>
-                        <tr><td>Single Person Child Carer</td><td>€1,900</td></tr>
-                        <tr><td>Incapacitated Child</td><td>€3,800</td></tr>
-                        <tr><td>Widowed Person (no children)</td><td>€2,000</td></tr>
-                        <tr><td>Home Carer Credit</td><td>€1,800</td></tr>
-                    </tbody>
-                </table>
-                <p class="cs-note">* Placeholder figures — replace with official figures</p>
-            </div>
-
-            <div class="cs-section">
-                <h3>USC Rates 2025</h3>
-                <table class="cs-table">
-                    <thead><tr><th>Band</th><th>Rate</th></tr></thead>
-                    <tbody>
-                        <tr><td>First €12,012</td><td>0.5%</td></tr>
-                        <tr><td>Next €15,370</td><td>2%</td></tr>
-                        <tr><td>Next €42,662</td><td>3%</td></tr>
-                        <tr><td>Balance</td><td>8%</td></tr>
-                    </tbody>
-                </table>
-                <p class="cs-note">Exempt if income ≤ €13,000. Reduced 2% rate for over-70s with income ≤ €60,000.</p>
-            </div>
-
-            <div class="cs-section">
-                <h3>PRSI Rates 2025</h3>
-                <table class="cs-table">
-                    <thead><tr><th>Class</th><th>Rate</th><th>Notes</th></tr></thead>
-                    <tbody>
-                        <tr><td>Class A (Employee)</td><td>4.125%</td><td>Standard employee rate</td></tr>
-                        <tr><td>Class S (Self-employed)</td><td>4.125%</td><td>On net income after capital allowances</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="cs-section">
-                <h3>CGT Rates & Key Figures 2025</h3>
-                <table class="cs-table">
-                    <thead><tr><th>Item</th><th>Amount/Rate</th></tr></thead>
-                    <tbody>
-                        <tr><td>CGT Rate</td><td>33%</td></tr>
-                        <tr><td>Annual Exemption</td><td>€1,270</td></tr>
-                        <tr><td>Chattel exemption threshold</td><td>€2,540</td></tr>
-                        <tr><td>CGT payment date (Jan–Nov disposals)</td><td>15 December in year of disposal</td></tr>
-                        <tr><td>CGT payment date (Dec disposals)</td><td>31 January following year</td></tr>
-                        <tr><td>CGT return filing date</td><td>31 October following year</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="cs-section">
-                <h3>VAT Rates 2025</h3>
-                <table class="cs-table">
-                    <thead><tr><th>Rate</th><th>Applies to</th></tr></thead>
-                    <tbody>
-                        <tr><td>23%</td><td>Standard rate (most goods and services)</td></tr>
-                        <tr><td>13.5%</td><td>Building services, fuel, short-term car hire</td></tr>
-                        <tr><td>9%</td><td>Hospitality, newspapers, sporting facilities</td></tr>
-                        <tr><td>4.8%</td><td>Livestock, greyhounds</td></tr>
-                        <tr><td>0%</td><td>Food, books, oral medicines, children's clothes</td></tr>
-                        <tr><td>Exempt</td><td>Financial services, insurance, education</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="cs-section">
-                <h3>VAT Thresholds 2025</h3>
-                <table class="cs-table">
-                    <thead><tr><th>Type</th><th>Threshold</th></tr></thead>
-                    <tbody>
-                        <tr><td>Services</td><td>€40,000</td></tr>
-                        <tr><td>Goods (90%+ from goods)</td><td>€85,000</td></tr>
-                        <tr><td>Goods manufactured from zero-rated materials</td><td>€42,500</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="cs-section">
-                <h3>Capital Allowances</h3>
-                <table class="cs-table">
-                    <thead><tr><th>Asset Type</th><th>Rate</th></tr></thead>
-                    <tbody>
-                        <tr><td>Plant & Machinery (standard)</td><td>12.5% straight-line (8 years)</td></tr>
-                        <tr><td>Industrial Buildings</td><td>4% straight-line (25 years)</td></tr>
-                        <tr><td>Energy-efficient equipment</td><td>100% in year 1</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="cs-section">
-                <h3>Corporation Tax Rates 2025</h3>
-                <table class="cs-table">
-                    <thead><tr><th>Income Type</th><th>Rate</th></tr></thead>
-                    <tbody>
-                        <tr><td>Trading income (Case I)</td><td>12.5%</td></tr>
-                        <tr><td>Non-trading income (Case III, IV, V)</td><td>25%</td></tr>
-                        <tr><td>Chargeable gains</td><td>Grossed up at 12.5% (effective 33%)</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="cs-section">
-                <h3>Key Pension Relief Limits 2025</h3>
-                <table class="cs-table">
-                    <thead><tr><th>Age</th><th>Max % of Net Relevant Earnings</th></tr></thead>
-                    <tbody>
-                        <tr><td>Under 30</td><td>15%</td></tr>
-                        <tr><td>30–39</td><td>20%</td></tr>
-                        <tr><td>40–49</td><td>25%</td></tr>
-                        <tr><td>50–54</td><td>30%</td></tr>
-                        <tr><td>55–59</td><td>35%</td></tr>
-                        <tr><td>60 and over</td><td>40%</td></tr>
-                    </tbody>
-                </table>
-                <p class="cs-note">Max earnings cap: €115,000</p>
-            </div>
-
+        <div class="modal-body" style="padding:0; height:80vh;">
+            <iframe src="tax_reference_material.pdf" width="100%" height="100%" style="border:none; display:block;"></iframe>
         </div>
     </div>
 </div>
@@ -492,15 +348,15 @@
 <!-- Question bank scripts -->
 <script src="law_question_bank.js"></script>
 <script src="tax_mock_2026.js"></script>
-<!-- <script src="tax_sample_paper_1.js"></script> -->
-<!-- <script src="tax_sample_paper_2.js"></script> -->
+<script src="tax_sample_paper_1.js"></script>
+<script src="tax_sample_paper_2.js"></script>
 
 <script>
 // ═══════════════════════════════════════════════════════
 //  DATA ASSEMBLY — pulls from external question bank files
 // ═══════════════════════════════════════════════════════
 const allTopicData = {
-    law:     typeof lawQuestions     !== 'undefined' ? lawQuestions     : [],
+    law: typeof lawQuestions !== 'undefined' ? lawQuestions : [],
     tax: [
         ...(typeof taxMock2026     !== 'undefined' ? taxMock2026     : []),
         ...(typeof taxSamplePaper1 !== 'undefined' ? taxSamplePaper1 : []),
@@ -513,9 +369,10 @@ const allTopicData = {
 
 // Past papers definition — sections within tax questions
 const pastPapers = [
-    { id:'mock2026',  label:'Mock Paper 2026',  meta:'40 questions · 90 mins', section:'Mock Paper 2026' },
-    { id:'sample1',   label:'Sample Paper 1',   meta:'40 questions · 90 mins', section:'Sample Paper 1'  },
-    { id:'sample2',   label:'Sample Paper 2',   meta:'42 questions · 90 mins', section:'Sample Paper 2'  },
+    { id:'mock2026',  label:'Mock Paper 2026',  meta:'40 questions · 90 mins', section:'Mock Paper 2026'  },
+    { id:'sample1',   label:'Sample Paper 1',   meta:'40 questions · 90 mins', section:'Sample Paper 1'   },
+    { id:'sample2',   label:'Sample Paper 2',   meta:'42 questions · 90 mins', section:'Sample Paper 2'   },
+    { id:'sample3',   label:'Sample Paper 3',   meta:'Coming soon',            section:'Sample Paper 3'   },
 ];
 
 const MOCK_EXAM_QUESTION_COUNT = 40;
@@ -588,10 +445,12 @@ function showPastPapers() {
     list.innerHTML = '';
     pastPapers.forEach(paper => {
         const questionsInPaper = allTopicData.tax.filter(q => q.section === paper.section);
+        const hasQuestions = questionsInPaper.length > 0;
         const btn = document.createElement('button');
-        btn.className = 'paper-btn';
-        btn.innerHTML = `<span>${paper.label}</span><span class="paper-meta">${questionsInPaper.length} questions</span>`;
-        btn.addEventListener('click', () => startPaperPractice(paper));
+        btn.className = 'paper-btn' + (hasQuestions ? '' : ' disabled');
+        btn.disabled = !hasQuestions;
+        btn.innerHTML = `<span>${paper.label}</span><span class="paper-meta">${hasQuestions ? questionsInPaper.length + ' questions' : 'Coming soon'}</span>`;
+        if (hasQuestions) btn.addEventListener('click', () => startPaperPractice(paper));
         list.appendChild(btn);
     });
     showScreen(screens.taxPapers);
@@ -630,7 +489,7 @@ $('law-mock-btn').addEventListener('click', () => {
 // ═══════════════════════════════════════════════════════
 function startPaperPractice(paper) {
     returnMenuFn = showPastPapers;
-    currentMode = 'practice';
+    currentMode = 'paper';
     const questions = allTopicData.tax.filter(q => q.section === paper.section);
     startQuiz(questions, false);
 }
@@ -707,7 +566,7 @@ function displayQuestion() {
         renderNumeric(q);
     }
 
-    if (currentMode === 'mock' && qType === 'single') $('next-btn').classList.remove('hidden');
+    if ((currentMode === 'mock' || currentMode === 'paper') && qType === 'single') $('next-btn').classList.remove('hidden');
 }
 
 function resetUI() {
@@ -731,7 +590,7 @@ function renderSingle(q) {
 }
 
 function handleSingle(sel, btn, q) {
-    if (currentMode === 'mock') {
+    if (currentMode === 'mock' || currentMode === 'paper') {
         Array.from($('options-container').children).forEach(b => b.classList.remove('selected'));
         btn.classList.add('selected');
         q.userAnswer = sel;
@@ -780,6 +639,13 @@ function handleMulti(q, sb) {
     const allOk = correct.every(k => uSet.has(k)) && user.every(k => cSet.has(k));
     const anyOk = correct.some(k => uSet.has(k));
     q.isCorrect = allOk; if (allOk) score++;
+
+    if (currentMode === 'paper') {
+        // Just mark selected and move on, no colour feedback
+        $('next-btn').classList.remove('hidden');
+        return;
+    }
+
     Array.from($('options-container').querySelectorAll('.multi-option')).forEach(d => {
         d.classList.add('disabled');
         const k = d.dataset.key, cb = d.querySelector('.multi-checkbox');
@@ -823,6 +689,12 @@ function handleNumeric(q, inp, sb) {
     const tol = q.tolerance !== undefined ? q.tolerance : 1;
     const ok = Math.abs(raw - q.correctAnswer) <= tol;
     q.isCorrect = ok; if (ok) score++;
+
+    if (currentMode === 'paper') {
+        $('next-btn').classList.remove('hidden');
+        return;
+    }
+
     inp.classList.add(ok ? 'correct' : 'incorrect');
     showFeedback(ok ? 'correct' : 'incorrect', ok
         ? `✓ Correct! The answer is €${q.correctAnswer.toLocaleString()}.`
