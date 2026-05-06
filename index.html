@@ -735,7 +735,7 @@
 <script src="law_question_bank.js"></script>
 <script src="tax_mock_2026.js"></script>
 <script src="tax_sample_paper_1.js"></script>
-<!-- <script src="tax_sample_paper_2.js"></script> -->
+<script src="tax_sample_paper_2.js"></script>
 
 <script>
 // ═══════════════════════════════════════════════════════
@@ -874,7 +874,7 @@ $('law-mock-btn').addEventListener('click', () => {
 // ═══════════════════════════════════════════════════════
 function startPaperPractice(paper) {
     returnMenuFn = showPastPapers;
-    currentMode = 'paper';
+    currentMode = 'practice';
     const questions = allTopicData.tax.filter(q => q.section === paper.section);
     startQuiz(questions, false);
 }
