@@ -175,6 +175,8 @@
         .cs-table td { padding:8px 10px; border:1px solid var(--border); }
         .cs-table tr:nth-child(even) td { background:#fafafa; }
         .cs-note { font-size:.82em; color:var(--muted); font-style:italic; margin-top:6px; }
+        .cs-list { margin:0; padding-left:16px; font-size:.88em; }
+        .cs-list li { margin-bottom:4px; line-height:1.45; }
     </style>
 </head>
 <body>
@@ -648,13 +650,79 @@
                 <table class="cs-table">
                     <thead><tr><th>Rate</th><th>Examples</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Exempt</strong></td><td>Medical, dental and optical services; Insurance services; Certain banking services; Educational services; Funeral services; Gambling and lotteries; Transport of passengers (and their baggage); Certain lettings of immovable goods</td></tr>
-                        <tr><td><strong>Zero rate</strong></td><td>Supply of most foodstuffs (excluding those specifically liable at the standard rate); Milk and milk-based food and drink; Books (printed, electronic and audio) and booklets (excluding stationery, brochures, etc.); Most clothing and footwear for children under 11 years of age; Oral medicine (excluding food supplements); Exported goods (i.e. despatched outside the EU); Sea-going ships (more than 15 tonnes); Fertilizer; Animal feed, other than pet food; Supply and installation of solar panels on school buildings or private dwellings</td></tr>
-                        <tr><td><strong>Standard rate (23%)</strong></td><td>All goods and services that are not exempt or zero-rated, or are not liable at the other specific rates. Includes: Alcohol, soft drinks, bottled drinking water, juices; Chocolate and confectionery, biscuits, crisps, ice cream and similar; Adult clothing and footwear; Office equipment and stationery; Consultancy services; Solicitor's services</td></tr>
-                        <tr><td><strong>Reduced rate (13.5%)</strong></td><td>Fuel for power and heating (coal, peat, etc.); Supply of electricity and gas (from 1 November 2025); Waste disposal services; Non-residential immovable goods, including supply and development; Supply of concrete and concrete goods; Repair and maintenance of movable goods; General agricultural and veterinary services; Short-term hire of cars, boats, caravans, etc.; Food supplements; Driving instruction; Supply and hire of live horses and greyhounds; Hairdressing services; Supply of hot food, including take-away food; Hotel/holiday accommodation, including caravan parks and camping sites; Admission to cinemas, theatres, certain musical performances, museums and fairground amusements</td></tr>
-                        <tr><td><strong>Second reduced rate (9%)</strong></td><td>Subscriptions for certain sporting activities; Supplies of electricity and gas (for the period 1 May 2022 to 31 October 2025. From 1 November 2025 the rate is expected to return to the reduced rate of 13.5%.)</td></tr>
-                        <tr><td><strong>Farmer flatrate addition (5.1%)</strong></td><td>Supply of agricultural products and services by non-VAT-registered farmers to VAT-registered customers</td></tr>
-                        <tr><td><strong>Livestock rate (4.8%)</strong></td><td>Supply of livestock; Supply of horses intended for foodstuffs</td></tr>
+                        <tr><td><strong>Exempt</strong></td><td>
+                            <ul class="cs-list">
+                                <li>Medical, dental and optical services</li>
+                                <li>Insurance services</li>
+                                <li>Certain banking services</li>
+                                <li>Educational services</li>
+                                <li>Funeral services</li>
+                                <li>Gambling and lotteries</li>
+                                <li>Transport of passengers (and their baggage)</li>
+                                <li>Certain lettings of immovable goods</li>
+                            </ul>
+                        </td></tr>
+                        <tr><td><strong>Zero rate</strong></td><td>
+                            <ul class="cs-list">
+                                <li>Supply of most foodstuffs (excluding those specifically liable at the standard rate)</li>
+                                <li>Milk and milk-based food and drink</li>
+                                <li>Books (printed, electronic and audio) and booklets (excluding stationery, brochures, etc.)</li>
+                                <li>Most clothing and footwear for children under 11 years of age</li>
+                                <li>Oral medicine (excluding food supplements)</li>
+                                <li>Exported goods (i.e. despatched outside the EU)</li>
+                                <li>Sea-going ships (more than 15 tonnes)</li>
+                                <li>Fertilizer</li>
+                                <li>Animal feed, other than pet food</li>
+                                <li>Supply and installation of solar panels on school buildings or private dwellings</li>
+                            </ul>
+                        </td></tr>
+                        <tr><td><strong>Standard rate (23%)</strong></td><td>
+                            <p style="margin-bottom:6px; font-size:.88em;">All goods and services that are not exempt or zero-rated, or are not liable at the other specific rates. Includes:</p>
+                            <ul class="cs-list">
+                                <li>Alcohol, soft drinks, bottled drinking water, juices</li>
+                                <li>Chocolate and confectionery, biscuits, crisps, ice cream and similar</li>
+                                <li>Adult clothing and footwear</li>
+                                <li>Office equipment and stationery</li>
+                                <li>Consultancy services</li>
+                                <li>Solicitor's services</li>
+                            </ul>
+                        </td></tr>
+                        <tr><td><strong>Reduced rate (13.5%)</strong></td><td>
+                            <ul class="cs-list">
+                                <li>Fuel for power and heating (coal, peat, etc.)</li>
+                                <li>Supply of electricity and gas (from 1 November 2025)</li>
+                                <li>Waste disposal services</li>
+                                <li>Non-residential immovable goods, including supply and development</li>
+                                <li>Supply of concrete and concrete goods</li>
+                                <li>Repair and maintenance of movable goods</li>
+                                <li>General agricultural and veterinary services</li>
+                                <li>Short-term hire of cars, boats, caravans, etc.</li>
+                                <li>Food supplements</li>
+                                <li>Driving instruction</li>
+                                <li>Supply and hire of live horses and greyhounds</li>
+                                <li>Hairdressing services</li>
+                                <li>Supply of hot food, including take-away food</li>
+                                <li>Hotel/holiday accommodation, including caravan parks and camping sites</li>
+                                <li>Admission to cinemas, theatres, certain musical performances, museums and fairground amusements</li>
+                            </ul>
+                        </td></tr>
+                        <tr><td><strong>Second reduced rate (9%)</strong></td><td>
+                            <ul class="cs-list">
+                                <li>Subscriptions for certain sporting activities</li>
+                                <li>Supplies of electricity and gas (for the period 1 May 2022 to 31 October 2025. From 1 November 2025 the rate is expected to return to the reduced rate of 13.5%.)</li>
+                            </ul>
+                        </td></tr>
+                        <tr><td><strong>Farmer flatrate addition (5.1%)</strong></td><td>
+                            <ul class="cs-list">
+                                <li>Supply of agricultural products and services by non-VAT-registered farmers to VAT-registered customers</li>
+                            </ul>
+                        </td></tr>
+                        <tr><td><strong>Livestock rate (4.8%)</strong></td><td>
+                            <ul class="cs-list">
+                                <li>Supply of livestock</li>
+                                <li>Supply of horses intended for foodstuffs</li>
+                            </ul>
+                        </td></tr>
                     </tbody>
                 </table>
             </div>
