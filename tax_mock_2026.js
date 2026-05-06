@@ -50,7 +50,7 @@ const taxMock2026 = [
     type: "single",
     marks: 1,
     questionText:
-      "Monica has just started working as a trainee accountant for Oak Limited (OAK). OAK has an accounting year end " +
+      "Monica has just started working as a trainee accountant for Oak Limited ('OAK'). OAK has an accounting year end " +
       "of 31 August 2025. Monica has asked you for advice regarding the filing of OAK's corporation tax return.\n\n" +
       "Advise Monica of the latest date by which OAK's corporation tax return (Form CT1) for the year ended " +
       "31 August 2025 must be filed. OAK files all its tax returns on ROS.",
@@ -140,7 +140,7 @@ const taxMock2026 = [
     type: "single",
     marks: 2,
     questionText:
-      "Juno Limited ("JUNO") is a company which is engaged in the distribution of chilled foods and has a history " +
+      "Juno Limited ('JUNO') is a company which is engaged in the distribution of chilled foods and has a history " +
       "of being very successful. In 2025, JUNO's largest customer went into liquidation. This led to a significant " +
       "bad debt write-off in JUNO's 2025 accounts.\n\n" +
       "Results for recent periods, as adjusted for tax purposes, are as follows:\n" +
@@ -233,7 +233,7 @@ const taxMock2026 = [
     type: "computation",
     marks: 10,
     questionText:
-      "Langley Limited ("LANGLEY") is an Irish resident company based in the food and ingredients sector. " +
+      "Langley Limited ('LANGLEY') is an Irish resident company based in the food and ingredients sector. " +
       "The extract from the income statement of LANGLEY for the year ended 30 September 2025 is as follows:\n\n" +
       "Gross profit: €411,250\n\n" +
       "Less expenses:\n" +
@@ -339,7 +339,7 @@ const taxMock2026 = [
     type: "single",
     marks: 2,
     questionText:
-      "Heights Limited's ("HEIGHTS") corporation tax liability for the year ended 31 October 2025 is estimated " +
+      "Heights Limited's ('HEIGHTS') corporation tax liability for the year ended 31 October 2025 is estimated " +
       "to be €175,000. Its corporation tax liability for the year ended 31 October 2024 was €190,000.\n\n" +
       "Calculate the minimum amount of preliminary tax payable by HEIGHTS for the year ended 31 October 2025 " +
       "and state the due date(s) for the payment of preliminary tax.",
@@ -598,7 +598,7 @@ const taxMock2026 = [
     type: "numeric",
     marks: 2,
     questionText:
-      "Loyal Investments Limited ("LOYAL"), an Irish resident company, is to pay a dividend of €500,000 on " +
+      "Loyal Investments Limited ('LOYAL'), an Irish resident company, is to pay a dividend of €500,000 on " +
       "1 November 2025.\n\n" +
       "Its shareholders are as follows:\n" +
       "• Mr Brannigan (resident in the State): 6,000 ordinary shares\n" +
@@ -625,7 +625,7 @@ const taxMock2026 = [
     type: "single",
     marks: 1,
     questionText:
-      "Loyal Investments Limited ("LOYAL") paid a dividend on 1 November 2025.\n\n" +
+      "Loyal Investments Limited ('LOYAL') paid a dividend on 1 November 2025.\n\n" +
       "State the due date for payment of DWT by LOYAL.",
     options: {
       A: "The DWT must be paid before 14 November 2025",
@@ -712,7 +712,7 @@ const taxMock2026 = [
     type: "numeric",
     marks: 2,
     questionText:
-      "Copco Limited ("COPCO") produces and sells flat pack furniture. The furniture is supplied with instructions " +
+      "Copco Limited ('COPCO') produces and sells flat pack furniture. The furniture is supplied with instructions " +
       "in a booklet form. The value of each booklet is approximately €5 (VAT rate of 0%) while the price of the " +
       "furniture is €890 (ex VAT). The total sales value of the furniture is €895 (ex VAT).\n\n" +
       "Calculate how much VAT COPCO will charge on the sale of the flat pack furniture. " +
@@ -1041,7 +1041,7 @@ const taxMock2026 = [
     type: "computation",
     marks: 5,
     questionText:
-      "Elsa is employed as financial controller by Olaf Limited ("OLAF"). She was paid a salary of €115,000 " +
+      "Elsa is employed as financial controller by Olaf Limited ('OLAF'). She was paid a salary of €115,000 " +
       "for 2025. Elsa participates in a performance related bonus scheme and received a bonus of €12,000 on " +
       "28 January 2025. This bonus related to her work in 2024. For 2025, she was paid her bonus of €15,000 " +
       "on 3 February 2026.\n\n" +
