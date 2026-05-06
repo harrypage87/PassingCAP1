@@ -1034,7 +1034,7 @@ function handleMulti(q, sb) {
     q.isCorrect = allOk; if (allOk) score++;
 
     if (currentMode === 'paper') {
-        // Just mark selected and move on, no colour feedback
+        sb.classList.add('hidden');
         $('next-btn').classList.remove('hidden');
         return;
     }
@@ -1047,6 +1047,7 @@ function handleMulti(q, sb) {
         else if (!sp && up) { d.classList.remove('selected'); d.classList.add('incorrect'); cb.textContent = '✗'; }
         else if (sp && !up) { d.classList.add('missed'); cb.textContent = '!'; }
     });
+    sb.classList.add('hidden');
     if (allOk) showFeedback('correct', '✓ Correct! You selected all the right answers.');
     else if (anyOk) {
         const m = correct.filter(k => !uSet.has(k)), w = user.filter(k => !cSet.has(k));
@@ -1078,7 +1079,7 @@ function renderNumeric(q) {
 
 function handleNumeric(q, inp, sb) {
     const raw = parseFloat(inp.value); if (isNaN(raw)) return;
-    sb.disabled = true; inp.disabled = true; q.userAnswer = raw;
+    sb.disabled = true; sb.classList.add('hidden'); inp.disabled = true; q.userAnswer = raw;
     const tol = q.tolerance !== undefined ? q.tolerance : 1;
     const ok = Math.abs(raw - q.correctAnswer) <= tol;
     q.isCorrect = ok; if (ok) score++;
