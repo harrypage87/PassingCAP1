@@ -59,7 +59,7 @@ const taxSamplePaper2 = [
     type: "multi_numeric",
     marks: 7,
     questionText:
-      "Hennessey Distributers Limited ("HENNESSEY") is a successful hardware distribution company. It has been in business for ten years, has two fulltime employees and the business is registered for VAT in the Republic of Ireland. HENNESSEY prepares its VAT returns on an invoice basis.\n\n" +
+      "Hennessey Distributers Limited (HENNESSEY) is a successful hardware distribution company. It has been in business for ten years, has two fulltime employees and the business is registered for VAT in the Republic of Ireland. HENNESSEY prepares its VAT returns on an invoice basis.\n\n" +
       "The company had the following activities for the VAT period May/June 2025:\n\n" +
       "Sales (exclusive of VAT):\n" +
       "  VAT registered Irish customers:   €310,000\n" +
