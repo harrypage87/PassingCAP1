@@ -1002,7 +1002,7 @@ function showTopicSelect() {
 }
 
 function selectTopic(key) {
-    if (!allTopicData[key] || allTopicData[key].length === 0) return;
+    if (key !== 'finance' && (!allTopicData[key] || allTopicData[key].length === 0)) return;
     currentTopic = key;
     if (key === 'law') showLawMenu();
     else if (key === 'tax') showTaxMenu();
