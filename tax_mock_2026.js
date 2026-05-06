@@ -50,7 +50,7 @@ const taxMock2026 = [
     type: "single",
     marks: 1,
     questionText:
-      "Monica has just started working as a trainee accountant for Oak Limited ("OAK"). OAK has an accounting year end " +
+      "Monica has just started working as a trainee accountant for Oak Limited (OAK). OAK has an accounting year end " +
       "of 31 August 2025. Monica has asked you for advice regarding the filing of OAK's corporation tax return.\n\n" +
       "Advise Monica of the latest date by which OAK's corporation tax return (Form CT1) for the year ended " +
       "31 August 2025 must be filed. OAK files all its tax returns on ROS.",
