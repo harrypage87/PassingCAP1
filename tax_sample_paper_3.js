@@ -37,15 +37,26 @@ const taxSamplePaper3 = [
   // --- Q3 -------------------------------------------------------------------
   {
     section: "Sample Paper 3",
-    type: "numeric",
+    type: "multi_numeric",
     marks: 4,
     questionText:
-      "Desmond and Jen are married and jointly assessed. Desmond is a finance executive and has a salary of €159,000 (PAYE paid €50,800) in 2025. Jen is a marketing executive and has a salary of €215,000 (PAYE paid €73,200) in 2025.\n\n" +
-      "They have three children, two of which are in third level education. Joe is an undergraduate student in UCC, and his fees are €3,000 in 2025. Caroline is doing a Masters in DCU, and her fees are €13,000 in 2025.\n\n" +
-      "Desmond and Jen also have qualifying medical expenses of €1,330 in 2025.\n\n" +
-      "Calculate the total non-refundable tax credits that Desmond and Jen can avail of for the tax year 2025.",
-    correctAnswer: 9666,
-    tolerance: 0,
+      "Desmond and Jen are married and jointly assessed. Desmond is a finance executive and has a salary of \u20ac159,000 (PAYE paid \u20ac50,800) in 2025. Jen is a marketing executive and has a salary of \u20ac215,000 (PAYE paid \u20ac73,200) in 2025.\n\n" +
+      "They have three children, two of which are in third level education. Joe is an undergraduate student in UCC, and his fees are \u20ac3,000 in 2025. Caroline is doing a Masters in DCU, and her fees are \u20ac13,000 in 2025.\n\n" +
+      "Desmond and Jen also have qualifying medical expenses of \u20ac1,330 in 2025.\n\n" +
+      "Calculate the total non-refundable tax credits and the total refundable tax credits that Desmond and Jen can avail of for the tax year 2025.\n\n" +
+      "Your answers should be entered as positive values.",
+    parts: [
+      {
+        label: "Total non-refundable tax credits",
+        correctAnswer: 9666,
+        tolerance: 0,
+      },
+      {
+        label: "Total refundable tax credits",
+        correctAnswer: 124000,
+        tolerance: 0,
+      },
+    ],
   },
 
   // --- Q4 -------------------------------------------------------------------
@@ -114,7 +125,7 @@ const taxSamplePaper3 = [
     type: "single",
     marks: 2,
     questionText:
-      "Carma Cakery Limited (CARMA) operates a bakery in Meath. The company has been very profitable in the past but due to increases in the cost of raw materials, the company made its first trading loss in many years in 2025.\n\n" +
+      "Carma Cakery Limited ("CARMA") operates a bakery in Meath. The company has been very profitable in the past but due to increases in the cost of raw materials, the company made its first trading loss in many years in 2025.\n\n" +
       "The company's recent results are as follows:\n\n" +
       "                              Year ended 31/10/2024    Year ended 31/10/2025\n" +
       "Adjusted Trading Profit/(Loss)    €240,000                 (€390,000)\n" +
@@ -249,7 +260,7 @@ const taxSamplePaper3 = [
     type: "single",
     marks: 2,
     questionText:
-      "On 1 January 2025, Freebie Limited (FREEBIE) purchased notebooks with the company logo printed on them worth €2,200 (ex-VAT) which they intend to give to customers free of charge. The notebooks have a value of €11 each. 200 customers will receive a notebook free of charge in February 2025.\n\n" +
+      "On 1 January 2025, Freebie Limited ("FREEBIE") purchased notebooks with the company logo printed on them worth €2,200 (ex-VAT) which they intend to give to customers free of charge. The notebooks have a value of €11 each. 200 customers will receive a notebook free of charge in February 2025.\n\n" +
       "Calculate the output VAT and the input VAT on the notebooks.",
     options: {
       A: "Output VAT €506, Input VAT €506",
@@ -283,7 +294,7 @@ const taxSamplePaper3 = [
     type: "numeric",
     marks: 8,
     questionText:
-      "You have been provided with the extract from the Statement of Profit and Loss of Jumbo Jim Limited (JUMBO JIM) for the year ended 31 December 2025. JUMBO JIM is an Irish resident company operating in the commercial cleaning sector.\n\n" +
+      "You have been provided with the extract from the Statement of Profit and Loss of Jumbo Jim Limited ("JUMBO JIM") for the year ended 31 December 2025. JUMBO JIM is an Irish resident company operating in the commercial cleaning sector.\n\n" +
       "Jumbo Jim Limited — Statement of Profit or Loss, year ended 31 December 2025\n\n" +
       "Gross profit:                          €430,000\n\n" +
       "Operating expenses:\n" +
@@ -411,7 +422,7 @@ const taxSamplePaper3 = [
       "Judy Murray (aged 52) is a widow and has no children. Her husband Andy died in 2024. Judy has a salary of €50,000 in 2025.\n\n" +
       "Calculate the weekly tax credits due to Judy which will appear on her tax credit certificate (TCC).\n\n" +
       "Your answer should be rounded to two decimal places.",
-    correctAnswer: 87.31,
+    correctAnswer: 87.30,
     tolerance: 0.01,
   },
 
@@ -465,7 +476,7 @@ const taxSamplePaper3 = [
       C: "If the income of the home carer is in excess of €1,950, the tax credit is reduced by one-half of the excess over the limit (this in addition to other conditions being satisfied)",
       D: "One tax credit is given regardless of the number of dependent persons being cared for",
     },
-    correctAnswer: ["A", "B", "D"],
+    correctAnswer: ["A", "D"],
   },
 
   // --- Q26 ------------------------------------------------------------------
@@ -700,7 +711,7 @@ const taxSamplePaper3 = [
       C: "Expenses incurred 24 months before the commencement of the trade in respect of accountancy fees for the new trade are allowable pre-trading expenses",
       D: "Expenses incurred 36 months before the commencement of the trade in respect of entertaining potential new clients are allowable pre-trading expenses",
     },
-    correctAnswer: ["A", "C"],
+    correctAnswer: ["C"],
   },
 
   // --- Q40 ------------------------------------------------------------------
