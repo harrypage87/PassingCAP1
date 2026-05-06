@@ -1,5 +1,5 @@
 const taxMock2026 = [
-  // ─── Q1 ───────────────────────────────────────────────────────────────────
+  // --- Q1 -------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "single",
@@ -18,11 +18,11 @@ const taxMock2026 = [
     correctAnswer: "D",
     explanation:
       "Proceeds €200,000 less cost €250,000 = loss of €50,000.\n" +
-      "PPR exempt portion: (2 years lived in + 1 year deemed) / 5 years total × €50,000 = €30,000.\n" +
-      "Allowable loss = €50,000 − €30,000 = €20,000.",
+      "PPR exempt portion: (2 years lived in + 1 year deemed) / 5 years total x €50,000 = €30,000.\n" +
+      "Allowable loss = €50,000 - €30,000 = €20,000.",
   },
 
-  // ─── Q2 ───────────────────────────────────────────────────────────────────
+  // --- Q2 -------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "single",
@@ -44,7 +44,7 @@ const taxMock2026 = [
       "and the disposal is not to a connected person.",
   },
 
-  // ─── Q3 ───────────────────────────────────────────────────────────────────
+  // --- Q3 -------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "single",
@@ -66,7 +66,7 @@ const taxMock2026 = [
       "filing via ROS is due by 23 May 2026.",
   },
 
-  // ─── Q4 ───────────────────────────────────────────────────────────────────
+  // --- Q4 -------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "numeric",
@@ -74,9 +74,9 @@ const taxMock2026 = [
     questionText:
       "Rose has three children in third-level education in 2025, two undertaking full-time courses and one in " +
       "part-time education. Relevant details including student fees paid by Rose for 2025 are as follows:\n\n" +
-      "• Ian  – Full-time: Student Contribution €3,000, Tuition Fees Nil\n" +
-      "• Poppy – Full-time: Student Contribution €3,000, Tuition Fees €9,000\n" +
-      "• David – Part-time: Student Contribution €1,500, Tuition Fees €2,500\n\n" +
+      "* Ian  - Full-time: Student Contribution €3,000, Tuition Fees Nil\n" +
+      "* Poppy - Full-time: Student Contribution €3,000, Tuition Fees €9,000\n" +
+      "* David - Part-time: Student Contribution €1,500, Tuition Fees €2,500\n\n" +
       "Note: In all cases the fees are paid for an approved course to an approved college.\n\n" +
       "Calculate, in respect of the third-level fees paid by Rose, the income tax credit she can claim for 2025. " +
       "Your answer should be entered as a positive value.",
@@ -85,12 +85,12 @@ const taxMock2026 = [
     explanation:
       "Disregard first €3,000. Max relief per full-time student = €7,000; max per part-time = €3,500.\n" +
       "Ian: €3,000 (all disallowed by €3,000 threshold) = €0\n" +
-      "Poppy: €3,000 + €9,000 = €12,000 − €3,000 threshold = €9,000, capped at €7,000\n" +
-      "David: €1,500 + €2,500 = €4,000 − €0 (threshold already used) = €4,000, capped at €3,500 … \n" +
-      "Total allowable = €0 + €7,000 + €4,000 = €11,000 × 20% = €2,200.",
+      "Poppy: €3,000 + €9,000 = €12,000 - €3,000 threshold = €9,000, capped at €7,000\n" +
+      "David: €1,500 + €2,500 = €4,000 - €0 (threshold already used) = €4,000, capped at €3,500 ... \n" +
+      "Total allowable = €0 + €7,000 + €4,000 = €11,000 x 20% = €2,200.",
   },
 
-  // ─── Q5 ───────────────────────────────────────────────────────────────────
+  // --- Q5 -------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "multi",
@@ -113,7 +113,7 @@ const taxMock2026 = [
       "parents of a spouse, a company controlled by the person, and lineal descendants.",
   },
 
-  // ─── Q6 ───────────────────────────────────────────────────────────────────
+  // --- Q6 -------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "multi",
@@ -130,11 +130,11 @@ const taxMock2026 = [
     },
     correctAnswer: ["A", "B", "C"],
     explanation:
-      "Statements A, B and C are all correct. Statement D is incorrect — the threshold is €2.5 million " +
+      "Statements A, B and C are all correct. Statement D is incorrect -- the threshold is €2.5 million " +
       "(not €2.1 million) under Finance Act 2024.",
   },
 
-  // ─── Q7 ───────────────────────────────────────────────────────────────────
+  // --- Q7 -------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "single",
@@ -144,9 +144,9 @@ const taxMock2026 = [
       "of being very successful. In 2025, JUNO's largest customer went into liquidation. This led to a significant " +
       "bad debt write-off in JUNO's 2025 accounts.\n\n" +
       "Results for recent periods, as adjusted for tax purposes, are as follows:\n" +
-      "• Year-end 31/03/2024 (12 months) – Case I Profit: €30,000\n" +
-      "• Period end 31/12/2024 (9 months) – Case I Profit: €20,000\n" +
-      "• Year-end 31/12/2025 (12 months) – Case I Loss: (€60,000)\n\n" +
+      "* Year-end 31/03/2024 (12 months) - Case I Profit: €30,000\n" +
+      "* Period end 31/12/2024 (9 months) - Case I Profit: €20,000\n" +
+      "* Year-end 31/12/2025 (12 months) - Case I Loss: (€60,000)\n\n" +
       "Calculate the corporation tax payable by JUNO for the year ended 31 March 2024.",
     options: {
       A: "NIL",
@@ -158,10 +158,10 @@ const taxMock2026 = [
     explanation:
       "Trading loss of €60,000 arises in 2025. S396A: carry back to 31/12/2024 (9 months) = €20,000 used; " +
       "then carry back 3/12 of year ended 31/03/2024 = €7,500. Net Case I for year ended 31/03/2024 = " +
-      "€30,000 − €7,500 = €22,500 × 12.5% = €2,813.",
+      "€30,000 - €7,500 = €22,500 x 12.5% = €2,813.",
   },
 
-  // ─── Q8 ───────────────────────────────────────────────────────────────────
+  // --- Q8 -------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "numeric",
@@ -179,12 +179,12 @@ const taxMock2026 = [
     correctAnswer: 1756,
     tolerance: 0,
     explanation:
-      "Michelle: PRSI on deposit interest only: €940 × 4.125% = €39.\n" +
-      "Sam: Case I (€47,000 − €6,000 = €41,000) + Case IV €627 = €41,627 × 4.125% = €1,717.\n" +
+      "Michelle: PRSI on deposit interest only: €940 x 4.125% = €39.\n" +
+      "Sam: Case I (€47,000 - €6,000 = €41,000) + Case IV €627 = €41,627 x 4.125% = €1,717.\n" +
       "Total PRSI = €1,717 + €39 = €1,756.",
   },
 
-  // ─── Q9 ───────────────────────────────────────────────────────────────────
+  // --- Q9 -------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "numeric",
@@ -201,12 +201,12 @@ const taxMock2026 = [
     tolerance: 0,
     explanation:
       "Stephen's base cost is €2,550 (value at date of inheritance in 2008).\n" +
-      "Actual loss = €1,350 − €2,550 = −€1,200.\n" +
+      "Actual loss = €1,350 - €2,550 = -€1,200.\n" +
       "Non-wasting chattel: proceeds (€1,350) < €2,540 floor, so deemed proceeds = €2,540.\n" +
-      "Allowable loss = €2,540 − €2,550 = −€10.",
+      "Allowable loss = €2,540 - €2,550 = -€10.",
   },
 
-  // ─── Q10 ──────────────────────────────────────────────────────────────────
+  // --- Q10 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "multi",
@@ -227,7 +227,7 @@ const taxMock2026 = [
       "The retail/showroom threshold is 10% (not 12.5%).",
   },
 
-  // ─── Q11 ──────────────────────────────────────────────────────────────────
+  // --- Q11 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "computation",
@@ -262,10 +262,10 @@ const taxMock2026 = [
       "Notes:\n" +
       "1. Repairs: installation of a new heating system €10,200 (capital) + painting and decorating €5,900 (revenue).\n" +
       "2. Professional fees: debt collection fees €200 (allowable) + legal fees €2,000 re acquisition of new property (capital, not allowable).\n" +
-      "3. Subscriptions: political donations €900 (not allowable) + staff race sponsorship €1,200 (allowable — company logo on bibs).\n" +
+      "3. Subscriptions: political donations €900 (not allowable) + staff race sponsorship €1,200 (allowable -- company logo on bibs).\n" +
       "4. Entertainment: customer entertainment €450 + supplier entertainment €150 (all not allowable).\n" +
       "5. Staff awards: four one4all vouchers gifted to staff for outstanding contributions.\n" +
-      "6. Foreign rental income is net of expenses — commercial property in UK.\n" +
+      "6. Foreign rental income is net of expenses -- commercial property in UK.\n" +
       "7. Sale of Irish shares: cost €9,200 (May 2018), sold €14,400 (June 2025).\n" +
       "8. Fixtures and fittings: cost €8,000 (August 2023), sold €11,100 (September 2025).\n" +
       "9. Total capital allowances for 2025 (including balancing allowances/charges and capital additions): €11,300. No adjustment required.\n\n" +
@@ -296,23 +296,23 @@ const taxMock2026 = [
       totalCT: 41727,
     },
     explanation:
-      "Add backs: Repairs €10,200 (capital — new heating system); Professional fees €2,000 (capital — property acquisition); " +
+      "Add backs: Repairs €10,200 (capital -- new heating system); Professional fees €2,000 (capital -- property acquisition); " +
       "Depreciation €14,000; Subscriptions €900 (political donations); Entertainment €600 (all); Staff awards €0 (one4all vouchers up to €500 each are exempt BIK, so deductible).\n\n" +
-      "Deductions – Other income: remove profit on investments €5,200, profit on F&F €3,100, bad debts recovered €600, " +
+      "Deductions - Other income: remove profit on investments €5,200, profit on F&F €3,100, bad debts recovered €600, " +
       "interest on tax overpaid €2,000 (exempt), foreign rental €5,000 (Case III) = deduct €15,300. Capital allowances €11,300.\n\n" +
-      "Case I = €300,800 + €27,700 − €15,300 − €11,300 = €301,900\n" +
+      "Case I = €300,800 + €27,700 - €15,300 - €11,300 = €301,900\n" +
       "Case III (foreign rental) = €5,000\n" +
       "Total income = €306,900\n\n" +
       "Chargeable gains:\n" +
-      "  Shares: (€14,400 − €9,200) × 33%/12.5% = €5,200 × 2.64 = €13,728 (grossed-up gain included in CT base)\n" +
-      "  Fixtures: (€11,100 − €8,000) × 33%/12.5% = €3,100 × 2.64 = €8,184\n" +
+      "  Shares: (€14,400 - €9,200) x 33%/12.5% = €5,200 x 2.64 = €13,728 (grossed-up gain included in CT base)\n" +
+      "  Fixtures: (€11,100 - €8,000) x 33%/12.5% = €3,100 x 2.64 = €8,184\n" +
       "  Total grossed-up = €21,912\n\n" +
-      "CT at 12.5% on (€301,900 + €21,912) = €323,812 × 12.5% = €40,477\n" +
+      "CT at 12.5% on (€301,900 + €21,912) = €323,812 x 12.5% = €40,477\n" +
       "CT at 25% on €5,000 = €1,250\n" +
       "Total CT = €41,727",
   },
 
-  // ─── Q12 ──────────────────────────────────────────────────────────────────
+  // --- Q12 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "multi",
@@ -329,11 +329,11 @@ const taxMock2026 = [
     },
     correctAnswer: ["B", "D"],
     explanation:
-      "B and D are correct. The exemption limit is €50,000 (not €40,000). USC is not exempt — only income tax " +
+      "B and D are correct. The exemption limit is €50,000 (not €40,000). USC is not exempt -- only income tax " +
       "is exempt. PRSI is still payable on exempt artist income.",
   },
 
-  // ─── Q13 ──────────────────────────────────────────────────────────────────
+  // --- Q13 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "single",
@@ -351,11 +351,11 @@ const taxMock2026 = [
     },
     correctAnswer: "B",
     explanation:
-      "Minimum preliminary tax = lower of 90% of current year liability (90% × €175,000 = €157,500) or " +
+      "Minimum preliminary tax = lower of 90% of current year liability (90% x €175,000 = €157,500) or " +
       "100% of prior year liability (€190,000). Minimum = €157,500, due 23 September 2025 (one month before period end).",
   },
 
-  // ─── Q14 ──────────────────────────────────────────────────────────────────
+  // --- Q14 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "single",
@@ -374,10 +374,10 @@ const taxMock2026 = [
     correctAnswer: "A",
     explanation:
       "Taking the iPads for private use constitutes a self-supply for VAT purposes. " +
-      "Output VAT = 3 × €1,200 × 23% = €828.",
+      "Output VAT = 3 x €1,200 x 23% = €828.",
   },
 
-  // ─── Q15 ──────────────────────────────────────────────────────────────────
+  // --- Q15 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "multi",
@@ -398,7 +398,7 @@ const taxMock2026 = [
       "(option C is wrong on the amount, option D is wrong on the upper limit).",
   },
 
-  // ─── Q16 ──────────────────────────────────────────────────────────────────
+  // --- Q16 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "computation",
@@ -428,17 +428,17 @@ const taxMock2026 = [
       totalChargeableGain: 420597,
     },
     explanation:
-      "Transaction 1: Proceeds €80,000 − costs of sale €2,000 = €78,000. Less: acquisition cost €61,000 + purchase costs €1,500 = €62,500. Gain = €15,500.\n\n" +
-      "Transaction 2: Connected persons — use market value €200,000. " +
+      "Transaction 1: Proceeds €80,000 - costs of sale €2,000 = €78,000. Less: acquisition cost €61,000 + purchase costs €1,500 = €62,500. Gain = €15,500.\n\n" +
+      "Transaction 2: Connected persons -- use market value €200,000. " +
       "Development land rules apply: deduct CUV €3,000 indexed at 82/83 factor 2.253 = €6,759; hope value = €2,000. " +
-      "Gain = €200,000 − €6,759 − €2,000 = €191,241.\n\n" +
-      "Transaction 3: Acquired as gift from wife — no CGT on inter-spouse transfer, wife's original cost applies. " +
-      "Wife's cost €32,000 × indexation factor 1.442 (1990) = €46,144. " +
-      "Gain = €260,000 − €46,144 = €213,856.\n\n" +
+      "Gain = €200,000 - €6,759 - €2,000 = €191,241.\n\n" +
+      "Transaction 3: Acquired as gift from wife -- no CGT on inter-spouse transfer, wife's original cost applies. " +
+      "Wife's cost €32,000 x indexation factor 1.442 (1990) = €46,144. " +
+      "Gain = €260,000 - €46,144 = €213,856.\n\n" +
       "Total chargeable gain = €15,500 + €191,241 + €213,856 = €420,597.",
   },
 
-  // ─── Q17 ──────────────────────────────────────────────────────────────────
+  // --- Q17 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "computation",
@@ -477,20 +477,20 @@ const taxMock2026 = [
     },
     explanation:
       "Property A income:\n" +
-      "  Rent: €12,000 × 5/12 (Aug–Dec) = €5,000\n" +
-      "  Premium: €10,000 × (51 − 21) / 50 = €6,000\n" +
+      "  Rent: €12,000 x 5/12 (Aug-Dec) = €5,000\n" +
+      "  Premium: €10,000 x (51 - 21) / 50 = €6,000\n" +
       "  Total = €11,000\n" +
       "Property A allowable expenses:\n" +
-      "  Interest on loan used to purchase = €1,800 + €3,600 = €5,400 — only allowed from date property first let (1 Aug). " +
-      "Interest for pre-letting period (Apr–Jun €1,800) not allowable. Post-letting interest = €3,600 (Jul–Dec). " +
+      "  Interest on loan used to purchase = €1,800 + €3,600 = €5,400 -- only allowed from date property first let (1 Aug). " +
+      "Interest for pre-letting period (Apr-Jun €1,800) not allowable. Post-letting interest = €3,600 (Jul-Dec). " +
       "However, dry rot (€950) is allowable; window (€80) allowable; storm damage (€1,400) allowable. " +
-      "Total expenses = €3,600 + €950 − €950 = €4,400 per solution (storm damage + interest post letting).\n" +
-      "Property B income: €6,000 × 4/12 + €9,000 × 2/12 = €2,000 + €1,500 = €3,500\n" +
+      "Total expenses = €3,600 + €950 - €950 = €4,400 per solution (storm damage + interest post letting).\n" +
+      "Property B income: €6,000 x 4/12 + €9,000 x 2/12 = €2,000 + €1,500 = €3,500\n" +
       "Property B expenses: €90 + €700 + €140 = €930\n" +
       "Total rental income = €6,600 + €2,570 = €9,170.",
   },
 
-  // ─── Q18 ──────────────────────────────────────────────────────────────────
+  // --- Q18 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "multi",
@@ -508,10 +508,10 @@ const taxMock2026 = [
     correctAnswer: ["A", "B", "E"],
     explanation:
       "A, B and E are exempt from CGT. Development land gains (C) are chargeable. " +
-      "The non-wasting chattel exemption threshold is €2,540 — not €5,240 (D is incorrect).",
+      "The non-wasting chattel exemption threshold is €2,540 -- not €5,240 (D is incorrect).",
   },
 
-  // ─── Q19 ──────────────────────────────────────────────────────────────────
+  // --- Q19 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "multi",
@@ -532,7 +532,7 @@ const taxMock2026 = [
       "The distance sales threshold into Ireland is €10,000 (EU-wide OSS threshold), not €12,000.",
   },
 
-  // ─── Q20 ──────────────────────────────────────────────────────────────────
+  // --- Q20 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "numeric",
@@ -548,14 +548,14 @@ const taxMock2026 = [
     correctAnswer: 6000,
     tolerance: 0,
     explanation:
-      "Category C vehicle, 16,800 business km falls in the 15,000–20,000 km band → 30% BIK rate.\n" +
-      "Reduced OMV = €35,000 − €10,000 = €25,000 (pre-2023 car, €10,000 deduction applies).\n" +
-      "BIK = €25,000 × 30% = €7,500.\n" +
-      "20% reduction for high business mileage: €7,500 × 20% = €1,500.\n" +
-      "Taxable BIK = €7,500 − €1,500 = €6,000.",
+      "Category C vehicle, 16,800 business km falls in the 15,000-20,000 km band -> 30% BIK rate.\n" +
+      "Reduced OMV = €35,000 - €10,000 = €25,000 (pre-2023 car, €10,000 deduction applies).\n" +
+      "BIK = €25,000 x 30% = €7,500.\n" +
+      "20% reduction for high business mileage: €7,500 x 20% = €1,500.\n" +
+      "Taxable BIK = €7,500 - €1,500 = €6,000.",
   },
 
-  // ─── Q21 ──────────────────────────────────────────────────────────────────
+  // --- Q21 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "single",
@@ -563,11 +563,11 @@ const taxMock2026 = [
     questionText:
       "Theresa bought her principal private residence in Clare on 1 February 1997. She lived in the house except " +
       "in the following periods:\n" +
-      "• She was required to live in Amsterdam from 1 October 1999 until 31 December 2000 for work purposes. " +
+      "* She was required to live in Amsterdam from 1 October 1999 until 31 December 2000 for work purposes. " +
       "Afterwards she returned home to live in her house in Clare;\n" +
-      "• She was also required to live in Donegal from 1 July 2005 until 31 December 2010 for work purposes. " +
+      "* She was also required to live in Donegal from 1 July 2005 until 31 December 2010 for work purposes. " +
       "Afterwards she returned home to live in her house in Clare;\n" +
-      "• She was required to move to Madrid from 1 January 2012 until 31 December 2015 to supervise a project " +
+      "* She was required to move to Madrid from 1 January 2012 until 31 December 2015 to supervise a project " +
       "for work. She ended up renting out her house in Clare and never moved back. She is currently still living " +
       "in Madrid.\n\n" +
       "Theresa sold her house on 1 February 2025. Theresa had no other disposals in 2025.\n\n" +
@@ -582,17 +582,17 @@ const taxMock2026 = [
     correctAnswer: "C",
     explanation:
       "Period of occupation (months):\n" +
-      "01/02/1997 – 01/10/1999: 32 occupied\n" +
-      "01/10/1999 – 31/12/2000 (Amsterdam, work abroad): 15 deemed occupied\n" +
-      "01/01/2001 – 01/07/2005: 54 occupied\n" +
-      "01/07/2005 – 31/12/2010 (Donegal, work in Ireland): 66 months total; only 18 deemed occupied (4-year limit)\n" +
-      "01/01/2011 – 31/12/2011: 12 occupied (returned home)\n" +
-      "01/01/2012 – 01/02/2024 (Madrid, never returned): 145 unoccupied — no exemption as she did not return\n" +
-      "01/02/2024 – 01/02/2025: 12 months deemed occupied (final 12-month deemed occupation)\n" +
+      "01/02/1997 - 01/10/1999: 32 occupied\n" +
+      "01/10/1999 - 31/12/2000 (Amsterdam, work abroad): 15 deemed occupied\n" +
+      "01/01/2001 - 01/07/2005: 54 occupied\n" +
+      "01/07/2005 - 31/12/2010 (Donegal, work in Ireland): 66 months total; only 18 deemed occupied (4-year limit)\n" +
+      "01/01/2011 - 31/12/2011: 12 occupied (returned home)\n" +
+      "01/01/2012 - 01/02/2024 (Madrid, never returned): 145 unoccupied -- no exemption as she did not return\n" +
+      "01/02/2024 - 01/02/2025: 12 months deemed occupied (final 12-month deemed occupation)\n" +
       "Total deemed occupied = 32 + 15 + 54 + 18 + 12 + 0 + 12 = 173 months.",
   },
 
-  // ─── Q22 ──────────────────────────────────────────────────────────────────
+  // --- Q22 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "numeric",
@@ -601,10 +601,10 @@ const taxMock2026 = [
       "Loyal Investments Limited ('LOYAL'), an Irish resident company, is to pay a dividend of €500,000 on " +
       "1 November 2025.\n\n" +
       "Its shareholders are as follows:\n" +
-      "• Mr Brannigan (resident in the State): 6,000 ordinary shares\n" +
-      "• Happy Investments Limited (resident in the State): 36,000 ordinary shares\n" +
-      "• Arc – Irish registered charity: 2,000 ordinary shares\n" +
-      "• Potts Investments Limited (resident in the State): 6,000 ordinary shares\n" +
+      "* Mr Brannigan (resident in the State): 6,000 ordinary shares\n" +
+      "* Happy Investments Limited (resident in the State): 36,000 ordinary shares\n" +
+      "* Arc - Irish registered charity: 2,000 ordinary shares\n" +
+      "* Potts Investments Limited (resident in the State): 6,000 ordinary shares\n" +
       "Total shares in issue: 50,000\n\n" +
       "Calculate the dividend withholding tax (DWT) payable by LOYAL, if any, assuming all declarations necessary " +
       "to obtain exemptions are given. " +
@@ -612,14 +612,14 @@ const taxMock2026 = [
     correctAnswer: 15000,
     tolerance: 0,
     explanation:
-      "Mr Brannigan (individual resident): 6,000/50,000 × €500,000 = €60,000 × 25% DWT = €15,000.\n" +
+      "Mr Brannigan (individual resident): 6,000/50,000 x €500,000 = €60,000 x 25% DWT = €15,000.\n" +
       "Happy Investments Limited (Irish resident company): exempt from DWT.\n" +
       "Arc (Irish registered charity): exempt from DWT.\n" +
       "Potts Investments Limited (Irish resident company): exempt from DWT.\n" +
       "Total DWT = €15,000.",
   },
 
-  // ─── Q23 ──────────────────────────────────────────────────────────────────
+  // --- Q23 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "single",
@@ -636,10 +636,10 @@ const taxMock2026 = [
     correctAnswer: "C",
     explanation:
       "DWT must be remitted to Revenue by the 14th of the month following the month in which the dividend is paid. " +
-      "Dividend paid in November 2025 → DWT due by 14 December 2025.",
+      "Dividend paid in November 2025 -> DWT due by 14 December 2025.",
   },
 
-  // ─── Q24 ──────────────────────────────────────────────────────────────────
+  // --- Q24 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "single",
@@ -657,7 +657,7 @@ const taxMock2026 = [
       "Option C describes tax avoidance (exploitation of loopholes).",
   },
 
-  // ─── Q25 ──────────────────────────────────────────────────────────────────
+  // --- Q25 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "numeric",
@@ -673,7 +673,7 @@ const taxMock2026 = [
       "The specified income limit for the dependent relative credit for 2025 is €18,028.",
   },
 
-  // ─── Q26 ──────────────────────────────────────────────────────────────────
+  // --- Q26 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "single",
@@ -684,9 +684,9 @@ const taxMock2026 = [
       "accommodation, utilities, food and laundry. After June 2026 Olga intends to downsize to a smaller property " +
       "and will no longer have spare bedrooms available.\n\n" +
       "The monthly costs associated with the provision of the accommodation will be as follows:\n" +
-      "• Utilities: €300\n" +
-      "• Food: €800\n" +
-      "• Laundry costs: €200\n\n" +
+      "* Utilities: €300\n" +
+      "* Food: €800\n" +
+      "* Laundry costs: €200\n\n" +
       "Calculate Olga's taxable rental profits for 2025 and 2026.\n" +
       "You can assume that the tax rules in 2026 remain the same as in 2025.",
     options: {
@@ -697,16 +697,16 @@ const taxMock2026 = [
     },
     correctAnswer: "C",
     explanation:
-      "2025 (Sep–Dec = 4 months):\n" +
-      "  Gross rental income = €650 × 4 students × 4 months = €10,400\n" +
-      "  This is below the rent-a-room relief threshold of €14,000 → exempt in 2025.\n\n" +
-      "2026 (Jan–Jun = 6 months):\n" +
-      "  Gross rental income = €650 × 4 students × 6 months = €15,600\n" +
-      "  €15,600 exceeds €14,000 threshold → full amount becomes taxable under Case V.\n" +
-      "  Net rental profit = €15,600 − (€300 + €800 + €200) × 6 months = €15,600 − €7,800 = €7,800 taxable.",
+      "2025 (Sep-Dec = 4 months):\n" +
+      "  Gross rental income = €650 x 4 students x 4 months = €10,400\n" +
+      "  This is below the rent-a-room relief threshold of €14,000 -> exempt in 2025.\n\n" +
+      "2026 (Jan-Jun = 6 months):\n" +
+      "  Gross rental income = €650 x 4 students x 6 months = €15,600\n" +
+      "  €15,600 exceeds €14,000 threshold -> full amount becomes taxable under Case V.\n" +
+      "  Net rental profit = €15,600 - (€300 + €800 + €200) x 6 months = €15,600 - €7,800 = €7,800 taxable.",
   },
 
-  // ─── Q27 ──────────────────────────────────────────────────────────────────
+  // --- Q27 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "numeric",
@@ -720,11 +720,11 @@ const taxMock2026 = [
     correctAnswer: 206,
     tolerance: 0,
     explanation:
-      "The booklet is ancillary to the main supply of furniture. The composite supply rule applies — " +
-      "the dominant supply is the furniture (23% VAT rate). VAT = €895 × 23% = €205.85 ≈ €206.",
+      "The booklet is ancillary to the main supply of furniture. The composite supply rule applies -- " +
+      "the dominant supply is the furniture (23% VAT rate). VAT = €895 x 23% = €205.85 ~ €206.",
   },
 
-  // ─── Q28 ──────────────────────────────────────────────────────────────────
+  // --- Q28 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "single",
@@ -748,11 +748,11 @@ const taxMock2026 = [
     correctAnswer: "A",
     explanation:
       "Peter is an employee (contract of service). The key indicators are: (1) exchange of remuneration for work; " +
-      "(2) Peter must perform the work himself; (3) Thomas exercises sufficient control (set hours 10–16 Mon–Fri, " +
+      "(2) Peter must perform the work himself; (3) Thomas exercises sufficient control (set hours 10-16 Mon-Fri, " +
       "requires sign-off for outside work). These three mutuality of obligation tests are satisfied.",
   },
 
-  // ─── Q29 ──────────────────────────────────────────────────────────────────
+  // --- Q29 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "computation",
@@ -761,9 +761,9 @@ const taxMock2026 = [
       "Yasmin McDonnell has been trading for a number of years to a year-end of 31 May. In 2025, Yasmin changed " +
       "her accounting year-end to correspond with the calendar year, 31 December.\n\n" +
       "Profits recorded by Yasmin are as follows:\n" +
-      "• 12 months to 31 May 2024: €11,000\n" +
-      "• 12 months to 31 May 2025: €19,000\n" +
-      "• 7 months to 31 December 2025: €15,000\n\n" +
+      "* 12 months to 31 May 2024: €11,000\n" +
+      "* 12 months to 31 May 2025: €19,000\n" +
+      "* 7 months to 31 December 2025: €15,000\n\n" +
       "Calculate Yasmin's assessable profits for 2025 and 2024. " +
       "All answers should be entered as positive values. The answer should be rounded to the nearest whole number.",
     solution: {
@@ -771,17 +771,17 @@ const taxMock2026 = [
       assessableProfitsFor2024: 15667,
     },
     explanation:
-      "Year of assessment 2025 — profit period is 01/01/2025 to 31/12/2025:\n" +
-      "  Jan–May 2025 (5 months from 12 months to 31 May 2025): €19,000 × 5/12 = €7,917\n" +
-      "  Jun–Dec 2025 (7 months to 31 Dec 2025): €15,000\n" +
+      "Year of assessment 2025 -- profit period is 01/01/2025 to 31/12/2025:\n" +
+      "  Jan-May 2025 (5 months from 12 months to 31 May 2025): €19,000 x 5/12 = €7,917\n" +
+      "  Jun-Dec 2025 (7 months to 31 Dec 2025): €15,000\n" +
       "  Total 2025 = €22,917\n\n" +
-      "Year of assessment 2024 — revised to 01/01/2024 to 31/12/2024:\n" +
-      "  Jan–May 2024 (5 months from 12 months to 31 May 2024): €11,000 × 5/12 = €4,583\n" +
-      "  Jun–Dec 2024 (7 months from 12 months to 31 May 2025): €19,000 × 7/12 = €11,083\n" +
+      "Year of assessment 2024 -- revised to 01/01/2024 to 31/12/2024:\n" +
+      "  Jan-May 2024 (5 months from 12 months to 31 May 2024): €11,000 x 5/12 = €4,583\n" +
+      "  Jun-Dec 2024 (7 months from 12 months to 31 May 2025): €19,000 x 7/12 = €11,083\n" +
       "  Total 2024 = €15,667",
   },
 
-  // ─── Q30 ──────────────────────────────────────────────────────────────────
+  // --- Q30 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "single",
@@ -789,8 +789,8 @@ const taxMock2026 = [
     questionText:
       "Bobby constructed a hotel in July 1992 for €260,000. He received a capital grant from the State of €10,000 " +
       "for the construction of the hotel. Additional expenditure was incurred as follows:\n" +
-      "• August 2002 – Repairs to roof after storm: €3,000\n" +
-      "• May 2005 – Three new bedrooms added: €90,000\n\n" +
+      "* August 2002 - Repairs to roof after storm: €3,000\n" +
+      "* May 2005 - Three new bedrooms added: €90,000\n\n" +
       "Bobby sold the hotel on 31 May 2025 for €650,000. He had no other chargeable gains during 2025.\n\n" +
       "Calculate Bobby's capital gains tax (CGT) liability arising on the sale of the hotel in 2025.",
     options: {
@@ -801,15 +801,15 @@ const taxMock2026 = [
     },
     correctAnswer: "C",
     explanation:
-      "Acquisition cost net of grant = €260,000 − €10,000 = €250,000 × indexation factor 1.356 (1992) = €339,000.\n" +
-      "Storm repairs (Aug 2002) = revenue, not capital — nil.\n" +
+      "Acquisition cost net of grant = €260,000 - €10,000 = €250,000 x indexation factor 1.356 (1992) = €339,000.\n" +
+      "Storm repairs (Aug 2002) = revenue, not capital -- nil.\n" +
       "New bedrooms (May 2005) = €90,000 (no indexation, post-2003).\n" +
-      "Chargeable gain = €650,000 − €339,000 − €90,000 = €221,000.\n" +
-      "Less annual exemption: €221,000 − €1,270 = €219,730.\n" +
-      "CGT = €219,730 × 33% = €72,511.",
+      "Chargeable gain = €650,000 - €339,000 - €90,000 = €221,000.\n" +
+      "Less annual exemption: €221,000 - €1,270 = €219,730.\n" +
+      "CGT = €219,730 x 33% = €72,511.",
   },
 
-  // ─── Q31 ──────────────────────────────────────────────────────────────────
+  // --- Q31 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "multi",
@@ -828,7 +828,7 @@ const taxMock2026 = [
       "The 10% of income restriction applies to covenants to persons who are permanently incapacitated, not those aged 65+ (C is wrong).",
   },
 
-  // ─── Q32 ──────────────────────────────────────────────────────────────────
+  // --- Q32 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "computation",
@@ -865,18 +865,18 @@ const taxMock2026 = [
       "Schedule F (dividends gross): €5,030 / 0.75 = €6,707\n" +
       "Taxable income = €24,408\n\n" +
       "Tax:\n" +
-      "  DIRT income €2,657 × 33% = €877\n" +
-      "  Remaining €21,751 × 20% = €4,350\n" +
+      "  DIRT income €2,657 x 33% = €877\n" +
+      "  Remaining €21,751 x 20% = €4,350\n" +
       "  Total tax = €5,227\n\n" +
       "Non-refundable credits (restricted to tax):\n" +
       "  Widowed Person credit: €2,540\n" +
       "  PAYE credit: €2,000\n" +
       "  DIRT credit: €877\n" +
-      "  Total = €5,417, restricted to tax = €5,227 → net tax = €0\n\n" +
-      "Refundable credit: DWT paid = €6,707 × 25% = €1,677 → refund of €1,677.",
+      "  Total = €5,417, restricted to tax = €5,227 -> net tax = €0\n\n" +
+      "Refundable credit: DWT paid = €6,707 x 25% = €1,677 -> refund of €1,677.",
   },
 
-  // ─── Q33 ──────────────────────────────────────────────────────────────────
+  // --- Q33 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "multi",
@@ -896,7 +896,7 @@ const taxMock2026 = [
       "A, B and C are correct. Income qualifying for Rent-a-Room relief is exempt from both income tax and USC (D is incorrect).",
   },
 
-  // ─── Q34 ──────────────────────────────────────────────────────────────────
+  // --- Q34 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "multi",
@@ -913,10 +913,10 @@ const taxMock2026 = [
     correctAnswer: ["A", "C", "D"],
     explanation:
       "A, C and D are correct. The claim for s396A/s396B must be made within two years (not one year) of the end of the " +
-      "accounting period in which the loss occurs — B is incorrect.",
+      "accounting period in which the loss occurs -- B is incorrect.",
   },
 
-  // ─── Q35 ──────────────────────────────────────────────────────────────────
+  // --- Q35 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "numeric",
@@ -929,16 +929,16 @@ const taxMock2026 = [
     tolerance: 0,
     explanation:
       "USC bands for 2025:\n" +
-      "  First €12,012 × 0.5% = €60\n" +
-      "  Next €15,370 × 2% = €307\n" +
-      "  Next €42,662 × 3% = €1,280 (George is 70+ so capped at 3% — the 8% rate does not apply)\n" +
-      "  Remaining: €75,000 − €12,012 − €15,370 − €42,662 = €4,956 × 8% = €396\n" +
-      "  Note: the 3% reduced rate applies to those aged 70+ with income ≤ €60,000 — George earns €75,000 " +
+      "  First €12,012 x 0.5% = €60\n" +
+      "  Next €15,370 x 2% = €307\n" +
+      "  Next €42,662 x 3% = €1,280 (George is 70+ so capped at 3% -- the 8% rate does not apply)\n" +
+      "  Remaining: €75,000 - €12,012 - €15,370 - €42,662 = €4,956 x 8% = €396\n" +
+      "  Note: the 3% reduced rate applies to those aged 70+ with income <= €60,000 -- George earns €75,000 " +
       "so normal rates apply.\n" +
       "  Total USC = €60 + €307 + €1,280 + €396 = €2,043.",
   },
 
-  // ─── Q36 ──────────────────────────────────────────────────────────────────
+  // --- Q36 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "multi",
@@ -954,11 +954,11 @@ const taxMock2026 = [
     },
     correctAnswer: ["A", "B", "D", "E"],
     explanation:
-      "Livestock (A), private motor cars (B), yachts (D) and bloodstock (E) are wasting chattels (useful life ≤ 50 years). " +
+      "Livestock (A), private motor cars (B), yachts (D) and bloodstock (E) are wasting chattels (useful life <= 50 years). " +
       "Fine art such as a painting (C) is a non-wasting chattel.",
   },
 
-  // ─── Q37 ──────────────────────────────────────────────────────────────────
+  // --- Q37 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "numeric",
@@ -966,12 +966,12 @@ const taxMock2026 = [
     questionText:
       "Jim, who is a baker, supplies you with the following information from his accounts for the months of May " +
       "and June 2025. All figures are exclusive of VAT.\n\n" +
-      "• Sales of bread (zero-rated): €10,000\n" +
-      "• Purchase of ingredients (zero-rated): €5,000\n" +
-      "• Expenditure on petrol (23%): €1,000\n" +
-      "• Purchase of mixing machine (23%): €3,000\n" +
-      "• Lease rentals – vans (23%): €2,000\n" +
-      "• Bank interest (exempt): €400\n\n" +
+      "* Sales of bread (zero-rated): €10,000\n" +
+      "* Purchase of ingredients (zero-rated): €5,000\n" +
+      "* Expenditure on petrol (23%): €1,000\n" +
+      "* Purchase of mixing machine (23%): €3,000\n" +
+      "* Lease rentals - vans (23%): €2,000\n" +
+      "* Bank interest (exempt): €400\n\n" +
       "Calculate the VAT recoverable by Jim for the period May/June 2025. " +
       "The answer should be entered as a positive value.",
     correctAnswer: 1150,
@@ -979,12 +979,12 @@ const taxMock2026 = [
     explanation:
       "Jim makes zero-rated supplies only (bread), so he has full input VAT recovery.\n" +
       "Petrol: not recoverable (blocked).\n" +
-      "Purchase of mixing machine: €3,000 × 23% = €690\n" +
-      "Lease rentals – vans: €2,000 × 23% = €460\n" +
+      "Purchase of mixing machine: €3,000 x 23% = €690\n" +
+      "Lease rentals - vans: €2,000 x 23% = €460\n" +
       "Total VAT recoverable = €690 + €460 = €1,150.",
   },
 
-  // ─── Q38 ──────────────────────────────────────────────────────────────────
+  // --- Q38 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "single",
@@ -1001,10 +1001,10 @@ const taxMock2026 = [
     correctAnswer: "A",
     explanation:
       "VAT returns for bi-monthly periods are due by the 19th of the following month if filed by post, " +
-      "or extended to the 23rd when filed via ROS. May/June 2025 period → due 23 July 2025.",
+      "or extended to the 23rd when filed via ROS. May/June 2025 period -> due 23 July 2025.",
   },
 
-  // ─── Q39 ──────────────────────────────────────────────────────────────────
+  // --- Q39 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "computation",
@@ -1012,10 +1012,10 @@ const taxMock2026 = [
     questionText:
       "Timmy is retired and is 69 years old. He is married to Tara (67), and they are jointly assessed. " +
       "Tara has no income in 2025.\n" +
-      "• Timmy receives his private pension of €64,800 (PAYE deducted is €8,830) in 2025.\n" +
-      "• He received €24,000 (net) of dividends from Irish companies.\n" +
-      "• He received foreign rental income of €14,000.\n" +
-      "• Timmy and Tara had qualifying medical expenses of €730 in 2025 of which they received a refund of €250 from the VHI.\n\n" +
+      "* Timmy receives his private pension of €64,800 (PAYE deducted is €8,830) in 2025.\n" +
+      "* He received €24,000 (net) of dividends from Irish companies.\n" +
+      "* He received foreign rental income of €14,000.\n" +
+      "* Timmy and Tara had qualifying medical expenses of €730 in 2025 of which they received a refund of €250 from the VHI.\n\n" +
       "Calculate Timmy and Tara's non-refundable and refundable tax credits for 2025. " +
       "The answers should be entered as positive values.",
     solution: {
@@ -1027,15 +1027,15 @@ const taxMock2026 = [
       "  Married persons credit: €4,000\n" +
       "  Employee (PAYE) tax credit: €2,000\n" +
       "  Age credit (jointly assessed, both over 65): €490\n" +
-      "  Medical expenses: (€730 − €250) × 20% = €96\n" +
+      "  Medical expenses: (€730 - €250) x 20% = €96\n" +
       "  Total = €6,586\n\n" +
       "Refundable tax credits:\n" +
       "  PAYE deducted: €8,830\n" +
-      "  DWT on dividends: €24,000 / 75 × 25 = €8,000\n" +
+      "  DWT on dividends: €24,000 / 75 x 25 = €8,000\n" +
       "  Total = €16,830",
   },
 
-  // ─── Q40 ──────────────────────────────────────────────────────────────────
+  // --- Q40 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
     type: "computation",
@@ -1068,16 +1068,16 @@ const taxMock2026 = [
       "  2025 bonus of €15,000 paid in Feb 2026 is NOT taxable in 2025 (paid after year end).\n\n" +
       "Employer loan BIK:\n" +
       "  Preferential loan rate 13.5% (non-home loan). OLAF charges 6.5%. Difference = 7%.\n" +
-      "  €50,000 × 7% × 7/12 (Jun–Dec) = €2,042.\n\n" +
+      "  €50,000 x 7% x 7/12 (Jun-Dec) = €2,042.\n\n" +
       "Free use of apartment:\n" +
-      "  Annual BIK = open market rent = €2,700 × 12 = €32,400.\n\n" +
+      "  Annual BIK = open market rent = €2,700 x 12 = €32,400.\n\n" +
       "Course fees:\n" +
-      "  Not related to Elsa's role → taxable BIK = €2,600.\n\n" +
+      "  Not related to Elsa's role -> taxable BIK = €2,600.\n\n" +
       "Total taxable Schedule E income = €127,000 + €2,042 + €32,400 + €2,600 = €164,042.",
   },
 ];
 
-// ─── Export ────────────────────────────────────────────────────────────────────
+// --- Export --------------------------------------------------------------------
 if (typeof module !== "undefined" && module.exports) {
   module.exports = { taxMock2026 };
 }
