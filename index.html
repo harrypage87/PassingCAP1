@@ -919,7 +919,16 @@ $('menu-return-btn').addEventListener('click', () => {
 //  QUIZ ENGINE
 // ═══════════════════════════════════════════════════════
 function startQuiz(questions, timed) {
-    activeQuestions = questions.map(q => ({ ...q, userAnswer: null, isCorrect: false }));
+    // Normalise all 'single' questions to 'multi' format
+    // so everything renders with checkboxes — correct answer becomes a single-item array
+    activeQuestions = questions.map(q => {
+        const norm = { ...q, userAnswer: null, isCorrect: false };
+        if ((norm.type || 'single') === 'single') {
+            norm.type = 'multi';
+            norm.correctAnswer = [norm.correctAnswer];
+        }
+        return norm;
+    });
     currentQuestionIndex = 0;
     score = 0;
 
@@ -939,19 +948,14 @@ function displayQuestion() {
     $('question-number').textContent = `Question ${currentQuestionIndex + 1} of ${activeQuestions.length}`;
     $('question-text').textContent = q.questionText;
 
-    const qType = q.type || 'single'; // default to single if no type field
-    if (qType === 'single') {
-        $('question-type-label').textContent = 'Select one answer';
-        renderSingle(q);
-    } else if (qType === 'multi') {
+    const qType = q.type || 'multi';
+    if (qType === 'multi') {
         $('question-type-label').textContent = 'Select ALL that apply, then click Submit';
         renderMulti(q);
     } else if (qType === 'numeric') {
         $('question-type-label').textContent = 'Enter your numeric answer (no commas or symbols)';
         renderNumeric(q);
     }
-
-    if ((currentMode === 'mock' || currentMode === 'paper') && qType === 'single') $('next-btn').classList.remove('hidden');
 }
 
 function resetUI() {
@@ -1093,11 +1097,6 @@ function showFeedback(type, msg) {
 }
 
 function handleNextClick() {
-    const q = activeQuestions[currentQuestionIndex];
-    if (currentMode === 'mock' && (q.type || 'single') === 'single') {
-        const s = $('options-container').querySelector('.option-btn.selected');
-        if (s) q.userAnswer = s.dataset.key;
-    }
     currentQuestionIndex++;
     if (currentQuestionIndex < activeQuestions.length) displayQuestion();
     else showResults();
@@ -1119,19 +1118,13 @@ function startTimer(dur) {
 // ═══════════════════════════════════════════════════════
 function showResults() {
     if (timerInterval) clearInterval(timerInterval);
-    if (currentMode === 'mock') {
-        activeQuestions.forEach(q => {
-            if (q.userAnswer === null || q.userAnswer === undefined) return;
-            if ((q.type || 'single') === 'single') q.isCorrect = q.userAnswer === q.correctAnswer;
-        });
-    }
     const correct = activeQuestions.filter(q => q.isCorrect).length;
     const pct = Math.round(correct / activeQuestions.length * 100);
     showScreen(screens.results);
     $('score-text').textContent = `Your Score: ${correct} / ${activeQuestions.length} (${pct}%)`;
     $('final-feedback').textContent = pct >= 50 ? "Well done — keep it up!" : "Keep practising, you'll get there!";
 
-    // Show cheat sheet button on results only for tax
+    // Show reference material button on results only for tax
     const csWrap = $('results-cheatsheet-wrap');
     csWrap.style.display = currentTopic === 'tax' ? 'block' : 'none';
 
@@ -1141,17 +1134,12 @@ function showResults() {
         div.className = `result-item ${q.isCorrect ? 'result-correct' : 'result-incorrect'}`;
         let ans = '';
         if (!q.isCorrect) {
-            const qType = q.type || 'single';
-            if (qType === 'single') {
-                const ua = q.userAnswer ? `${q.userAnswer}. ${q.options[q.userAnswer]}` : 'Not answered';
-                const ca = `${q.correctAnswer}. ${q.options[q.correctAnswer]}`;
-                ans = `<p>Your answer: <span class="user-answer">${ua}</span></p><p>Correct answer: <span class="correct-answer">${ca}</span></p>`;
-            } else if (qType === 'multi') {
-                const ua = Array.isArray(q.userAnswer) && q.userAnswer.length ? q.userAnswer.join(', ') : 'Not answered';
-                ans = `<p>Your selections: <span class="user-answer">${ua}</span></p><p>Correct answers: <span class="correct-answer">${q.correctAnswer.join(', ')}</span></p>`;
-            } else if (qType === 'numeric') {
+            if (q.type === 'numeric') {
                 const ua = q.userAnswer != null ? `€${Number(q.userAnswer).toLocaleString()}` : 'Not answered';
                 ans = `<p>Your answer: <span class="user-answer">${ua}</span></p><p>Correct answer: <span class="correct-answer">€${q.correctAnswer.toLocaleString()}</span></p>`;
+            } else {
+                const ua = Array.isArray(q.userAnswer) && q.userAnswer.length ? q.userAnswer.join(', ') : 'Not answered';
+                ans = `<p>Your selections: <span class="user-answer">${ua}</span></p><p>Correct answers: <span class="correct-answer">${q.correctAnswer.join(', ')}</span></p>`;
             }
         }
         const preview = q.questionText.substring(0, 120) + (q.questionText.length > 120 ? '…' : '');
