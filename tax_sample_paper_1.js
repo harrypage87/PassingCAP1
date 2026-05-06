@@ -1,4 +1,4 @@
-const taxMockROI = [
+const taxSamplePaper1 = [
   // --- Q1 -------------------------------------------------------------------
   {
     section: "Sample Paper 1",
