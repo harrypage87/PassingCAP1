@@ -115,6 +115,8 @@
         .paper-btn { padding:18px 20px; font-size:1em; font-weight:600; background:var(--white); color:var(--primary); border:1.5px solid var(--border); border-radius:10px; cursor:pointer; text-align:left; transition:background .15s,border-color .15s; font-family:inherit; display:flex; justify-content:space-between; align-items:center; }
         .paper-btn:hover { background:var(--bg); border-color:var(--tax-green); }
         .paper-btn .paper-meta { font-size:.78em; font-weight:700; color:var(--tax-green); text-transform:uppercase; letter-spacing:.05em; }
+        .paper-btn.finance-paper:hover { border-color:var(--finance-purple); }
+        .paper-btn.finance-paper .paper-meta { color:var(--finance-purple); }
         .paper-btn.disabled { opacity:.5; cursor:default; }
         .paper-btn.disabled:hover { border-color:var(--border); background:var(--white); transform:none; }
 
@@ -298,11 +300,11 @@
                 <p>Drill questions organised by tax topic — CGT, VAT, USC, and more.</p>
                 <div class="coming-badge">Coming Soon</div>
             </div>
-            <div class="tax-menu-card" onclick="showPastPapers()">
+            <div class="tax-menu-card" onclick="showPastPapers('tax')">
                 <div class="card-icon">📄</div>
                 <h3>Past Papers</h3>
                 <p>Practise full past papers and sample papers with worked solutions.</p>
-                <div class="topic-count" style="color:var(--tax-green); margin-top:10px;">3 papers available</div>
+                <div class="topic-count" style="color:var(--tax-green); margin-top:10px;" id="tax-papers-count"></div>
             </div>
             <div class="tax-menu-card" onclick="startTaxMock()">
                 <div class="card-icon">⏱️</div>
@@ -328,7 +330,7 @@
             <button style="background:rgba(255,255,255,0.2); color:white;" onclick="showTopicSelect()">Change Subject</button>
         </div>
         <div class="finance-strip">
-            <span>📐 Tables & formulae available</span>
+            <span>📐 Tables &amp; formulae available</span>
             <button onclick="openFinanceRefMat()">Open Reference Material</button>
         </div>
         <div class="finance-menu-grid">
@@ -338,11 +340,11 @@
                 <p>Drill questions organised by finance topic.</p>
                 <div class="coming-badge">Coming Soon</div>
             </div>
-            <div class="finance-menu-card disabled">
+            <div class="finance-menu-card" onclick="showPastPapers('finance')">
                 <div class="card-icon">📄</div>
                 <h3>Past Papers</h3>
-                <p>Practise full past papers and sample papers.</p>
-                <div class="coming-badge">Coming Soon</div>
+                <p>Practise full past papers and mock papers with worked solutions.</p>
+                <div class="topic-count" style="color:var(--finance-purple); margin-top:10px;" id="finance-papers-count"></div>
             </div>
             <div class="finance-menu-card disabled">
                 <div class="card-icon">⏱️</div>
@@ -368,11 +370,21 @@
     <!-- ══ SCREEN 2b: Tax Past Papers ══ -->
     <div id="tax-papers-container" class="main-content hidden">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:10px;">
-            <h2 class="screen-title" style="margin-bottom:0;">Past Papers</h2>
+            <h2 class="screen-title" style="margin-bottom:0;">Tax Past Papers</h2>
             <button onclick="openCheatSheet()" class="quiz-cheatsheet-btn">📋 Reference Material</button>
         </div>
-        <div class="btn-list" id="papers-list"></div>
+        <div class="btn-list" id="tax-papers-list"></div>
         <button onclick="showTaxMenu()" class="btn btn-secondary" style="margin-top:16px;">Back to Menu</button>
+    </div>
+
+    <!-- ══ SCREEN 2c: Finance Past Papers ══ -->
+    <div id="finance-papers-container" class="main-content hidden">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:10px;">
+            <h2 class="screen-title" style="margin-bottom:0;">Finance Past Papers</h2>
+            <button onclick="openFinanceRefMat()" class="quiz-refmat-btn-finance">📐 Reference Material</button>
+        </div>
+        <div class="btn-list" id="finance-papers-list"></div>
+        <button onclick="showFinanceMenu()" class="btn btn-secondary" style="margin-top:16px;">Back to Menu</button>
     </div>
 
     <!-- ══ SCREEN 3: Quiz ══ -->
@@ -400,7 +412,7 @@
         <p id="score-text"></p>
         <p id="final-feedback"></p>
         <div class="results-cheatsheet-wrap" id="results-cheatsheet-wrap" style="display:none;">
-            <button onclick="openCheatSheet()" class="btn btn-green" style="width:auto; padding:10px 24px;">📋 Open Reference Material</button>
+            <button id="results-refmat-btn" class="btn btn-green" style="width:auto; padding:10px 24px;">📋 Open Reference Material</button>
         </div>
         <div id="results-details"></div>
         <button id="menu-return-btn" class="btn" style="margin-top:20px;">Back to Main Menu</button>
@@ -544,7 +556,6 @@
                     </tbody>
                 </table>
                 <p class="cs-note">For 2023, 2024 and 2025 the OMV of Category A, B, C and D cars, all vans and all electric vehicles is reduced by €10,000. The reduction does not apply to Category E cars.</p>
-                <p class="cs-note">For electric vehicles made available for use in the period 1 January 2023 to 31 December 2027, relief from the BIK charge applies on a tapered basis for each year, with the cash equivalent calculated based on the actual OMV of the vehicle reduced by: for vehicles available for use in 2023, 2024 and 2025 – €45,000 (includes the €10,000 reduction above); for vehicles available for use in 2026 – €20,000; and for vehicles available for use in 2027 – €10,000.</p>
             </div>
 
             <div class="cs-section">
@@ -595,9 +606,7 @@
                     </tbody>
                 </table>
                 <p class="cs-note">In the case of individuals with total income in the year not exceeding €60,000 and who are either (i) aged 70 or over, or (ii) hold a full medical card, the 2% rate applies to all income over €12,012.</p>
-                <p class="cs-note" style="margin-top:8px; font-weight:700; font-style:normal;">Exempt Categories:</p>
-                <p class="cs-note">Where an individual's total income for a year does not exceed €13,000. | All Department of Social Protection payments. | Income already subjected to DIRT.</p>
-                <p class="cs-note" style="margin-top:10px; font-weight:700; font-style:normal;">Self-assessed Individuals — The rates of USC (where gross income is greater than €13,000 per annum) are:</p>
+                <p class="cs-note" style="margin-top:8px; font-weight:700; font-style:normal;">Self-assessed Individuals — The rates of USC (where gross income is greater than €13,000 per annum) are:</p>
                 <table class="cs-table">
                     <thead><tr><th></th><th>Aged under 70/Aged 70 and over with income >€60,000/Full medical card holder with income >€60,000</th><th>Aged 70 and over with income of €60,000 or less/Full medical card holder with income of €60,000 or less</th></tr></thead>
                     <tbody>
@@ -608,7 +617,6 @@
                     </tbody>
                 </table>
                 <p class="cs-note">¹ An additional USC charge of 3% is payable by individuals on self-assessed income (excluding employment income) in excess of €100,000 in a year, regardless of age.</p>
-                <p class="cs-note">There is also an additional USC surcharge of 5% on investors with gross income greater than €100,000 where certain property tax reliefs have been used to shelter taxable income.</p>
             </div>
 
             <div class="cs-section">
@@ -623,38 +631,8 @@
                         <tr><td>Over €527</td><td>4.20%</td><td>4.1%</td><td>11.25%</td><td>11.15%</td></tr>
                     </tbody>
                 </table>
-                <p class="cs-note">An employee PRSI credit of a maximum of €12 per week is available to Class A employees with gross earnings up to €424 per week. The credit is reduced by one-sixth of gross earnings in excess of €352 per week. The reduced credit is then deducted from the employee PRSI liability calculated at 4.2% (4.1% prior to 1 October 2025) of gross weekly earnings.</p>
                 <p class="cs-note" style="margin-top:8px; font-weight:700; font-style:normal;">Self-employed:</p>
                 <p class="cs-note">Individuals in receipt of income of €5,000 or less in 2025 will not be subject to PRSI. Where income is greater than €5,000, PRSI at 4.2% (4.1% prior to 1 October 2025) is payable subject to a minimum contribution of €650. A blended rate of 4.125% applies for 2025 due to the change of rate on 1 October 2025.</p>
-            </div>
-
-            <div class="cs-section">
-                <h3>Local Property Tax — Valuation Table 2022–2025</h3>
-                <table class="cs-table">
-                    <thead><tr><th>Band No.</th><th>Valuation Band €</th><th>Mid-Point €</th><th>LPT at Standard Rate €</th></tr></thead>
-                    <tbody>
-                        <tr><td>01</td><td>0 to 200,000</td><td>N/A</td><td>90</td></tr>
-                        <tr><td>02</td><td>200,001 to 262,500</td><td>N/A</td><td>225</td></tr>
-                        <tr><td>03</td><td>262,501 to 350,000</td><td>306,250</td><td>315</td></tr>
-                        <tr><td>04</td><td>350,001 to 437,500</td><td>393,750</td><td>405</td></tr>
-                        <tr><td>05</td><td>437,501 to 525,000</td><td>481,251</td><td>495</td></tr>
-                        <tr><td>06</td><td>525,001 to 612,500</td><td>568,751</td><td>585</td></tr>
-                        <tr><td>07</td><td>612,501 to 700,000</td><td>656,251</td><td>675</td></tr>
-                        <tr><td>08</td><td>700,001 to 787,500</td><td>743,751</td><td>765</td></tr>
-                        <tr><td>09</td><td>787,501 to 875,000</td><td>831,251</td><td>855</td></tr>
-                        <tr><td>10</td><td>875,001 to 962,500</td><td>918,751</td><td>945</td></tr>
-                        <tr><td>11</td><td>962,501 to 1,050,000</td><td>1,006,251</td><td>1,035</td></tr>
-                        <tr><td>12</td><td>1,050,001 to 1,137,500</td><td>1,093,750</td><td>1,190</td></tr>
-                        <tr><td>13</td><td>1,137,501 to 1,225,000</td><td>1,181,251</td><td>1,409</td></tr>
-                        <tr><td>14</td><td>1,225,001 to 1,312,500</td><td>1,268,751</td><td>1,627</td></tr>
-                        <tr><td>15</td><td>1,312,501 to 1,400,000</td><td>1,356,251</td><td>1,846</td></tr>
-                        <tr><td>16</td><td>1,400,001 to 1,487,500</td><td>1,443,751</td><td>2,064</td></tr>
-                        <tr><td>17</td><td>1,487,501 to 1,575,000</td><td>1,531,251</td><td>2,284</td></tr>
-                        <tr><td>18</td><td>1,575,001 to 1,662,500</td><td>1,618,751</td><td>2,502</td></tr>
-                        <tr><td>19</td><td>1,662,501 to 1,750,000</td><td>1,706,251</td><td>2,721</td></tr>
-                        <tr><td>20</td><td>1,750,001 +</td><td>N/A</td><td>2,830 +</td></tr>
-                    </tbody>
-                </table>
             </div>
 
             <div class="cs-section">
@@ -680,36 +658,16 @@
                 <table class="cs-table">
                     <thead><tr><th>Year of Assessment in which Expenditure Incurred</th><th>Multiplier for Disposal in Period Ended</th></tr></thead>
                     <tbody>
-                        <tr><td>1974/75</td><td>7.528</td></tr>
-                        <tr><td>1975/76</td><td>6.080</td></tr>
-                        <tr><td>1976/77</td><td>5.238</td></tr>
-                        <tr><td>1977/78</td><td>4.490</td></tr>
-                        <tr><td>1978/79</td><td>4.148</td></tr>
-                        <tr><td>1979/80</td><td>3.742</td></tr>
-                        <tr><td>1980/81</td><td>3.240</td></tr>
-                        <tr><td>1981/82</td><td>2.678</td></tr>
-                        <tr><td>1982/83</td><td>2.253</td></tr>
-                        <tr><td>1983/84</td><td>2.003</td></tr>
-                        <tr><td>1984/85</td><td>1.819</td></tr>
-                        <tr><td>1985/86</td><td>1.713</td></tr>
-                        <tr><td>1986/87</td><td>1.637</td></tr>
-                        <tr><td>1987/88</td><td>1.583</td></tr>
-                        <tr><td>1988/89</td><td>1.553</td></tr>
-                        <tr><td>1989/90</td><td>1.503</td></tr>
-                        <tr><td>1990/91</td><td>1.442</td></tr>
-                        <tr><td>1991/92</td><td>1.406</td></tr>
-                        <tr><td>1992/93</td><td>1.356</td></tr>
-                        <tr><td>1993/94</td><td>1.331</td></tr>
-                        <tr><td>1994/95</td><td>1.309</td></tr>
-                        <tr><td>1995/96</td><td>1.277</td></tr>
-                        <tr><td>1996/97</td><td>1.251</td></tr>
-                        <tr><td>1997/98</td><td>1.232</td></tr>
-                        <tr><td>1998/99</td><td>1.212</td></tr>
-                        <tr><td>1999/00</td><td>1.193</td></tr>
-                        <tr><td>2000/01</td><td>1.144</td></tr>
-                        <tr><td>2001</td><td>1.087</td></tr>
-                        <tr><td>2002</td><td>1.049</td></tr>
-                        <tr><td>2003 et seq.</td><td>1.000</td></tr>
+                        <tr><td>1974/75</td><td>7.528</td></tr><tr><td>1975/76</td><td>6.080</td></tr><tr><td>1976/77</td><td>5.238</td></tr>
+                        <tr><td>1977/78</td><td>4.490</td></tr><tr><td>1978/79</td><td>4.148</td></tr><tr><td>1979/80</td><td>3.742</td></tr>
+                        <tr><td>1980/81</td><td>3.240</td></tr><tr><td>1981/82</td><td>2.678</td></tr><tr><td>1982/83</td><td>2.253</td></tr>
+                        <tr><td>1983/84</td><td>2.003</td></tr><tr><td>1984/85</td><td>1.819</td></tr><tr><td>1985/86</td><td>1.713</td></tr>
+                        <tr><td>1986/87</td><td>1.637</td></tr><tr><td>1987/88</td><td>1.583</td></tr><tr><td>1988/89</td><td>1.553</td></tr>
+                        <tr><td>1989/90</td><td>1.503</td></tr><tr><td>1990/91</td><td>1.442</td></tr><tr><td>1991/92</td><td>1.406</td></tr>
+                        <tr><td>1992/93</td><td>1.356</td></tr><tr><td>1993/94</td><td>1.331</td></tr><tr><td>1994/95</td><td>1.309</td></tr>
+                        <tr><td>1995/96</td><td>1.277</td></tr><tr><td>1996/97</td><td>1.251</td></tr><tr><td>1997/98</td><td>1.232</td></tr>
+                        <tr><td>1998/99</td><td>1.212</td></tr><tr><td>1999/00</td><td>1.193</td></tr><tr><td>2000/01</td><td>1.144</td></tr>
+                        <tr><td>2001</td><td>1.087</td></tr><tr><td>2002</td><td>1.049</td></tr><tr><td>2003 et seq.</td><td>1.000</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -719,13 +677,10 @@
                 <table class="cs-table">
                     <thead><tr><th>Rate</th><th>Examples</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Exempt</strong></td><td><ul class="cs-list"><li>Medical, dental and optical services</li><li>Insurance services</li><li>Certain banking services</li><li>Educational services</li><li>Funeral services</li><li>Gambling and lotteries</li><li>Transport of passengers (and their baggage)</li><li>Certain lettings of immovable goods</li></ul></td></tr>
-                        <tr><td><strong>Zero rate</strong></td><td><ul class="cs-list"><li>Supply of most foodstuffs (excluding those specifically liable at the standard rate)</li><li>Milk and milk-based food and drink</li><li>Books (printed, electronic and audio) and booklets (excluding stationery, brochures, etc.)</li><li>Most clothing and footwear for children under 11 years of age</li><li>Oral medicine (excluding food supplements)</li><li>Exported goods (i.e. despatched outside the EU)</li><li>Sea-going ships (more than 15 tonnes)</li><li>Fertilizer</li><li>Animal feed, other than pet food</li><li>Supply and installation of solar panels on school buildings or private dwellings</li></ul></td></tr>
-                        <tr><td><strong>Standard rate (23%)</strong></td><td><p style="margin-bottom:6px; font-size:.88em;">All goods and services not exempt or zero-rated. Includes:</p><ul class="cs-list"><li>Alcohol, soft drinks, bottled drinking water, juices</li><li>Chocolate and confectionery, biscuits, crisps, ice cream and similar</li><li>Adult clothing and footwear</li><li>Office equipment and stationery</li><li>Consultancy services</li><li>Solicitor's services</li></ul></td></tr>
-                        <tr><td><strong>Reduced rate (13.5%)</strong></td><td><ul class="cs-list"><li>Fuel for power and heating (coal, peat, etc.)</li><li>Supply of electricity and gas (from 1 November 2025)</li><li>Waste disposal services</li><li>Non-residential immovable goods, including supply and development</li><li>Supply of concrete and concrete goods</li><li>Repair and maintenance of movable goods</li><li>General agricultural and veterinary services</li><li>Short-term hire of cars, boats, caravans, etc.</li><li>Food supplements</li><li>Driving instruction</li><li>Supply and hire of live horses and greyhounds</li><li>Hairdressing services</li><li>Supply of hot food, including take-away food</li><li>Hotel/holiday accommodation, including caravan parks and camping sites</li><li>Admission to cinemas, theatres, certain musical performances, museums and fairground amusements</li></ul></td></tr>
-                        <tr><td><strong>Second reduced rate (9%)</strong></td><td><ul class="cs-list"><li>Subscriptions for certain sporting activities</li><li>Supplies of electricity and gas (for the period 1 May 2022 to 31 October 2025. From 1 November 2025 the rate is expected to return to the reduced rate of 13.5%.)</li></ul></td></tr>
-                        <tr><td><strong>Farmer flatrate addition (5.1%)</strong></td><td><ul class="cs-list"><li>Supply of agricultural products and services by non-VAT-registered farmers to VAT-registered customers</li></ul></td></tr>
-                        <tr><td><strong>Livestock rate (4.8%)</strong></td><td><ul class="cs-list"><li>Supply of livestock</li><li>Supply of horses intended for foodstuffs</li></ul></td></tr>
+                        <tr><td><strong>Exempt</strong></td><td><ul class="cs-list"><li>Medical, dental and optical services</li><li>Insurance services</li><li>Certain banking services</li><li>Educational services</li><li>Funeral services</li><li>Gambling and lotteries</li><li>Transport of passengers</li><li>Certain lettings of immovable goods</li></ul></td></tr>
+                        <tr><td><strong>Zero rate</strong></td><td><ul class="cs-list"><li>Supply of most foodstuffs</li><li>Books (printed, electronic and audio)</li><li>Most clothing and footwear for children under 11</li><li>Oral medicine</li><li>Exported goods</li><li>Sea-going ships (more than 15 tonnes)</li><li>Animal feed, other than pet food</li></ul></td></tr>
+                        <tr><td><strong>Standard rate (23%)</strong></td><td><ul class="cs-list"><li>Alcohol, soft drinks, bottled water, juices</li><li>Chocolate, confectionery, biscuits, crisps, ice cream</li><li>Adult clothing and footwear</li><li>Office equipment and stationery</li><li>Consultancy services</li><li>Solicitor's services</li></ul></td></tr>
+                        <tr><td><strong>Reduced rate (13.5%)</strong></td><td><ul class="cs-list"><li>Fuel for power and heating</li><li>Supply of electricity and gas (from 1 November 2025)</li><li>Non-residential immovable goods</li><li>Hairdressing services</li><li>Hot food, including take-away food</li><li>Hotel/holiday accommodation</li></ul></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -738,7 +693,7 @@
 <div id="finance-refmat-modal" class="modal-overlay hidden" onclick="handleFinanceModalClick(event)">
     <div class="modal-sheet">
         <div class="modal-header" style="background:var(--finance-purple);">
-            <h2>📐 Finance: Tables & Formulae</h2>
+            <h2>📐 Finance: Tables &amp; Formulae</h2>
             <button class="modal-close" onclick="closeFinanceRefMat()">✕</button>
         </div>
         <div class="modal-body">
@@ -746,7 +701,6 @@
             <div class="cs-section" style="border-top:4px solid #6b2d8b; padding-top:20px;">
                 <h3 style="color:#6b2d8b; border-bottom-color:#6b2d8b;">Present Value Tables</h3>
                 <p class="cs-note">Present value of 1, i.e. (1 + r)<sup>-n</sup> where r = discount rate, n = number of periods until payment</p>
-
                 <p class="cs-note" style="margin-top:10px; font-weight:700; font-style:normal;">1% – 10%</p>
                 <div style="overflow-x:auto; margin-top:6px;">
                     <table class="cs-table">
@@ -770,7 +724,6 @@
                         </tbody>
                     </table>
                 </div>
-
                 <p class="cs-note" style="margin-top:14px; font-weight:700; font-style:normal;">11% – 20%</p>
                 <div style="overflow-x:auto; margin-top:6px;">
                     <table class="cs-table">
@@ -794,36 +747,11 @@
                         </tbody>
                     </table>
                 </div>
-
-                <p class="cs-note" style="margin-top:14px; font-weight:700; font-style:normal;">21% – 30%</p>
-                <div style="overflow-x:auto; margin-top:6px;">
-                    <table class="cs-table">
-                        <thead><tr><th>(n)</th><th>21%</th><th>22%</th><th>23%</th><th>24%</th><th>25%</th><th>26%</th><th>27%</th><th>28%</th><th>29%</th><th>30%</th></tr></thead>
-                        <tbody>
-                            <tr><td>1</td><td>0.826</td><td>0.820</td><td>0.813</td><td>0.807</td><td>0.800</td><td>0.794</td><td>0.787</td><td>0.781</td><td>0.775</td><td>0.769</td></tr>
-                            <tr><td>2</td><td>0.683</td><td>0.672</td><td>0.661</td><td>0.650</td><td>0.640</td><td>0.630</td><td>0.620</td><td>0.610</td><td>0.601</td><td>0.592</td></tr>
-                            <tr><td>3</td><td>0.565</td><td>0.551</td><td>0.537</td><td>0.525</td><td>0.512</td><td>0.500</td><td>0.488</td><td>0.477</td><td>0.466</td><td>0.455</td></tr>
-                            <tr><td>4</td><td>0.467</td><td>0.451</td><td>0.437</td><td>0.423</td><td>0.410</td><td>0.397</td><td>0.384</td><td>0.373</td><td>0.361</td><td>0.350</td></tr>
-                            <tr><td>5</td><td>0.386</td><td>0.370</td><td>0.355</td><td>0.341</td><td>0.328</td><td>0.315</td><td>0.303</td><td>0.291</td><td>0.280</td><td>0.269</td></tr>
-                            <tr><td>6</td><td>0.319</td><td>0.303</td><td>0.289</td><td>0.275</td><td>0.262</td><td>0.250</td><td>0.238</td><td>0.227</td><td>0.217</td><td>0.207</td></tr>
-                            <tr><td>7</td><td>0.263</td><td>0.249</td><td>0.235</td><td>0.222</td><td>0.210</td><td>0.198</td><td>0.188</td><td>0.178</td><td>0.168</td><td>0.159</td></tr>
-                            <tr><td>8</td><td>0.218</td><td>0.204</td><td>0.191</td><td>0.179</td><td>0.168</td><td>0.157</td><td>0.148</td><td>0.139</td><td>0.130</td><td>0.123</td></tr>
-                            <tr><td>9</td><td>0.180</td><td>0.167</td><td>0.155</td><td>0.144</td><td>0.134</td><td>0.125</td><td>0.116</td><td>0.108</td><td>0.101</td><td>0.094</td></tr>
-                            <tr><td>10</td><td>0.149</td><td>0.137</td><td>0.126</td><td>0.116</td><td>0.107</td><td>0.099</td><td>0.092</td><td>0.085</td><td>0.078</td><td>0.073</td></tr>
-                            <tr><td>11</td><td>0.123</td><td>0.112</td><td>0.103</td><td>0.094</td><td>0.086</td><td>0.079</td><td>0.072</td><td>0.066</td><td>0.061</td><td>0.056</td></tr>
-                            <tr><td>12</td><td>0.102</td><td>0.092</td><td>0.083</td><td>0.076</td><td>0.069</td><td>0.063</td><td>0.057</td><td>0.052</td><td>0.047</td><td>0.043</td></tr>
-                            <tr><td>13</td><td>0.084</td><td>0.075</td><td>0.068</td><td>0.061</td><td>0.055</td><td>0.050</td><td>0.045</td><td>0.040</td><td>0.037</td><td>0.033</td></tr>
-                            <tr><td>14</td><td>0.069</td><td>0.062</td><td>0.055</td><td>0.049</td><td>0.044</td><td>0.039</td><td>0.035</td><td>0.032</td><td>0.028</td><td>0.025</td></tr>
-                            <tr><td>15</td><td>0.057</td><td>0.051</td><td>0.045</td><td>0.040</td><td>0.035</td><td>0.031</td><td>0.028</td><td>0.025</td><td>0.022</td><td>0.020</td></tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
 
             <div class="cs-section">
                 <h3 style="color:#6b2d8b; border-bottom-color:#6b2d8b;">Annuity Tables</h3>
-                <p class="cs-note">Present value of an annuity of 1, i.e. <span class="math-fraction"><span class="math-numerator">1 - (1 + r)<sup>-n</sup></span><span class="math-denominator">r</span></span></p>
-
+                <p class="cs-note">Present value of an annuity of 1, i.e. [1 - (1 + r)<sup>-n</sup>] / r</p>
                 <p class="cs-note" style="margin-top:10px; font-weight:700; font-style:normal;">1% – 10%</p>
                 <div style="overflow-x:auto; margin-top:6px;">
                     <table class="cs-table">
@@ -847,7 +775,6 @@
                         </tbody>
                     </table>
                 </div>
-
                 <p class="cs-note" style="margin-top:14px; font-weight:700; font-style:normal;">11% – 20%</p>
                 <div style="overflow-x:auto; margin-top:6px;">
                     <table class="cs-table">
@@ -871,71 +798,32 @@
                         </tbody>
                     </table>
                 </div>
-
-                <p class="cs-note" style="margin-top:14px; font-weight:700; font-style:normal;">21% – 30%</p>
-                <div style="overflow-x:auto; margin-top:6px;">
-                    <table class="cs-table">
-                        <thead><tr><th>(n)</th><th>21%</th><th>22%</th><th>23%</th><th>24%</th><th>25%</th><th>26%</th><th>27%</th><th>28%</th><th>29%</th><th>30%</th></tr></thead>
-                        <tbody>
-                            <tr><td>1</td><td>0.826</td><td>0.820</td><td>0.813</td><td>0.806</td><td>0.800</td><td>0.794</td><td>0.787</td><td>0.781</td><td>0.775</td><td>0.769</td></tr>
-                            <tr><td>2</td><td>1.509</td><td>1.492</td><td>1.474</td><td>1.457</td><td>1.440</td><td>1.424</td><td>1.407</td><td>1.392</td><td>1.376</td><td>1.361</td></tr>
-                            <tr><td>3</td><td>2.074</td><td>2.042</td><td>2.011</td><td>1.981</td><td>1.952</td><td>1.923</td><td>1.896</td><td>1.868</td><td>1.842</td><td>1.816</td></tr>
-                            <tr><td>4</td><td>2.540</td><td>2.494</td><td>2.448</td><td>2.404</td><td>2.362</td><td>2.320</td><td>2.280</td><td>2.241</td><td>2.203</td><td>2.166</td></tr>
-                            <tr><td>5</td><td>2.926</td><td>2.864</td><td>2.803</td><td>2.745</td><td>2.689</td><td>2.635</td><td>2.583</td><td>2.532</td><td>2.483</td><td>2.436</td></tr>
-                            <tr><td>6</td><td>3.245</td><td>3.167</td><td>3.092</td><td>3.020</td><td>2.951</td><td>2.885</td><td>2.821</td><td>2.759</td><td>2.700</td><td>2.643</td></tr>
-                            <tr><td>7</td><td>3.508</td><td>3.416</td><td>3.327</td><td>3.242</td><td>3.161</td><td>3.083</td><td>3.009</td><td>2.937</td><td>2.868</td><td>2.802</td></tr>
-                            <tr><td>8</td><td>3.726</td><td>3.619</td><td>3.518</td><td>3.421</td><td>3.329</td><td>3.241</td><td>3.156</td><td>3.076</td><td>2.999</td><td>2.925</td></tr>
-                            <tr><td>9</td><td>3.905</td><td>3.786</td><td>3.673</td><td>3.566</td><td>3.463</td><td>3.366</td><td>3.273</td><td>3.184</td><td>3.100</td><td>3.019</td></tr>
-                            <tr><td>10</td><td>4.054</td><td>3.923</td><td>3.799</td><td>3.682</td><td>3.571</td><td>3.465</td><td>3.364</td><td>3.269</td><td>3.178</td><td>3.092</td></tr>
-                            <tr><td>11</td><td>4.177</td><td>4.035</td><td>3.902</td><td>3.776</td><td>3.656</td><td>3.543</td><td>3.437</td><td>3.335</td><td>3.239</td><td>3.147</td></tr>
-                            <tr><td>12</td><td>4.278</td><td>4.127</td><td>3.985</td><td>3.851</td><td>3.725</td><td>3.606</td><td>3.493</td><td>3.387</td><td>3.286</td><td>3.190</td></tr>
-                            <tr><td>13</td><td>4.362</td><td>4.203</td><td>4.053</td><td>3.912</td><td>3.780</td><td>3.656</td><td>3.538</td><td>3.427</td><td>3.322</td><td>3.223</td></tr>
-                            <tr><td>14</td><td>4.432</td><td>4.265</td><td>4.108</td><td>3.962</td><td>3.824</td><td>3.695</td><td>3.573</td><td>3.459</td><td>3.351</td><td>3.249</td></tr>
-                            <tr><td>15</td><td>4.489</td><td>4.315</td><td>4.153</td><td>4.001</td><td>3.859</td><td>3.726</td><td>3.601</td><td>3.483</td><td>3.373</td><td>3.268</td></tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
 
             <div class="cs-section">
                 <h3 style="color:#6b2d8b; border-bottom-color:#6b2d8b;">CAP 1 — Formulae</h3>
                 <p><strong>Capital asset pricing model</strong></p>
                 <div class="formula-box">r<sub>j</sub> = r<sub>f</sub> + &beta;(r<sub>m</sub> - r<sub>f</sub>)</div>
-                <p><strong>Dividend valuation model (no growth – finding the value of equity)</strong></p>
-                <div class="formula-box">P<sub>0</sub> = <span class="math-fraction"><span class="math-numerator">D<sub>1</sub></span><span class="math-denominator">K<sub>e</sub></span></span></div>
                 <p><strong>Dividend valuation model (no growth – finding the cost of equity)</strong></p>
-                <div class="formula-box">K<sub>e</sub> = <span class="math-fraction"><span class="math-numerator">D<sub>1</sub></span><span class="math-denominator">P<sub>0</sub></span></span></div>
+                <div class="formula-box">K<sub>e</sub> = D<sub>1</sub> / P<sub>0</sub></div>
                 <p><strong>Dividend valuation model (with growth – finding the cost of equity)</strong></p>
-                <div class="formula-box">K<sub>e</sub> = <span class="math-fraction"><span class="math-numerator">D<sub>0</sub>(1 + g)</span><span class="math-denominator">P<sub>0</sub></span></span> + g</div>
-                <p><strong>Dividend valuation model (with growth – finding the value of equity)</strong></p>
-                <div class="formula-box">P<sub>0</sub> = <span class="math-fraction"><span class="math-numerator">D<sub>0</sub>(1 + g)</span><span class="math-denominator">K<sub>e</sub> - g</span></span></div>
+                <div class="formula-box">K<sub>e</sub> = D<sub>0</sub>(1 + g) / P<sub>0</sub> + g</div>
                 <p><strong>Economic order quantity model</strong></p>
-                <div class="formula-box">EOQ = &radic;<span class="math-sqrt"><span class="math-fraction"><span class="math-numerator">2FU</span><span class="math-denominator">CP</span></span></span></div>
-                <p><strong>Growth in dividends (using historic actual dividend information)</strong></p>
-                <div class="formula-box">g = <sup>y</sup>&radic;<span class="math-sqrt"><span class="math-fraction"><span class="math-numerator">D<sub>t0</sub></span><span class="math-denominator">D<sub>t0-y</sub></span></span></span> - 1</div>
+                <div class="formula-box">EOQ = &radic;(2FU / CP)</div>
+                <p><strong>Growth in dividends</strong></p>
+                <div class="formula-box">g = (D<sub>t0</sub> / D<sub>t0-y</sub>)<sup>1/y</sup> - 1</div>
                 <p><strong>Growth (using retentions)</strong></p>
                 <div class="formula-box">g = br</div>
                 <p><strong>Interpolation (IRR)</strong></p>
-                <div class="formula-box">IRR rate = Rate 1 + <span class="math-fraction"><span class="math-numerator">NPV 1 (Rate 2 – Rate 1)</span><span class="math-denominator">NPV 1 - NPV 2</span></span></div>
-                <p><strong>Irredeemable debt (market value of debt)</strong></p>
-                <div class="formula-box">D = <span class="math-fraction"><span class="math-numerator">i</span><span class="math-denominator">K<sub>d</sub></span></span></div>
+                <div class="formula-box">IRR = Rate 1 + [NPV 1 / (NPV 1 - NPV 2)] &times; (Rate 2 – Rate 1)</div>
                 <p><strong>Irredeemable debt (cost of debt)</strong></p>
-                <div class="formula-box">K<sub>d</sub> = <span class="math-fraction"><span class="math-numerator">i(1-t)</span><span class="math-denominator">D</span></span></div>
+                <div class="formula-box">K<sub>d</sub> = i(1-t) / D</div>
                 <p><strong>Nominal discount rate</strong></p>
-                <div class="formula-box">Nominal discount rate = ((1 + Real rate) &times; (1 + Inflation rate)) - 1</div>
-                <p><strong>Preference share (cost)</strong></p>
-                <div class="formula-box">K<sub>P</sub> = <span class="math-fraction"><span class="math-numerator">D<sub>1</sub></span><span class="math-denominator">P<sub>p</sub></span></span></div>
-                <p><strong>Redeemable bonds (market value)</strong></p>
-                <div class="formula-box">P<sub>0</sub> = <span class="math-fraction"><span class="math-numerator">I<sub>1</sub></span><span class="math-denominator">(1 + K<sub>d</sub>)</span></span> + <span class="math-fraction"><span class="math-numerator">I<sub>2</sub></span><span class="math-denominator">(1 + K<sub>d</sub>)<sup>2</sup></span></span> + ... <span class="math-fraction"><span class="math-numerator">R<sub>n</sub></span><span class="math-denominator">(1 + K<sub>d</sub>)<sup>n</sup></span></span></div>
-                <p><strong>Redeemable bonds (approximate cost/return)</strong></p>
-                <div class="formula-box">K<sub>d</sub> = <span class="math-fraction"><span class="math-numerator">I<sub>1</sub></span><span class="math-denominator">P<sub>0</sub></span></span> + <span class="math-fraction"><span class="math-numerator">(R – P<sub>0</sub>)/n</span><span class="math-denominator">P<sub>0</sub></span></span></div>
-                <p class="cs-note">(more accurate cost/return is calculated using the internal rate of return techniques)</p>
-                <p><strong>Untraded debt (cost)</strong></p>
-                <div class="formula-box">K<sub>dt</sub> = i(1 - t)</div>
+                <div class="formula-box">Nominal rate = ((1 + Real rate) &times; (1 + Inflation rate)) - 1</div>
                 <p><strong>Weighted average cost of capital (WACC)</strong></p>
-                <div class="formula-box">WACC = <span class="math-fraction"><span class="math-numerator">E(K<sub>e</sub>)</span><span class="math-denominator">(D + E)</span></span> + <span class="math-fraction"><span class="math-numerator">D(K<sub>d</sub>(1-t))</span><span class="math-denominator">(D + E)</span></span></div>
+                <div class="formula-box">WACC = E(K<sub>e</sub>) / (D + E) + D(K<sub>d</sub>(1-t)) / (D + E)</div>
                 <p><strong>Annualised cost of discount</strong></p>
-                <div class="formula-box"><span class="math-fraction"><span class="math-numerator">d</span><span class="math-denominator">100 - d</span></span> &times; <span class="math-fraction"><span class="math-numerator">365</span><span class="math-denominator">(reduction in receivables/debtors days)</span></span></div>
+                <div class="formula-box">d / (100 - d) &times; 365 / (reduction in receivables days)</div>
             </div>
 
         </div>
@@ -944,6 +832,7 @@
 
 <!-- Question bank scripts -->
 <script src="law_question_bank.js"></script>
+<script src="finance_mock_2026.js"></script>
 <script src="tax_mock_2026.js"></script>
 <script src="tax_sample_paper_1.js"></script>
 <script src="tax_sample_paper_2.js"></script>
@@ -961,15 +850,21 @@ const allTopicData = {
         ...(typeof taxSamplePaper2 !== 'undefined' ? taxSamplePaper2 : []),
         ...(typeof taxSamplePaper3 !== 'undefined' ? taxSamplePaper3 : []),
     ],
-    finance: typeof financeQuestions !== 'undefined' ? financeQuestions : [],
-    facctg:  typeof facctgQuestions  !== 'undefined' ? facctgQuestions  : [],
+    finance: [
+        ...(typeof financeMock2026 !== 'undefined' ? financeMock2026 : []),
+    ],
+    facctg: [],
 };
 
-const pastPapers = [
+const taxPastPapers = [
     { id:'mock2026',  label:'Mock Paper 2026',  meta:'40 questions · 90 mins', section:'Mock Paper 2026'  },
     { id:'sample1',   label:'Sample Paper 1',   meta:'40 questions · 90 mins', section:'Sample Paper 1'   },
     { id:'sample2',   label:'Sample Paper 2',   meta:'42 questions · 90 mins', section:'Sample Paper 2'   },
     { id:'sample3',   label:'Sample Paper 3',   meta:'40 questions · 90 mins', section:'Sample Paper 3'   },
+];
+
+const financePastPapers = [
+    { id:'finmock2026', label:'Mock Paper 2026', meta:'44 questions · 2.5 hrs', section:'Finance Mock 2026' },
 ];
 
 const MOCK_EXAM_QUESTION_COUNT = 40;
@@ -992,7 +887,6 @@ let returnMenuFn = null;
 // ═══════════════════════════════════════════════════════
 const $ = id => document.getElementById(id);
 
-// Format a number for display — preserves two decimal places where the number has a decimal part
 function fmtNum(n) {
     if (n == null || isNaN(n)) return 'Not answered';
     if (n % 1 !== 0) return Number(n).toFixed(2);
@@ -1003,19 +897,28 @@ function fmtNum(n) {
 //  DOM SCREENS
 // ═══════════════════════════════════════════════════════
 const screens = {
-    topicSelect:    $('topic-select-container'),
-    lawMenu:        $('law-menu-container'),
-    taxMenu:        $('tax-menu-container'),
-    financeMenu:    $('finance-menu-container'),
-    lawChapter:     $('law-chapter-container'),
-    taxPapers:      $('tax-papers-container'),
-    quiz:           $('quiz-container'),
-    results:        $('results-container'),
+    topicSelect:       $('topic-select-container'),
+    lawMenu:           $('law-menu-container'),
+    taxMenu:           $('tax-menu-container'),
+    financeMenu:       $('finance-menu-container'),
+    lawChapter:        $('law-chapter-container'),
+    taxPapers:         $('tax-papers-container'),
+    financePapers:     $('finance-papers-container'),
+    quiz:              $('quiz-container'),
+    results:           $('results-container'),
 };
 
-$('law-count').textContent = allTopicData.law.length + ' questions';
-$('tax-count').textContent = allTopicData.tax.length + ' questions';
+// Populate topic counts
+$('law-count').textContent     = allTopicData.law.length     + ' questions';
+$('tax-count').textContent     = allTopicData.tax.length     + ' questions';
 $('finance-count').textContent = allTopicData.finance.length + ' questions';
+
+// Populate paper counts in menus
+const taxAvailable = taxPastPapers.filter(p => allTopicData.tax.some(q => q.section === p.section)).length;
+$('tax-papers-count').textContent = taxAvailable + ' paper' + (taxAvailable !== 1 ? 's' : '') + ' available';
+
+const finAvailable = financePastPapers.filter(p => allTopicData.finance.some(q => q.section === p.section)).length;
+$('finance-papers-count').textContent = finAvailable + ' paper' + (finAvailable !== 1 ? 's' : '') + ' available';
 
 // ═══════════════════════════════════════════════════════
 //  NAVIGATION
@@ -1032,10 +935,9 @@ function showTopicSelect() {
 }
 
 function selectTopic(key) {
-    if (key !== 'finance' && (!allTopicData[key] || allTopicData[key].length === 0)) return;
     currentTopic = key;
-    if (key === 'law') showLawMenu();
-    else if (key === 'tax') showTaxMenu();
+    if (key === 'law')     showLawMenu();
+    else if (key === 'tax')     showTaxMenu();
     else if (key === 'finance') showFinanceMenu();
 }
 
@@ -1043,20 +945,35 @@ function showLawMenu()     { showScreen(screens.lawMenu);     resetQuit(); }
 function showTaxMenu()     { showScreen(screens.taxMenu);     resetQuit(); }
 function showFinanceMenu() { showScreen(screens.financeMenu); resetQuit(); }
 
-function showPastPapers() {
-    const list = $('papers-list');
-    list.innerHTML = '';
-    pastPapers.forEach(paper => {
-        const questionsInPaper = allTopicData.tax.filter(q => q.section === paper.section);
-        const hasQuestions = questionsInPaper.length > 0;
-        const btn = document.createElement('button');
-        btn.className = 'paper-btn' + (hasQuestions ? '' : ' disabled');
-        btn.disabled = !hasQuestions;
-        btn.innerHTML = `<span>${paper.label}</span><span class="paper-meta">${hasQuestions ? questionsInPaper.length + ' questions' : 'Coming soon'}</span>`;
-        if (hasQuestions) btn.addEventListener('click', () => startPaperPractice(paper));
-        list.appendChild(btn);
-    });
-    showScreen(screens.taxPapers);
+// ── Past Papers (shared renderer for both tax and finance) ──
+function showPastPapers(topic) {
+    if (topic === 'tax') {
+        const list = $('tax-papers-list');
+        list.innerHTML = '';
+        taxPastPapers.forEach(paper => {
+            const qs = allTopicData.tax.filter(q => q.section === paper.section);
+            const btn = document.createElement('button');
+            btn.className = 'paper-btn' + (qs.length ? '' : ' disabled');
+            btn.disabled = !qs.length;
+            btn.innerHTML = `<span>${paper.label}</span><span class="paper-meta">${qs.length ? qs.length + ' questions' : 'Coming soon'}</span>`;
+            if (qs.length) btn.addEventListener('click', () => startPaperPractice(paper, 'tax'));
+            list.appendChild(btn);
+        });
+        showScreen(screens.taxPapers);
+    } else {
+        const list = $('finance-papers-list');
+        list.innerHTML = '';
+        financePastPapers.forEach(paper => {
+            const qs = allTopicData.finance.filter(q => q.section === paper.section);
+            const btn = document.createElement('button');
+            btn.className = 'paper-btn finance-paper' + (qs.length ? '' : ' disabled');
+            btn.disabled = !qs.length;
+            btn.innerHTML = `<span>${paper.label}</span><span class="paper-meta">${qs.length ? qs.length + ' questions' : 'Coming soon'}</span>`;
+            if (qs.length) btn.addEventListener('click', () => startPaperPractice(paper, 'finance'));
+            list.appendChild(btn);
+        });
+        showScreen(screens.financePapers);
+    }
 }
 
 // ═══════════════════════════════════════════════════════
@@ -1088,12 +1005,13 @@ $('law-mock-btn').addEventListener('click', () => {
 });
 
 // ═══════════════════════════════════════════════════════
-//  TAX QUIZ SETUP
+//  TAX / FINANCE QUIZ SETUP
 // ═══════════════════════════════════════════════════════
-function startPaperPractice(paper) {
-    returnMenuFn = showPastPapers;
+function startPaperPractice(paper, topic) {
+    returnMenuFn = () => showPastPapers(topic);
     currentMode = 'practice';
-    const questions = allTopicData.tax.filter(q => q.section === paper.section);
+    const bank = topic === 'finance' ? allTopicData.finance : allTopicData.tax;
+    const questions = bank.filter(q => q.section === paper.section);
     startQuiz(questions, false);
 }
 
@@ -1141,7 +1059,6 @@ $('menu-return-btn').addEventListener('click', () => {
 function startQuiz(questions, timed) {
     activeQuestions = questions.map(q => {
         const norm = { ...q, userAnswer: null, isCorrect: false };
-        // Normalise single-select to multi format (single-item correctAnswer array)
         if ((norm.type || 'single') === 'single') {
             norm.type = 'multi';
             norm.correctAnswer = [norm.correctAnswer];
@@ -1153,9 +1070,15 @@ function startQuiz(questions, timed) {
 
     const csBtn = $('quiz-cheatsheet-btn');
     if (currentTopic === 'tax') {
-        csBtn.classList.remove('hidden'); csBtn.className = 'quiz-cheatsheet-btn'; csBtn.onclick = openCheatSheet;
+        csBtn.classList.remove('hidden');
+        csBtn.className = 'quiz-cheatsheet-btn';
+        csBtn.onclick = openCheatSheet;
+        csBtn.textContent = '📋 Reference Material';
     } else if (currentTopic === 'finance') {
-        csBtn.classList.remove('hidden'); csBtn.className = 'quiz-refmat-btn-finance'; csBtn.onclick = openFinanceRefMat;
+        csBtn.classList.remove('hidden');
+        csBtn.className = 'quiz-refmat-btn-finance';
+        csBtn.onclick = openFinanceRefMat;
+        csBtn.textContent = '📐 Reference Material';
     } else {
         csBtn.classList.add('hidden');
     }
@@ -1224,12 +1147,6 @@ function handleMulti(q, sb) {
     const anyOk = correct.some(k => uSet.has(k));
     q.isCorrect = allOk; if (allOk) score++;
 
-    if (currentMode === 'paper') {
-        sb.classList.add('hidden');
-        $('next-btn').classList.remove('hidden');
-        return;
-    }
-
     Array.from($('options-container').querySelectorAll('.multi-option')).forEach(d => {
         d.classList.add('disabled');
         const k = d.dataset.key, cb = d.querySelector('.multi-checkbox');
@@ -1250,6 +1167,12 @@ function handleMulti(q, sb) {
     } else {
         showFeedback('incorrect', `✗ Incorrect. Correct answers: ${correct.join(', ')}.`);
     }
+    if (q.explanation) {
+        const expDiv = document.createElement('div');
+        expDiv.style.cssText = 'margin-top:12px; padding:12px 14px; background:#f8f9fa; border-radius:8px; font-size:.92em; line-height:1.6; border-left:4px solid #0056b3;';
+        expDiv.innerHTML = '<strong>Explanation:</strong><br>' + q.explanation;
+        $('options-container').appendChild(expDiv);
+    }
     $('next-btn').classList.remove('hidden');
 }
 
@@ -1269,7 +1192,6 @@ function renderNumeric(q) {
     const go = () => handleNumeric(q, inp, sb);
     sb.addEventListener('click', go);
     inp.addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
-    if (currentMode === 'mock') $('next-btn').classList.remove('hidden');
 }
 
 function handleNumeric(q, inp, sb) {
@@ -1278,16 +1200,16 @@ function handleNumeric(q, inp, sb) {
     const tol = q.tolerance !== undefined ? q.tolerance : 1;
     const ok = Math.abs(raw - q.correctAnswer) <= tol;
     q.isCorrect = ok; if (ok) score++;
-
-    if (currentMode === 'paper') {
-        $('next-btn').classList.remove('hidden');
-        return;
-    }
-
     inp.classList.add(ok ? 'correct' : 'incorrect');
     showFeedback(ok ? 'correct' : 'incorrect', ok
-        ? `✓ Correct! The answer is €${fmtNum(q.correctAnswer)}.`
-        : `✗ Incorrect. The correct answer is €${fmtNum(q.correctAnswer)}. You entered €${fmtNum(raw)}.`);
+        ? `✓ Correct! The answer is ${fmtNum(q.correctAnswer)}.`
+        : `✗ Incorrect. The correct answer is ${fmtNum(q.correctAnswer)}. You entered ${fmtNum(raw)}.`);
+    if (q.explanation) {
+        const expDiv = document.createElement('div');
+        expDiv.style.cssText = 'margin-top:12px; padding:12px 14px; background:#f8f9fa; border-radius:8px; font-size:.92em; line-height:1.6; border-left:4px solid #0056b3;';
+        expDiv.innerHTML = '<strong>Explanation:</strong><br>' + q.explanation;
+        $('options-container').appendChild(expDiv);
+    }
     $('next-btn').classList.remove('hidden');
 }
 
@@ -1295,49 +1217,37 @@ function handleNumeric(q, inp, sb) {
 function renderMultiNumeric(q) {
     const hint = document.createElement('p');
     hint.className = 'numeric-hint';
-    hint.textContent = 'Enter each answer as a number only. No €, commas, or symbols.';
+    hint.textContent = 'Enter each answer as a number only. No €/£, commas, or symbols. Use - for negative values.';
     $('options-container').appendChild(hint);
 
     q.parts.forEach((part, i) => {
         const wrapper = document.createElement('div');
         wrapper.className = 'multi-numeric-part';
-
         const label = document.createElement('span');
         label.className = 'multi-numeric-label';
         label.textContent = part.label;
         wrapper.appendChild(label);
-
         const row = document.createElement('div');
         row.className = 'multi-numeric-row';
-
         const inp = document.createElement('input');
-        inp.type = 'text';
-        inp.inputMode = 'decimal';
-        inp.className = 'multi-numeric-input';
-        inp.placeholder = 'Your answer...';
+        inp.type = 'text'; inp.inputMode = 'decimal';
+        inp.className = 'multi-numeric-input'; inp.placeholder = 'Your answer...';
         inp.dataset.partIndex = i;
-        row.appendChild(inp);
-        wrapper.appendChild(row);
-
+        row.appendChild(inp); wrapper.appendChild(row);
         const resultMsg = document.createElement('div');
-        resultMsg.className = 'multi-numeric-result';
-        resultMsg.dataset.partIndex = i;
+        resultMsg.className = 'multi-numeric-result'; resultMsg.dataset.partIndex = i;
         wrapper.appendChild(resultMsg);
-
         $('options-container').appendChild(wrapper);
     });
 
     const sb = document.createElement('button');
-    sb.textContent = 'Submit Answer';
-    sb.className = 'btn multi-submit-btn';
+    sb.textContent = 'Submit Answer'; sb.className = 'btn multi-submit-btn';
     sb.addEventListener('click', () => handleMultiNumeric(q, sb));
     $('options-container').appendChild(sb);
 }
 
 function handleMultiNumeric(q, sb) {
-    sb.disabled = true;
-    sb.classList.add('hidden');
-
+    sb.disabled = true; sb.classList.add('hidden');
     const inputs = $('options-container').querySelectorAll('.multi-numeric-input');
     let allCorrect = true;
 
@@ -1346,18 +1256,16 @@ function handleMultiNumeric(q, sb) {
         const raw = parseFloat(inp.value);
         const tol = part.tolerance !== undefined ? part.tolerance : 1;
         const ok = !isNaN(raw) && Math.abs(raw - part.correctAnswer) <= tol;
-
         if (!ok) allCorrect = false;
         inp.disabled = true;
         inp.classList.add(ok ? 'correct' : 'incorrect');
-
         const resultMsg = $('options-container').querySelector(`.multi-numeric-result[data-part-index="${i}"]`);
         if (ok) {
-            resultMsg.textContent = `✓ Correct — €${fmtNum(part.correctAnswer)}`;
+            resultMsg.textContent = `✓ Correct — ${fmtNum(part.correctAnswer)}`;
             resultMsg.className = 'multi-numeric-result correct';
         } else {
-            const ua = isNaN(raw) ? 'Not answered' : `€${fmtNum(raw)}`;
-            resultMsg.textContent = `✗ Incorrect — correct answer: €${fmtNum(part.correctAnswer)} (you entered: ${ua})`;
+            const ua = isNaN(raw) ? 'Not answered' : fmtNum(raw);
+            resultMsg.textContent = `✗ Correct answer: ${fmtNum(part.correctAnswer)} (you entered: ${ua})`;
             resultMsg.className = 'multi-numeric-result incorrect';
         }
     });
@@ -1368,6 +1276,12 @@ function handleMultiNumeric(q, sb) {
 
     showFeedback(allCorrect ? 'correct' : 'incorrect',
         allCorrect ? '✓ All answers correct!' : '✗ See corrections above.');
+    if (q.explanation) {
+        const expDiv = document.createElement('div');
+        expDiv.style.cssText = 'margin-top:12px; padding:12px 14px; background:#f8f9fa; border-radius:8px; font-size:.92em; line-height:1.6; border-left:4px solid #0056b3;';
+        expDiv.innerHTML = '<strong>Explanation:</strong><br>' + q.explanation;
+        $('options-container').appendChild(expDiv);
+    }
     $('next-btn').classList.remove('hidden');
 }
 
@@ -1405,12 +1319,19 @@ function showResults() {
     $('final-feedback').textContent = pct >= 50 ? "Well done — keep it up!" : "Keep practising, you'll get there!";
 
     const csWrap = $('results-cheatsheet-wrap');
-    csWrap.style.display = (currentTopic === 'tax' || currentTopic === 'finance') ? 'block' : 'none';
-    const csResultBtn = csWrap.querySelector('button');
-    if (currentTopic === 'finance') {
-        csResultBtn.onclick = openFinanceRefMat; csResultBtn.textContent = '📐 Open Reference Material';
+    const csBtn  = $('results-refmat-btn');
+    if (currentTopic === 'tax') {
+        csWrap.style.display = 'block';
+        csBtn.onclick = openCheatSheet;
+        csBtn.textContent = '📋 Open Reference Material';
+        csBtn.className = 'btn btn-green';
+    } else if (currentTopic === 'finance') {
+        csWrap.style.display = 'block';
+        csBtn.onclick = openFinanceRefMat;
+        csBtn.textContent = '📐 Open Reference Material';
+        csBtn.className = 'btn btn-purple';
     } else {
-        csResultBtn.onclick = openCheatSheet; csResultBtn.textContent = '📋 Open Reference Material';
+        csWrap.style.display = 'none';
     }
 
     $('results-details').innerHTML = '';
@@ -1420,22 +1341,22 @@ function showResults() {
         let ans = '';
         if (!q.isCorrect) {
             if (q.type === 'numeric') {
-                const ua = q.userAnswer != null ? `€${fmtNum(q.userAnswer)}` : 'Not answered';
-                ans = `<p>Your answer: <span class="user-answer">${ua}</span></p><p>Correct answer: <span class="correct-answer">€${fmtNum(q.correctAnswer)}</span></p>`;
+                const ua = q.userAnswer != null ? fmtNum(q.userAnswer) : 'Not answered';
+                ans = `<p>Your answer: <span class="user-answer">${ua}</span></p><p>Correct answer: <span class="correct-answer">${fmtNum(q.correctAnswer)}</span></p>`;
             } else if (q.type === 'multi_numeric') {
                 ans = q.parts.map((part, i) => {
                     const uv = q.userAnswer && q.userAnswer[i] != null ? q.userAnswer[i] : null;
                     const tol = part.tolerance !== undefined ? part.tolerance : 1;
                     const ok = uv != null && Math.abs(uv - part.correctAnswer) <= tol;
-                    const ua = uv != null ? `€${fmtNum(uv)}` : 'Not answered';
-                    return `<p>${part.label}: <span class="${ok ? 'correct-answer' : 'user-answer'}">${ua}</span>${!ok ? ` → <span class="correct-answer">€${fmtNum(part.correctAnswer)}</span>` : ''}</p>`;
+                    const ua = uv != null ? fmtNum(uv) : 'Not answered';
+                    return `<p>${part.label}: <span class="${ok ? 'correct-answer' : 'user-answer'}">${ua}</span>${!ok ? ` → <span class="correct-answer">${fmtNum(part.correctAnswer)}</span>` : ''}</p>`;
                 }).join('');
             } else {
                 const ua = Array.isArray(q.userAnswer) && q.userAnswer.length ? q.userAnswer.join(', ') : 'Not answered';
                 ans = `<p>Your selections: <span class="user-answer">${ua}</span></p><p>Correct answers: <span class="correct-answer">${q.correctAnswer.join(', ')}</span></p>`;
             }
         }
-        const preview = q.questionText.substring(0, 120) + (q.questionText.length > 120 ? '…' : '');
+        const preview = q.questionText.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 120) + (q.questionText.length > 120 ? '…' : '');
         div.innerHTML = `<p><b>Q${i + 1}: ${q.isCorrect ? '✓ Correct' : '✗ Incorrect'}</b></p><p class="result-item-q">${preview}</p>${ans}`;
         $('results-details').appendChild(div);
     });
