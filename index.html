@@ -159,6 +159,18 @@
         #quiz-footer-buttons { display:flex; gap:10px; margin-top:18px; }
         #quiz-footer-buttons .btn { flex:1; }
 
+        /* ── MULTI-NUMERIC INPUT ── */
+        .multi-numeric-part { margin-bottom:14px; }
+        .multi-numeric-label { font-size:.88em; font-weight:700; color:var(--primary); margin-bottom:6px; display:block; }
+        .multi-numeric-row { display:flex; gap:10px; align-items:center; }
+        .multi-numeric-input { flex:1; padding:13px 15px; font-size:1.05em; font-weight:600; border:2px solid var(--border); border-radius:8px; font-family:inherit; outline:none; transition:border-color .15s; }
+        .multi-numeric-input:focus { border-color:var(--secondary); }
+        .multi-numeric-input.correct { border-color:var(--correct-text); background:var(--correct-bg); color:var(--correct-text); }
+        .multi-numeric-input.incorrect { border-color:var(--incorrect-text); background:var(--incorrect-bg); color:var(--incorrect-text); }
+        .multi-numeric-result { font-size:.82em; font-weight:600; margin-top:4px; display:none; }
+        .multi-numeric-result.correct { color:var(--correct-text); display:block; }
+        .multi-numeric-result.incorrect { color:var(--incorrect-text); display:block; }
+
         /* ── RESULTS ── */
         #results-container h2 { text-align:center; color:var(--primary); font-size:1.5em; margin-bottom:10px; }
         #score-text { text-align:center; font-size:1.35em; font-weight:700; margin-bottom:8px; }
@@ -167,7 +179,7 @@
         .result-item { border:1px solid var(--border); border-radius:10px; padding:14px; margin-bottom:14px; }
         .result-item p { margin-bottom:8px; font-size:.93em; }
         .result-item p:last-child { margin-bottom:0; }
-        .result-item-q { font-weight:700; white-space:pre-wrap; line-height:1.5; }
+        .result-item-q { font-weight:700; line-height:1.5; }
         .result-correct { border-left:5px solid var(--correct-text); }
         .result-incorrect { border-left:5px solid var(--incorrect-text); }
         .user-answer { color:var(--incorrect-text); font-weight:600; }
@@ -407,7 +419,6 @@
         </div>
         <div class="modal-body">
 
-            <!-- INCOME TAX, USC & PRSI -->
             <div class="cs-section">
                 <h3>Income Tax Rates 2025</h3>
                 <table class="cs-table">
@@ -619,7 +630,6 @@
                 <p class="cs-note">Individuals in receipt of income of €5,000 or less in 2025 will not be subject to PRSI. Where income is greater than €5,000, PRSI at 4.2% (4.1% prior to 1 October 2025) is payable subject to a minimum contribution of €650. A blended rate of 4.125% applies for 2025 due to the change of rate on 1 October 2025.</p>
             </div>
 
-            <!-- LOCAL PROPERTY TAX -->
             <div class="cs-section">
                 <h3>Local Property Tax — Valuation Table 2022–2025</h3>
                 <table class="cs-table">
@@ -649,7 +659,6 @@
                 </table>
             </div>
 
-            <!-- CORPORATION TAX -->
             <div class="cs-section">
                 <h3>Corporation Tax Rates</h3>
                 <p class="cs-note" style="margin-bottom:8px; font-weight:700; font-style:normal;">Trading Rate of Corporation Tax</p>
@@ -658,7 +667,6 @@
                 <p class="cs-note">The passive rate of corporation tax is 25% and applies to: Case III income (foreign income and untaxed Irish interest, excluding certain foreign dividends taxable at 12.5%); Case IV income (taxed Irish income and miscellaneous income); Case V income (Irish rental income); and income from an "excepted trade".</p>
             </div>
 
-            <!-- CAPITAL GAINS TAX -->
             <div class="cs-section">
                 <h3>Capital Gains Tax — Rates and Annual Exemption</h3>
                 <table class="cs-table">
@@ -708,85 +716,18 @@
                 </table>
             </div>
 
-            <!-- VAT -->
             <div class="cs-section">
                 <h3>VAT Rates</h3>
                 <table class="cs-table">
                     <thead><tr><th>Rate</th><th>Examples</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Exempt</strong></td><td>
-                            <ul class="cs-list">
-                                <li>Medical, dental and optical services</li>
-                                <li>Insurance services</li>
-                                <li>Certain banking services</li>
-                                <li>Educational services</li>
-                                <li>Funeral services</li>
-                                <li>Gambling and lotteries</li>
-                                <li>Transport of passengers (and their baggage)</li>
-                                <li>Certain lettings of immovable goods</li>
-                            </ul>
-                        </td></tr>
-                        <tr><td><strong>Zero rate</strong></td><td>
-                            <ul class="cs-list">
-                                <li>Supply of most foodstuffs (excluding those specifically liable at the standard rate)</li>
-                                <li>Milk and milk-based food and drink</li>
-                                <li>Books (printed, electronic and audio) and booklets (excluding stationery, brochures, etc.)</li>
-                                <li>Most clothing and footwear for children under 11 years of age</li>
-                                <li>Oral medicine (excluding food supplements)</li>
-                                <li>Exported goods (i.e. despatched outside the EU)</li>
-                                <li>Sea-going ships (more than 15 tonnes)</li>
-                                <li>Fertilizer</li>
-                                <li>Animal feed, other than pet food</li>
-                                <li>Supply and installation of solar panels on school buildings or private dwellings</li>
-                            </ul>
-                        </td></tr>
-                        <tr><td><strong>Standard rate (23%)</strong></td><td>
-                            <p style="margin-bottom:6px; font-size:.88em;">All goods and services that are not exempt or zero-rated, or are not liable at the other specific rates. Includes:</p>
-                            <ul class="cs-list">
-                                <li>Alcohol, soft drinks, bottled drinking water, juices</li>
-                                <li>Chocolate and confectionery, biscuits, crisps, ice cream and similar</li>
-                                <li>Adult clothing and footwear</li>
-                                <li>Office equipment and stationery</li>
-                                <li>Consultancy services</li>
-                                <li>Solicitor's services</li>
-                            </ul>
-                        </td></tr>
-                        <tr><td><strong>Reduced rate (13.5%)</strong></td><td>
-                            <ul class="cs-list">
-                                <li>Fuel for power and heating (coal, peat, etc.)</li>
-                                <li>Supply of electricity and gas (from 1 November 2025)</li>
-                                <li>Waste disposal services</li>
-                                <li>Non-residential immovable goods, including supply and development</li>
-                                <li>Supply of concrete and concrete goods</li>
-                                <li>Repair and maintenance of movable goods</li>
-                                <li>General agricultural and veterinary services</li>
-                                <li>Short-term hire of cars, boats, caravans, etc.</li>
-                                <li>Food supplements</li>
-                                <li>Driving instruction</li>
-                                <li>Supply and hire of live horses and greyhounds</li>
-                                <li>Hairdressing services</li>
-                                <li>Supply of hot food, including take-away food</li>
-                                <li>Hotel/holiday accommodation, including caravan parks and camping sites</li>
-                                <li>Admission to cinemas, theatres, certain musical performances, museums and fairground amusements</li>
-                            </ul>
-                        </td></tr>
-                        <tr><td><strong>Second reduced rate (9%)</strong></td><td>
-                            <ul class="cs-list">
-                                <li>Subscriptions for certain sporting activities</li>
-                                <li>Supplies of electricity and gas (for the period 1 May 2022 to 31 October 2025. From 1 November 2025 the rate is expected to return to the reduced rate of 13.5%.)</li>
-                            </ul>
-                        </td></tr>
-                        <tr><td><strong>Farmer flatrate addition (5.1%)</strong></td><td>
-                            <ul class="cs-list">
-                                <li>Supply of agricultural products and services by non-VAT-registered farmers to VAT-registered customers</li>
-                            </ul>
-                        </td></tr>
-                        <tr><td><strong>Livestock rate (4.8%)</strong></td><td>
-                            <ul class="cs-list">
-                                <li>Supply of livestock</li>
-                                <li>Supply of horses intended for foodstuffs</li>
-                            </ul>
-                        </td></tr>
+                        <tr><td><strong>Exempt</strong></td><td><ul class="cs-list"><li>Medical, dental and optical services</li><li>Insurance services</li><li>Certain banking services</li><li>Educational services</li><li>Funeral services</li><li>Gambling and lotteries</li><li>Transport of passengers (and their baggage)</li><li>Certain lettings of immovable goods</li></ul></td></tr>
+                        <tr><td><strong>Zero rate</strong></td><td><ul class="cs-list"><li>Supply of most foodstuffs (excluding those specifically liable at the standard rate)</li><li>Milk and milk-based food and drink</li><li>Books (printed, electronic and audio) and booklets (excluding stationery, brochures, etc.)</li><li>Most clothing and footwear for children under 11 years of age</li><li>Oral medicine (excluding food supplements)</li><li>Exported goods (i.e. despatched outside the EU)</li><li>Sea-going ships (more than 15 tonnes)</li><li>Fertilizer</li><li>Animal feed, other than pet food</li><li>Supply and installation of solar panels on school buildings or private dwellings</li></ul></td></tr>
+                        <tr><td><strong>Standard rate (23%)</strong></td><td><p style="margin-bottom:6px; font-size:.88em;">All goods and services not exempt or zero-rated. Includes:</p><ul class="cs-list"><li>Alcohol, soft drinks, bottled drinking water, juices</li><li>Chocolate and confectionery, biscuits, crisps, ice cream and similar</li><li>Adult clothing and footwear</li><li>Office equipment and stationery</li><li>Consultancy services</li><li>Solicitor's services</li></ul></td></tr>
+                        <tr><td><strong>Reduced rate (13.5%)</strong></td><td><ul class="cs-list"><li>Fuel for power and heating (coal, peat, etc.)</li><li>Supply of electricity and gas (from 1 November 2025)</li><li>Waste disposal services</li><li>Non-residential immovable goods, including supply and development</li><li>Supply of concrete and concrete goods</li><li>Repair and maintenance of movable goods</li><li>General agricultural and veterinary services</li><li>Short-term hire of cars, boats, caravans, etc.</li><li>Food supplements</li><li>Driving instruction</li><li>Supply and hire of live horses and greyhounds</li><li>Hairdressing services</li><li>Supply of hot food, including take-away food</li><li>Hotel/holiday accommodation, including caravan parks and camping sites</li><li>Admission to cinemas, theatres, certain musical performances, museums and fairground amusements</li></ul></td></tr>
+                        <tr><td><strong>Second reduced rate (9%)</strong></td><td><ul class="cs-list"><li>Subscriptions for certain sporting activities</li><li>Supplies of electricity and gas (for the period 1 May 2022 to 31 October 2025. From 1 November 2025 the rate is expected to return to the reduced rate of 13.5%.)</li></ul></td></tr>
+                        <tr><td><strong>Farmer flatrate addition (5.1%)</strong></td><td><ul class="cs-list"><li>Supply of agricultural products and services by non-VAT-registered farmers to VAT-registered customers</li></ul></td></tr>
+                        <tr><td><strong>Livestock rate (4.8%)</strong></td><td><ul class="cs-list"><li>Supply of livestock</li><li>Supply of horses intended for foodstuffs</li></ul></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -860,58 +801,40 @@
 
             <div class="cs-section">
                 <h3 style="color:#6b2d8b; border-bottom-color:#6b2d8b;">CAP 1 — Formulae</h3>
-
                 <p><strong>Capital asset pricing model</strong></p>
                 <div class="formula-box">r<sub>j</sub> = r<sub>f</sub> + &beta;(r<sub>m</sub> - r<sub>f</sub>)</div>
-
                 <p><strong>Dividend valuation model (no growth – finding the value of equity)</strong></p>
                 <div class="formula-box">P<sub>0</sub> = <span class="math-fraction"><span class="math-numerator">D<sub>1</sub></span><span class="math-denominator">K<sub>e</sub></span></span></div>
-
                 <p><strong>Dividend valuation model (no growth – finding the cost of equity)</strong></p>
                 <div class="formula-box">K<sub>e</sub> = <span class="math-fraction"><span class="math-numerator">D<sub>1</sub></span><span class="math-denominator">P<sub>0</sub></span></span></div>
-
                 <p><strong>Dividend valuation model (with growth – finding the cost of equity)</strong></p>
                 <div class="formula-box">K<sub>e</sub> = <span class="math-fraction"><span class="math-numerator">D<sub>0</sub>(1 + g)</span><span class="math-denominator">P<sub>0</sub></span></span> + g</div>
-
                 <p><strong>Dividend valuation model (with growth – finding the value of equity)</strong></p>
                 <div class="formula-box">P<sub>0</sub> = <span class="math-fraction"><span class="math-numerator">D<sub>0</sub>(1 + g)</span><span class="math-denominator">K<sub>e</sub> - g</span></span></div>
-
                 <p><strong>Economic order quantity model</strong></p>
                 <div class="formula-box">EOQ = &radic;<span class="math-fraction"><span class="math-numerator">2FU</span><span class="math-denominator">CP</span></span></div>
-
                 <p><strong>Growth in dividends (using historic actual dividend information)</strong></p>
                 <div class="formula-box">g = <sup>y</sup>&radic;<span class="math-fraction"><span class="math-numerator">D<sub>t0</sub></span><span class="math-denominator">D<sub>t0-y</sub></span></span> - 1</div>
-
                 <p><strong>Growth (using retentions)</strong></p>
                 <div class="formula-box">g = br</div>
-
                 <p><strong>Interpolation (IRR)</strong></p>
                 <div class="formula-box">IRR rate = Rate 1 + <span class="math-fraction"><span class="math-numerator">NPV 1 (Rate 2 – Rate 1)</span><span class="math-denominator">NPV 1 - NPV 2</span></span></div>
-
                 <p><strong>Irredeemable debt (market value of debt)</strong></p>
                 <div class="formula-box">D = <span class="math-fraction"><span class="math-numerator">i</span><span class="math-denominator">K<sub>d</sub></span></span></div>
-
                 <p><strong>Irredeemable debt (cost of debt)</strong></p>
                 <div class="formula-box">K<sub>d</sub> = <span class="math-fraction"><span class="math-numerator">i(1-t)</span><span class="math-denominator">D</span></span></div>
-
                 <p><strong>Nominal discount rate</strong></p>
                 <div class="formula-box">Nominal discount rate = ((1 + Real rate) &times; (1 + Inflation rate)) - 1</div>
-
                 <p><strong>Preference share (cost)</strong></p>
                 <div class="formula-box">K<sub>P</sub> = <span class="math-fraction"><span class="math-numerator">D<sub>1</sub></span><span class="math-denominator">P<sub>p</sub></span></span></div>
-
                 <p><strong>Redeemable bonds (market value)</strong></p>
                 <div class="formula-box">P<sub>0</sub> = <span class="math-fraction"><span class="math-numerator">I<sub>1</sub></span><span class="math-denominator">(1 + K<sub>d</sub>)</span></span> + <span class="math-fraction"><span class="math-numerator">I<sub>2</sub></span><span class="math-denominator">(1 + K<sub>d</sub>)<sup>2</sup></span></span> + ... <span class="math-fraction"><span class="math-numerator">R<sub>n</sub></span><span class="math-denominator">(1 + K<sub>d</sub>)<sup>n</sup></span></span></div>
-
                 <p><strong>Redeemable bonds (approximate cost/return)</strong></p>
                 <div class="formula-box">K<sub>d</sub> = <span class="math-fraction"><span class="math-numerator">I<sub>1</sub></span><span class="math-denominator">P<sub>0</sub></span></span> + <span class="math-fraction"><span class="math-numerator">(R – P<sub>0</sub>)/n</span><span class="math-denominator">P<sub>0</sub></span></span></div>
-
                 <p><strong>Untraded debt (cost)</strong></p>
                 <div class="formula-box">K<sub>dt</sub> = i(1 - t)</div>
-
                 <p><strong>Weighted average cost of capital (WACC)</strong></p>
                 <div class="formula-box">WACC = <span class="math-fraction"><span class="math-numerator">E(K<sub>e</sub>)</span><span class="math-denominator">(D + E)</span></span> + <span class="math-fraction"><span class="math-numerator">D(K<sub>d</sub>(1-t))</span><span class="math-denominator">(D + E)</span></span></div>
-
                 <p><strong>Annualised cost of discount</strong></p>
                 <div class="formula-box"><span class="math-fraction"><span class="math-numerator">d</span><span class="math-denominator">100 - d</span></span> &times; <span class="math-fraction"><span class="math-numerator">365</span><span class="math-denominator">(reduction in receivables/debtors days)</span></span></div>
             </div>
@@ -929,7 +852,7 @@
 
 <script>
 // ═══════════════════════════════════════════════════════
-//  DATA ASSEMBLY — pulls from external question bank files
+//  DATA ASSEMBLY
 // ═══════════════════════════════════════════════════════
 const allTopicData = {
     law: typeof lawQuestions !== 'undefined' ? lawQuestions : [],
@@ -943,7 +866,6 @@ const allTopicData = {
     facctg:  typeof facctgQuestions  !== 'undefined' ? facctgQuestions  : [],
 };
 
-// Past papers definition — sections within tax questions
 const pastPapers = [
     { id:'mock2026',  label:'Mock Paper 2026',  meta:'40 questions · 90 mins', section:'Mock Paper 2026'  },
     { id:'sample1',   label:'Sample Paper 1',   meta:'40 questions · 90 mins', section:'Sample Paper 1'   },
@@ -964,13 +886,23 @@ let score = 0;
 let activeQuestions = [];
 let timerInterval;
 let selectedMultiAnswers = [];
-let returnMenuFn = null; // which menu to return to after quiz
+let returnMenuFn = null;
 
 // ═══════════════════════════════════════════════════════
-//  DOM
+//  UTILITIES
 // ═══════════════════════════════════════════════════════
 const $ = id => document.getElementById(id);
 
+// Format a number for display — preserves two decimal places where the number has a decimal part
+function fmtNum(n) {
+    if (n == null || isNaN(n)) return 'Not answered';
+    if (n % 1 !== 0) return Number(n).toFixed(2);
+    return Number(n).toLocaleString();
+}
+
+// ═══════════════════════════════════════════════════════
+//  DOM SCREENS
+// ═══════════════════════════════════════════════════════
 const screens = {
     topicSelect:    $('topic-select-container'),
     lawMenu:        $('law-menu-container'),
@@ -982,7 +914,6 @@ const screens = {
     results:        $('results-container'),
 };
 
-// Update topic counts
 $('law-count').textContent = allTopicData.law.length + ' questions';
 $('tax-count').textContent = allTopicData.tax.length + ' questions';
 $('finance-count').textContent = allTopicData.finance.length + ' questions';
@@ -1009,20 +940,9 @@ function selectTopic(key) {
     else if (key === 'finance') showFinanceMenu();
 }
 
-function showLawMenu() {
-    showScreen(screens.lawMenu);
-    resetQuit();
-}
-
-function showTaxMenu() {
-    showScreen(screens.taxMenu);
-    resetQuit();
-}
-
-function showFinanceMenu() {
-    showScreen(screens.financeMenu);
-    resetQuit();
-}
+function showLawMenu()     { showScreen(screens.lawMenu);     resetQuit(); }
+function showTaxMenu()     { showScreen(screens.taxMenu);     resetQuit(); }
+function showFinanceMenu() { showScreen(screens.financeMenu); resetQuit(); }
 
 function showPastPapers() {
     const list = $('papers-list');
@@ -1120,10 +1040,9 @@ $('menu-return-btn').addEventListener('click', () => {
 //  QUIZ ENGINE
 // ═══════════════════════════════════════════════════════
 function startQuiz(questions, timed) {
-    // Normalise all 'single' questions to 'multi' format
-    // so everything renders with checkboxes — correct answer becomes a single-item array
     activeQuestions = questions.map(q => {
         const norm = { ...q, userAnswer: null, isCorrect: false };
+        // Normalise single-select to multi format (single-item correctAnswer array)
         if ((norm.type || 'single') === 'single') {
             norm.type = 'multi';
             norm.correctAnswer = [norm.correctAnswer];
@@ -1133,11 +1052,14 @@ function startQuiz(questions, timed) {
     currentQuestionIndex = 0;
     score = 0;
 
-    // Show reference material button for tax and finance
     const csBtn = $('quiz-cheatsheet-btn');
-    if (currentTopic === 'tax') { csBtn.classList.remove('hidden'); csBtn.className = 'quiz-cheatsheet-btn'; csBtn.onclick = openCheatSheet; }
-    else if (currentTopic === 'finance') { csBtn.classList.remove('hidden'); csBtn.className = 'quiz-refmat-btn-finance'; csBtn.onclick = openFinanceRefMat; }
-    else csBtn.classList.add('hidden');
+    if (currentTopic === 'tax') {
+        csBtn.classList.remove('hidden'); csBtn.className = 'quiz-cheatsheet-btn'; csBtn.onclick = openCheatSheet;
+    } else if (currentTopic === 'finance') {
+        csBtn.classList.remove('hidden'); csBtn.className = 'quiz-refmat-btn-finance'; csBtn.onclick = openFinanceRefMat;
+    } else {
+        csBtn.classList.add('hidden');
+    }
 
     showScreen(screens.quiz);
     displayQuestion();
@@ -1157,6 +1079,9 @@ function displayQuestion() {
     } else if (qType === 'numeric') {
         $('question-type-label').textContent = 'Enter your numeric answer (no commas or symbols)';
         renderNumeric(q);
+    } else if (qType === 'multi_numeric') {
+        $('question-type-label').textContent = 'Enter all numeric answers below, then click Submit';
+        renderMultiNumeric(q);
     }
 }
 
@@ -1168,38 +1093,7 @@ function resetUI() {
     selectedMultiAnswers = [];
 }
 
-// Single select
-function renderSingle(q) {
-    Object.entries(q.options).forEach(([k, v]) => {
-        const b = document.createElement('button');
-        b.textContent = `${k}. ${v}`;
-        b.className = 'option-btn';
-        b.dataset.key = k;
-        b.addEventListener('click', () => handleSingle(k, b, q));
-        $('options-container').appendChild(b);
-    });
-}
-
-function handleSingle(sel, btn, q) {
-    if (currentMode === 'mock' || currentMode === 'paper') {
-        Array.from($('options-container').children).forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        q.userAnswer = sel;
-        return;
-    }
-    const ok = sel === q.correctAnswer;
-    q.userAnswer = sel; q.isCorrect = ok;
-    if (ok) score++;
-    Array.from($('options-container').children).forEach(b => {
-        b.disabled = true;
-        if (b.dataset.key === q.correctAnswer) b.classList.add('correct');
-        else if (b.dataset.key === sel) b.classList.add('incorrect');
-    });
-    showFeedback(ok ? 'correct' : 'incorrect', ok ? '✓ Correct!' : `✗ Incorrect. The correct answer is ${q.correctAnswer}.`);
-    $('next-btn').classList.remove('hidden');
-}
-
-// Multi select
+// ── Multi-select (checkbox) ──
 function renderMulti(q) {
     Object.entries(q.options).forEach(([k, v]) => {
         const d = document.createElement('div');
@@ -1241,23 +1135,26 @@ function handleMulti(q, sb) {
         d.classList.add('disabled');
         const k = d.dataset.key, cb = d.querySelector('.multi-checkbox');
         const up = uSet.has(k), sp = cSet.has(k);
-        if (sp && up) { d.classList.remove('selected'); d.classList.add('correct'); cb.textContent = '✓'; }
+        if (sp && up)  { d.classList.remove('selected'); d.classList.add('correct');   cb.textContent = '✓'; }
         else if (!sp && up) { d.classList.remove('selected'); d.classList.add('incorrect'); cb.textContent = '✗'; }
         else if (sp && !up) { d.classList.add('missed'); cb.textContent = '!'; }
     });
     sb.classList.add('hidden');
-    if (allOk) showFeedback('correct', '✓ Correct! You selected all the right answers.');
-    else if (anyOk) {
+    if (allOk) {
+        showFeedback('correct', '✓ Correct! You selected all the right answers.');
+    } else if (anyOk) {
         const m = correct.filter(k => !uSet.has(k)), w = user.filter(k => !cSet.has(k));
         let msg = '~ Partially correct. ';
         if (m.length) msg += `Missed: ${m.join(', ')}. `;
         if (w.length) msg += `Incorrectly selected: ${w.join(', ')}.`;
         showFeedback('partial', msg);
-    } else showFeedback('incorrect', `✗ Incorrect. Correct answers: ${correct.join(', ')}.`);
+    } else {
+        showFeedback('incorrect', `✗ Incorrect. Correct answers: ${correct.join(', ')}.`);
+    }
     $('next-btn').classList.remove('hidden');
 }
 
-// Numeric input
+// ── Single numeric input ──
 function renderNumeric(q) {
     const hint = document.createElement('p');
     hint.className = 'numeric-hint';
@@ -1268,7 +1165,8 @@ function renderNumeric(q) {
     inp.type = 'number'; inp.className = 'numeric-input'; inp.placeholder = 'Your answer...';
     const sb = document.createElement('button');
     sb.textContent = 'Submit'; sb.className = 'btn numeric-submit';
-    wrap.appendChild(inp); wrap.appendChild(sb); $('options-container').appendChild(wrap);
+    wrap.appendChild(inp); wrap.appendChild(sb);
+    $('options-container').appendChild(wrap);
     const go = () => handleNumeric(q, inp, sb);
     sb.addEventListener('click', go);
     inp.addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
@@ -1289,8 +1187,87 @@ function handleNumeric(q, inp, sb) {
 
     inp.classList.add(ok ? 'correct' : 'incorrect');
     showFeedback(ok ? 'correct' : 'incorrect', ok
-        ? `✓ Correct! The answer is €${q.correctAnswer.toLocaleString()}.`
-        : `✗ Incorrect. The correct answer is €${q.correctAnswer.toLocaleString()}. You entered €${raw.toLocaleString()}.`);
+        ? `✓ Correct! The answer is €${fmtNum(q.correctAnswer)}.`
+        : `✗ Incorrect. The correct answer is €${fmtNum(q.correctAnswer)}. You entered €${fmtNum(raw)}.`);
+    $('next-btn').classList.remove('hidden');
+}
+
+// ── Multi-part numeric input ──
+function renderMultiNumeric(q) {
+    const hint = document.createElement('p');
+    hint.className = 'numeric-hint';
+    hint.textContent = 'Enter each answer as a number only. No €, commas, or symbols.';
+    $('options-container').appendChild(hint);
+
+    q.parts.forEach((part, i) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'multi-numeric-part';
+
+        const label = document.createElement('span');
+        label.className = 'multi-numeric-label';
+        label.textContent = part.label;
+        wrapper.appendChild(label);
+
+        const row = document.createElement('div');
+        row.className = 'multi-numeric-row';
+
+        const inp = document.createElement('input');
+        inp.type = 'number';
+        inp.className = 'multi-numeric-input';
+        inp.placeholder = 'Your answer...';
+        inp.dataset.partIndex = i;
+        row.appendChild(inp);
+        wrapper.appendChild(row);
+
+        const resultMsg = document.createElement('div');
+        resultMsg.className = 'multi-numeric-result';
+        resultMsg.dataset.partIndex = i;
+        wrapper.appendChild(resultMsg);
+
+        $('options-container').appendChild(wrapper);
+    });
+
+    const sb = document.createElement('button');
+    sb.textContent = 'Submit Answer';
+    sb.className = 'btn multi-submit-btn';
+    sb.addEventListener('click', () => handleMultiNumeric(q, sb));
+    $('options-container').appendChild(sb);
+}
+
+function handleMultiNumeric(q, sb) {
+    sb.disabled = true;
+    sb.classList.add('hidden');
+
+    const inputs = $('options-container').querySelectorAll('.multi-numeric-input');
+    let allCorrect = true;
+
+    q.parts.forEach((part, i) => {
+        const inp = inputs[i];
+        const raw = parseFloat(inp.value);
+        const tol = part.tolerance !== undefined ? part.tolerance : 1;
+        const ok = !isNaN(raw) && Math.abs(raw - part.correctAnswer) <= tol;
+
+        if (!ok) allCorrect = false;
+        inp.disabled = true;
+        inp.classList.add(ok ? 'correct' : 'incorrect');
+
+        const resultMsg = $('options-container').querySelector(`.multi-numeric-result[data-part-index="${i}"]`);
+        if (ok) {
+            resultMsg.textContent = `✓ Correct — €${fmtNum(part.correctAnswer)}`;
+            resultMsg.className = 'multi-numeric-result correct';
+        } else {
+            const ua = isNaN(raw) ? 'Not answered' : `€${fmtNum(raw)}`;
+            resultMsg.textContent = `✗ Incorrect — correct answer: €${fmtNum(part.correctAnswer)} (you entered: ${ua})`;
+            resultMsg.className = 'multi-numeric-result incorrect';
+        }
+    });
+
+    q.userAnswer = Array.from(inputs).map(inp => parseFloat(inp.value) || null);
+    q.isCorrect = allCorrect;
+    if (allCorrect) score++;
+
+    showFeedback(allCorrect ? 'correct' : 'incorrect',
+        allCorrect ? '✓ All answers correct!' : '✗ See corrections above.');
     $('next-btn').classList.remove('hidden');
 }
 
@@ -1327,12 +1304,14 @@ function showResults() {
     $('score-text').textContent = `Your Score: ${correct} / ${activeQuestions.length} (${pct}%)`;
     $('final-feedback').textContent = pct >= 50 ? "Well done — keep it up!" : "Keep practising, you'll get there!";
 
-    // Show reference material button on results for tax and finance
     const csWrap = $('results-cheatsheet-wrap');
     csWrap.style.display = (currentTopic === 'tax' || currentTopic === 'finance') ? 'block' : 'none';
     const csResultBtn = csWrap.querySelector('button');
-    if (currentTopic === 'finance') { csResultBtn.onclick = openFinanceRefMat; csResultBtn.textContent = '📐 Open Reference Material'; }
-    else { csResultBtn.onclick = openCheatSheet; csResultBtn.textContent = '📋 Open Reference Material'; }
+    if (currentTopic === 'finance') {
+        csResultBtn.onclick = openFinanceRefMat; csResultBtn.textContent = '📐 Open Reference Material';
+    } else {
+        csResultBtn.onclick = openCheatSheet; csResultBtn.textContent = '📋 Open Reference Material';
+    }
 
     $('results-details').innerHTML = '';
     activeQuestions.forEach((q, i) => {
@@ -1341,8 +1320,16 @@ function showResults() {
         let ans = '';
         if (!q.isCorrect) {
             if (q.type === 'numeric') {
-                const ua = q.userAnswer != null ? `€${Number(q.userAnswer).toLocaleString()}` : 'Not answered';
-                ans = `<p>Your answer: <span class="user-answer">${ua}</span></p><p>Correct answer: <span class="correct-answer">€${q.correctAnswer.toLocaleString()}</span></p>`;
+                const ua = q.userAnswer != null ? `€${fmtNum(q.userAnswer)}` : 'Not answered';
+                ans = `<p>Your answer: <span class="user-answer">${ua}</span></p><p>Correct answer: <span class="correct-answer">€${fmtNum(q.correctAnswer)}</span></p>`;
+            } else if (q.type === 'multi_numeric') {
+                ans = q.parts.map((part, i) => {
+                    const uv = q.userAnswer && q.userAnswer[i] != null ? q.userAnswer[i] : null;
+                    const tol = part.tolerance !== undefined ? part.tolerance : 1;
+                    const ok = uv != null && Math.abs(uv - part.correctAnswer) <= tol;
+                    const ua = uv != null ? `€${fmtNum(uv)}` : 'Not answered';
+                    return `<p>${part.label}: <span class="${ok ? 'correct-answer' : 'user-answer'}">${ua}</span>${!ok ? ` → <span class="correct-answer">€${fmtNum(part.correctAnswer)}</span>` : ''}</p>`;
+                }).join('');
             } else {
                 const ua = Array.isArray(q.userAnswer) && q.userAnswer.length ? q.userAnswer.join(', ') : 'Not answered';
                 ans = `<p>Your selections: <span class="user-answer">${ua}</span></p><p>Correct answers: <span class="correct-answer">${q.correctAnswer.join(', ')}</span></p>`;
@@ -1355,7 +1342,7 @@ function showResults() {
 }
 
 // ═══════════════════════════════════════════════════════
-//  CHEAT SHEET MODAL
+//  MODALS
 // ═══════════════════════════════════════════════════════
 function openCheatSheet() {
     $('cheatsheet-modal').classList.remove('hidden');
