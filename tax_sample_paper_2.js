@@ -59,7 +59,7 @@ const taxSamplePaper2 = [
     type: "multi_numeric",
     marks: 7,
     questionText:
-      "Hennessey Distributers Limited (HENNESSEY) is a successful hardware distribution company. It has been in business for ten years, has two fulltime employees and the business is registered for VAT in the Republic of Ireland. HENNESSEY prepares its VAT returns on an invoice basis.\n\n" +
+      "Hennessey Distributers Limited ("HENNESSEY") is a successful hardware distribution company. It has been in business for ten years, has two fulltime employees and the business is registered for VAT in the Republic of Ireland. HENNESSEY prepares its VAT returns on an invoice basis.\n\n" +
       "The company had the following activities for the VAT period May/June 2025:\n\n" +
       "Sales (exclusive of VAT):\n" +
       "  VAT registered Irish customers:   €310,000\n" +
@@ -156,7 +156,8 @@ const taxSamplePaper2 = [
     type: "numeric",
     marks: 1,
     questionText:
-      "Using the same Anita scenario from Question 8 (annual salary €72,000, prior earnings €9,600, annual standard rate cut-off €44,000, yearly tax credit €4,000):\n\n" +
+      "Gearoid, a sole trader, has decided to hire his first employee, Anita. Anita has accepted Gearoid's offer of employment, with an agreed annual salary of €72,000, and is due to start employment on 1 April 2025. Anita ceased with her former employer on 31 January 2025.\n\n" +
+      "Details of her earnings up to the date of leaving were €9,600 (PAYE paid of €1,900). Anita's standard rate cut-off is €44,000 per annum and her yearly tax credit is €4,000.\n\n" +
       "Calculate Anita's cumulative standard rate band for April (Month 4).",
     correctAnswer: 14668,
     tolerance: 1,
@@ -168,7 +169,8 @@ const taxSamplePaper2 = [
     type: "numeric",
     marks: 1,
     questionText:
-      "Using the same Anita scenario from Question 8 (annual salary €72,000, prior earnings €9,600, annual standard rate cut-off €44,000, yearly tax credit €4,000):\n\n" +
+      "Gearoid, a sole trader, has decided to hire his first employee, Anita. Anita has accepted Gearoid's offer of employment, with an agreed annual salary of €72,000, and is due to start employment on 1 April 2025. Anita ceased with her former employer on 31 January 2025.\n\n" +
+      "Details of her earnings up to the date of leaving were €9,600 (PAYE paid of €1,900). Anita's standard rate cut-off is €44,000 per annum and her yearly tax credit is €4,000.\n\n" +
       "Calculate Anita's cumulative tax credit for April (Month 4).",
     correctAnswer: 1332,
     tolerance: 1,
@@ -180,7 +182,8 @@ const taxSamplePaper2 = [
     type: "numeric",
     marks: 2,
     questionText:
-      "Using the same Anita scenario from Question 8 (annual salary €72,000, prior earnings €9,600, PAYE paid to date €1,900, annual standard rate cut-off €44,000, yearly tax credit €4,000):\n\n" +
+      "Gearoid, a sole trader, has decided to hire his first employee, Anita. Anita has accepted Gearoid's offer of employment, with an agreed annual salary of €72,000, and is due to start employment on 1 April 2025. Anita ceased with her former employer on 31 January 2025.\n\n" +
+      "Details of her earnings up to the date of leaving were €9,600 (PAYE paid of €1,900). Anita's standard rate cut-off is €44,000 per annum and her yearly tax credit is €4,000.\n\n" +
       "Calculate the total income tax Anita has to pay in April.",
     correctAnswer: 75,
     tolerance: 1,
@@ -507,7 +510,10 @@ const taxSamplePaper2 = [
     type: "multi_numeric",
     marks: 10,
     questionText:
-      "Using the same Bairbre and Kenneth information from Question 28, plus the following additional income:\n\n" +
+      "Bairbre (aged 42) is married to Kenneth (aged 42). Both are Irish resident and domiciled and are jointly assessed for income tax purposes. They have three young children between the ages of 2 and 7.\n\n" +
+      "Bairbre is a self-employed tax adviser. Her Case II adjusted profits for the year ended 31 December 2025 are €53,000. During 2025, Bairbre made contributions to a Revenue approved pension scheme of €5,000. Kenneth works as an operations manager in the local hospital. In 2025, Kenneth earned €38,000 from which PAYE of €3,600 was deducted.\n\n" +
+      "Rental property — Bairbre owns a residential house in Limerick, rented since 1 January 2025 to students. Gross rents received in 2025 amount to €12,800. Net Case V income after allowable expenses and capital allowances is €7,388.\n\n" +
+      "Additional income for the tax year 2025:\n" +
       "  Deposit interest income – Kenneth (net of DIRT):   €92\n" +
       "  Irish Dividends – Bairbre (net):                   €4,800\n\n" +
       "Calculate Bairbre and Kenneth's liability to income tax (before PRSI and USC) for the year ended 31 December 2025.",
@@ -620,9 +626,10 @@ const taxSamplePaper2 = [
     type: "single",
     marks: 2,
     questionText:
-      "Using the same Martin Mulrooney information from Question 35, plus the following enhancement expenditure:\n\n" +
-      "• February 1994: kitchen extension — Martin paid €5,600 for third party labour and building materials, plus €3,900 on a new fitted kitchen and €1,000 on new kitchen appliances.\n\n" +
-      "• July 2001: new conservatory added at a cost of €6,200.\n\n" +
+      "Martin Mulrooney is a single man resident and domiciled in Ireland. Martin purchased a house in Listowel on 1 July 1970 for €6,000. The market value of the house on 6 April 1974 was €15,000. The house was sold by Martin on 31 July 2025 for €720,000.\n\n" +
+      "Over his duration of ownership, Martin incurred the following additional expenditure on the house:\n\n" +
+      "• February 1994: kitchen extension. Martin paid €5,600 for third party labour and building materials, plus €3,900 on a new fitted kitchen and €1,000 on new kitchen appliances.\n\n" +
+      "• July 2001: a new conservatory was added at a cost of €6,200.\n\n" +
       "Note: The relevant indexation factors are: 1974/75 = 7.528 | 1994/95 = 1.331 | 2001/02 = 1.087.\n\n" +
       "Calculate the total cost (including any enhancement expenditure and indexation) to be included in Martin's CGT computation.",
     options: {
@@ -640,12 +647,11 @@ const taxSamplePaper2 = [
     type: "single",
     marks: 2,
     questionText:
-      "Using the same Martin Mulrooney information from Questions 35 and 36:\n\n" +
-      "Martin occupied the house as his principal private residence from 1 July 1970 until 1 April 2021, apart from the following periods of absence:\n\n" +
-      "• 1 August 1975 to 31 July 1978: worked in Brussels for an associated company of his employer. While away, he let his house to a tenant.\n\n" +
-      "• 1 May 1979 to 31 January 1986: sent by his employer to work in Mayo. During this period his house was unoccupied.\n\n" +
-      "On 1 April 2021, Martin retired to live in Tralee and let out the house in Listowel.\n\n" +
-      "The house was sold on 31 July 2025. Total ownership period (from 6 April 1974): 617 months.\n\n" +
+      "Martin Mulrooney is a single man resident and domiciled in Ireland. Martin purchased a house in Listowel on 1 July 1970 for €6,000. The market value of the house on 6 April 1974 was €15,000. The house was sold by Martin on 31 July 2025 for €720,000.\n\n" +
+      "The house was occupied by Martin as his principal private residence from 1 July 1970 until 1 April 2021, apart from the following periods of absence:\n\n" +
+      "• 1 August 1975 to 31 July 1978: Martin worked in Brussels for an associated company of his employer. While away, he let his house to a tenant.\n\n" +
+      "• 1 May 1979 to 31 January 1986: Martin was sent by his employer to work in Mayo. During this period his house was unoccupied.\n\n" +
+      "On 1 April 2021, Martin retired to live in Tralee and let out the house in Listowel. The house was sold on 31 July 2025. Total ownership period (from 6 April 1974 to 31 July 2025): 617 months.\n\n" +
       "Calculate the total number of months in which Martin occupied his house in Listowel for the purposes of claiming principal private residence (PPR) relief.",
     options: {
       A: "605 Months",
