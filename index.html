@@ -124,7 +124,7 @@
         #timer { font-size:1.15em; font-weight:700; color:var(--primary); background:#e9ecef; padding:5px 12px; border-radius:6px; }
         .quiz-cheatsheet-btn { background:var(--tax-green); color:white; border:none; padding:5px 12px; border-radius:6px; font-size:.82em; font-weight:700; cursor:pointer; font-family:inherit; transition:background .15s; }
         .quiz-cheatsheet-btn:hover { background:#145530; }
-        #question-text { font-size:1.05em; margin-bottom:14px; white-space:pre-wrap; line-height:1.7; }
+        #question-text { font-size:1.05em; margin-bottom:14px; line-height:1.7; }
         .question-type-label { font-size:.78em; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:14px; display:block; }
         .option-btn { display:block; width:100%; padding:13px 15px; font-size:.97em; text-align:left; background:#f9f9f9; border:1.5px solid var(--border); border-radius:8px; cursor:pointer; transition:background .15s,border-color .15s; margin-bottom:9px; font-family:inherit; }
         .option-btn:hover:not(:disabled) { background:#ebebeb; border-color:var(--secondary); }
@@ -1148,7 +1148,7 @@ function displayQuestion() {
     resetUI();
     const q = activeQuestions[currentQuestionIndex];
     $('question-number').textContent = `Question ${currentQuestionIndex + 1} of ${activeQuestions.length}`;
-    $('question-text').textContent = q.questionText;
+    $('question-text').innerHTML = q.questionText.replace(/\n/g, '<br>');
 
     const qType = q.type || 'multi';
     if (qType === 'multi') {
