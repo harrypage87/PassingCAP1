@@ -114,7 +114,7 @@ const taxSamplePaper3 = [
     type: "single",
     marks: 2,
     questionText:
-      "Carma Cakery Limited ("CARMA") operates a bakery in Meath. The company has been very profitable in the past but due to increases in the cost of raw materials, the company made its first trading loss in many years in 2025.\n\n" +
+      "Carma Cakery Limited (CARMA) operates a bakery in Meath. The company has been very profitable in the past but due to increases in the cost of raw materials, the company made its first trading loss in many years in 2025.\n\n" +
       "The company's recent results are as follows:\n\n" +
       "                              Year ended 31/10/2024    Year ended 31/10/2025\n" +
       "Adjusted Trading Profit/(Loss)    €240,000                 (€390,000)\n" +
