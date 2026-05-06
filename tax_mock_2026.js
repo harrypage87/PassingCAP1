@@ -266,7 +266,7 @@ const taxMock2026 = [
   // --- Q11 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
-    type: "computation",
+    type: "multi_numeric",
     marks: 10,
     questionText:
       "Langley Limited (\"LANGLEY\") is an Irish resident company based in the food and ingredients sector. " +
@@ -313,30 +313,24 @@ const taxMock2026 = [
       "<strong>Requirement</strong><br>" +
       "Calculate the corporation tax liability for LANGLEY for the year ended 30 September 2025.<br>" +
       "All answers should be rounded to the nearest whole number. The corporation tax payable should be entered as a positive value.",
-    solution: {
-      addBacks: {
-        repairs: 10200,
-        professionalFees: 2000,
-        depreciation: 14000,
-        subscriptions: 900,
-        entertainment: 600,
-        staffAward: 0,
-        totalAddBacks: 27700,
-      },
-      deductions: {
-        otherIncome: -15300,
-        capitalAllowances: -11300,
-        totalDeductions: -26600,
-      },
-      caseIIncome: 301900,
-      caseIIIIVVIncome: 5000,
-      totalIncome: 306900,
-      chargeableGains: 21912,
-      totalIncomeAndGains: 328812,
-      ctAt12_5pct: 40477,
-      ctAt25pct: 1250,
-      totalCT: 41727,
-    },
+    parts: [
+      { label: "Add-back: Repairs (€)",           correctAnswer: 10200, tolerance: 0 },
+      { label: "Add-back: Professional fees (€)",  correctAnswer: 2000,  tolerance: 0 },
+      { label: "Add-back: Depreciation (€)",       correctAnswer: 14000, tolerance: 0 },
+      { label: "Add-back: Subscriptions (€)",      correctAnswer: 900,   tolerance: 0 },
+      { label: "Add-back: Entertainment (€)",      correctAnswer: 600,   tolerance: 0 },
+      { label: "Add-back: Staff awards (€)",       correctAnswer: 0,     tolerance: 0 },
+      { label: "Total add-backs (€)",              correctAnswer: 27700, tolerance: 0 },
+      { label: "Deduction: Other income (€)",      correctAnswer: 15300, tolerance: 0 },
+      { label: "Deduction: Capital allowances (€)",correctAnswer: 11300, tolerance: 0 },
+      { label: "Case I income (€)",                correctAnswer: 301900,tolerance: 0 },
+      { label: "Case III/IV/V income (€)",         correctAnswer: 5000,  tolerance: 0 },
+      { label: "Total income (€)",                 correctAnswer: 306900,tolerance: 0 },
+      { label: "Chargeable gains grossed up (€)",  correctAnswer: 21912, tolerance: 1 },
+      { label: "CT at 12.5% (€)",                  correctAnswer: 40477, tolerance: 1 },
+      { label: "CT at 25% (€)",                    correctAnswer: 1250,  tolerance: 0 },
+      { label: "Total corporation tax (€)",        correctAnswer: 41727, tolerance: 1 },
+    ],
     explanation:
       "<strong>Add-backs:</strong><br>" +
       "• Repairs €10,200 (capital — new heating system)<br>" +
@@ -349,19 +343,15 @@ const taxMock2026 = [
       "<strong>Deductions — remove non-Case I income:</strong><br>" +
       "• Profit on sale of investments €5,200 (CGT)<br>" +
       "• Profit on sale of F&F €3,100 (CGT)<br>" +
-      "• Bad debts recovered €600 (was expensed — allowable; remove from deductions — keep in income = no deduction needed*)<br>" +
-      "• Interest on tax overpaid €2,000 (tax-free in hands of taxpayer)<br>" +
+      "• Bad debts recovered €600 (keep in income — no deduction)<br>" +
+      "• Interest on tax overpaid €2,000 (tax-free)<br>" +
       "• Foreign rental €5,000 (Case III)<br>" +
       "Total other income deducted: €15,300. Capital allowances: €11,300.<br><br>" +
       "<strong>Case I = €300,800 + €27,700 − €15,300 − €11,300 = €301,900</strong><br>" +
-      "<strong>Case III (foreign rental) = €5,000</strong><br>" +
-      "<strong>Total income = €306,900</strong><br><br>" +
-      "<strong>Chargeable gains (grossed up for CT):</strong><br>" +
-      "• Shares: (€14,400 − €9,200) × 33%/12.5% = €5,200 × 2.64 = €13,728<br>" +
-      "• F&F: (€11,100 − €8,000) × 33%/12.5% = €3,100 × 2.64 = €8,184<br>" +
-      "Total grossed-up gains = <strong>€21,912</strong><br><br>" +
-      "CT @ 12.5% on (€301,900 + €21,912) = €323,812 × 12.5% = €40,477<br>" +
-      "CT @ 25% on €5,000 = €1,250<br>" +
+      "<strong>Case III (foreign rental) = €5,000 | Total income = €306,900</strong><br><br>" +
+      "<strong>Chargeable gains (grossed up):</strong><br>" +
+      "Shares: €5,200 × 2.64 = €13,728 | F&F: €3,100 × 2.64 = €8,184 | Total = €21,912<br><br>" +
+      "CT @ 12.5% on €323,812 = €40,477 | CT @ 25% on €5,000 = €1,250<br>" +
       "<strong>Total CT = €41,727</strong>",
   },
 
@@ -465,7 +455,7 @@ const taxMock2026 = [
   // --- Q16 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
-    type: "computation",
+    type: "multi_numeric",
     marks: 6,
     questionText:
       "Ger Brady is resident and domiciled in Ireland. During the tax year 2025, he completed the following transactions:" +
@@ -486,12 +476,12 @@ const taxMock2026 = [
       "<br><br><strong>Requirement</strong><br>" +
       "Calculate Ger's total chargeable gains, before the annual exemption, for 2025.<br>" +
       "All answers should be entered as positive values. Your answers should be rounded to the nearest whole number.",
-    solution: {
-      transaction1: 15500,
-      transaction2: 191241,
-      transaction3: 213856,
-      totalChargeableGain: 420597,
-    },
+    parts: [
+      { label: "Transaction 1: Net chargeable gain (€)", correctAnswer: 15500,  tolerance: 0 },
+      { label: "Transaction 2: Net chargeable gain (€)", correctAnswer: 191241, tolerance: 1 },
+      { label: "Transaction 3: Net chargeable gain (€)", correctAnswer: 213856, tolerance: 1 },
+      { label: "Total chargeable gain (€)",              correctAnswer: 420597, tolerance: 1 },
+    ],
     explanation:
       "<strong>Transaction 1 (rental property):</strong><br>" +
       "Proceeds €80,000 − selling costs €2,000 = €78,000<br>" +
@@ -514,7 +504,7 @@ const taxMock2026 = [
   // --- Q17 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
-    type: "computation",
+    type: "multi_numeric",
     marks: 4,
     questionText:
       "Fabio Costello owns two properties that he lets out and on which he earns rental income. Details of his income " +
@@ -549,19 +539,15 @@ const taxMock2026 = [
       "<br><strong>Requirement</strong><br>" +
       "Calculate Fabio's rental income assessable under Schedule D, Case V for the tax year 2025.<br>" +
       "Rental income should be entered as positive values. Expenses should be entered as negative values.",
-    solution: {
-      propertyA: {
-        rentalIncome: 11000,
-        allowableExpenses: -4400,
-        netRentalIncome: 6600,
-      },
-      propertyB: {
-        rentalIncome: 3500,
-        allowableExpenses: -930,
-        netRentalIncome: 2570,
-      },
-      totalRentalIncome: 9170,
-    },
+    parts: [
+      { label: "Property A — rental income (€)",        correctAnswer: 11000, tolerance: 0 },
+      { label: "Property A — allowable expenses (€)",   correctAnswer: 4400,  tolerance: 0 },
+      { label: "Property A — net rental income (€)",    correctAnswer: 6600,  tolerance: 0 },
+      { label: "Property B — rental income (€)",        correctAnswer: 3500,  tolerance: 0 },
+      { label: "Property B — allowable expenses (€)",   correctAnswer: 930,   tolerance: 0 },
+      { label: "Property B — net rental income (€)",    correctAnswer: 2570,  tolerance: 0 },
+      { label: "Total rental income for 2025 (€)",      correctAnswer: 9170,  tolerance: 0 },
+    ],
     explanation:
       "<strong>Property A — Income:</strong><br>" +
       "Rent: €12,000 × 5/12 (Aug–Dec) = €5,000<br>" +
@@ -884,7 +870,7 @@ const taxMock2026 = [
   // --- Q29 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
-    type: "computation",
+    type: "multi_numeric",
     marks: 4,
     questionText:
       "Yasmin McDonnell has been trading for a number of years to a year-end of 31 May. In 2025, Yasmin changed " +
@@ -901,10 +887,10 @@ const taxMock2026 = [
       "<br><strong>Requirement</strong><br>" +
       "Calculate Yasmin's assessable profits for 2025 and 2024.<br>" +
       "All answers should be entered as positive values. The answer should be rounded to the nearest whole number.",
-    solution: {
-      assessableProfitsFor2025: 22917,
-      assessableProfitsFor2024: 15667,
-    },
+    parts: [
+      { label: "Assessable profits for 2025 (€)", correctAnswer: 22917, tolerance: 1 },
+      { label: "Assessable profits for 2024 (€)", correctAnswer: 15667, tolerance: 1 },
+    ],
     explanation:
       "<strong>Year of assessment 2025</strong> — profit period 01/01/2025 to 31/12/2025:<br>" +
       "Jan–May 2025 (5 months of the 12 months to 31/05/2025): €19,000 × 5/12 = €7,917<br>" +
@@ -981,7 +967,7 @@ const taxMock2026 = [
   // --- Q32 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
-    type: "computation",
+    type: "multi_numeric",
     marks: 6,
     questionText:
       "Bella, a 63-year-old widow with no dependent children, is in receipt of the following sources of Irish income in 2025:" +
@@ -1005,18 +991,18 @@ const taxMock2026 = [
       "<br><br><strong>Requirement</strong><br>" +
       "Calculate Bella's net income tax payable/(refundable) for 2025.<br>" +
       "Total tax at the appropriate rates should be entered as positive values.<br>" +
-      "The refundable and non-refundable credits should be entered as negative values.<br>" +
+      "Credits should be entered as positive values (the engine will treat them as deductions).<br>" +
       "The answers should be rounded to the nearest whole number.",
-    solution: {
-      scheduleDCaseIV: 2657,
-      scheduleE: 15044,
-      scheduleF: 6707,
-      taxableIncome: 24408,
-      totalTaxAtRates: 5227,
-      nonRefundableCredits: -5227,
-      refundableCredits: -1677,
-      netTaxPayableRefund: -1677,
-    },
+    parts: [
+      { label: "Schedule D — Case IV (gross deposit interest) (€)", correctAnswer: 2657, tolerance: 1 },
+      { label: "Schedule E — widow's pension (€)",                  correctAnswer: 15044,tolerance: 0 },
+      { label: "Schedule F — gross dividends (€)",                  correctAnswer: 6707, tolerance: 1 },
+      { label: "Taxable income (€)",                                correctAnswer: 24408,tolerance: 1 },
+      { label: "Total tax at appropriate rates (€)",                correctAnswer: 5227, tolerance: 1 },
+      { label: "Non-refundable credits (€)",                        correctAnswer: 5227, tolerance: 1 },
+      { label: "Refundable credits — DWT (€)",                      correctAnswer: 1677, tolerance: 1 },
+      { label: "Net tax payable / (refund) — enter refund positive (€)", correctAnswer: 1677, tolerance: 1 },
+    ],
     explanation:
       "<strong>Gross up income:</strong><br>" +
       "Schedule D Case IV (deposit interest gross): €1,780 ÷ 0.67 = €2,657<br>" +
@@ -1188,7 +1174,7 @@ const taxMock2026 = [
   // --- Q39 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
-    type: "computation",
+    type: "multi_numeric",
     marks: 4,
     questionText:
       "Timmy is retired and is 69 years old. He is married to Tara (67), and they are jointly assessed. Tara has no income in 2025." +
@@ -1201,10 +1187,10 @@ const taxMock2026 = [
       "<strong>Requirement</strong><br>" +
       "Calculate Timmy and Tara's non-refundable and refundable tax credits for 2025.<br>" +
       "The answers should be entered as positive values.",
-    solution: {
-      nonRefundableTaxCredits: 6586,
-      refundableTaxCredits: 16830,
-    },
+    parts: [
+      { label: "Non-refundable tax credits (€)", correctAnswer: 6586,  tolerance: 1 },
+      { label: "Refundable tax credits (€)",     correctAnswer: 16830, tolerance: 0 },
+    ],
     explanation:
       "<strong>Non-refundable tax credits:</strong><br>" +
       "<table border='1' cellpadding='6' cellspacing='0' style='border-collapse:collapse;'>" +
@@ -1229,7 +1215,7 @@ const taxMock2026 = [
   // --- Q40 ------------------------------------------------------------------
   {
     section: "Mock Paper 2026",
-    type: "computation",
+    type: "multi_numeric",
     marks: 5,
     questionText:
       "Elsa is employed as financial controller by Olaf Limited (\"OLAF\"). She was paid a salary of €115,000 " +
@@ -1247,13 +1233,13 @@ const taxMock2026 = [
       "<br><br><strong>Requirement</strong><br>" +
       "Calculate Elsa's taxable Schedule E income for 2025.<br>" +
       "The amounts should be rounded to the nearest whole number. The answers should be entered as positive values.",
-    solution: {
-      salaryAndBonus: 127000,
-      employerLoan: 2042,
-      freeUseOfApartment: 32400,
-      courseFees: 2600,
-      totalTaxableIncome: 164042,
-    },
+    parts: [
+      { label: "Salary & bonus (€)",               correctAnswer: 127000, tolerance: 0 },
+      { label: "Employer loan BIK (€)",             correctAnswer: 2042,   tolerance: 1 },
+      { label: "Free use of apartment BIK (€)",     correctAnswer: 32400,  tolerance: 0 },
+      { label: "Course fees BIK (€)",               correctAnswer: 2600,   tolerance: 0 },
+      { label: "Total taxable Schedule E income (€)",correctAnswer: 164042, tolerance: 1 },
+    ],
     explanation:
       "<strong>Salary & Bonus:</strong><br>" +
       "Salary €115,000 + bonus received Jan 2025 €12,000 = <strong>€127,000</strong><br>" +
