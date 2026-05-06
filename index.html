@@ -882,7 +882,9 @@ function startPaperPractice(paper) {
 function startTaxMock() {
     returnMenuFn = showTaxMenu;
     currentMode = 'mock';
-    const shuffled = [...allTopicData.tax].sort(() => 0.5 - Math.random());
+    const shuffled = [...allTopicData.tax]
+        .filter(q => !q.practiceOnly)
+        .sort(() => 0.5 - Math.random());
     startQuiz(shuffled.slice(0, Math.min(MOCK_EXAM_QUESTION_COUNT, shuffled.length)), true);
 }
 
