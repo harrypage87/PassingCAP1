@@ -437,6 +437,7 @@
 <script src="tax_sample_paper_2.js"></script>
 <script src="tax_sample_paper_3.js"></script>
 <script src="facctg_mock_2026.js"></script>
+<script src="facctg_sample_paper_1.js"></script>
 
 <script>
 const allTopicData = {
@@ -455,6 +456,7 @@ const allTopicData = {
     ],
     facctg: [
         ...(typeof facctgMock2026 !== 'undefined' ? facctgMock2026 : []),
+        ...(typeof facctgSamplePaper1   !== 'undefined' ? facctgSamplePaper1 : []),
     ],
 };
 
@@ -472,6 +474,7 @@ const financePastPapers = [
 ];
 const facctgPastPapers = [
     { id:'facctgmock2026', label:'Mock Paper 2026', meta:'42 questions · 2.5 hrs', section:'FA Mock 2026' },
+    { id:'facctgsample1', label:'Sample Paper 1', meta:'44 questions · 2.5 hrs', section:'Financial Accounting Sample Paper 1' },
 ];
 
 const MOCK_EXAM_QUESTION_COUNT = 40;
