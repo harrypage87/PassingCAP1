@@ -628,6 +628,10 @@ function startQuiz(questions, timed) {
     activeQuestions = questions.map(q => {
         const norm = { ...q, userAnswer: null, isCorrect: false };
         if ((norm.type || 'single') === 'single') { norm.type = 'multi'; norm.correctAnswer = [norm.correctAnswer]; }
+        // Single-part numeric: promote parts[0].answer to q.correctAnswer so handleNumeric can read it
+        if (norm.type === 'numeric' && norm.parts && norm.parts.length === 1 && norm.correctAnswer == null) {
+            norm.correctAnswer = norm.parts[0].answer;
+        }
         return norm;
     });
     currentQuestionIndex = 0; score = 0;
