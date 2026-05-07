@@ -40,15 +40,15 @@ const financeSamplePaper1 = [
       "Your answer should be rounded to the nearest whole number.<br>" +
       "Use the minus sign \"-\" to indicate a cash outflow.",
     parts: [
-      { label: "Revenue — basic subscription (€/£)",   correctAnswer: 63024,  tolerance: 1 },
-      { label: "Revenue — premium subscription (€/£)", correctAnswer: 81900,  tolerance: 0 },
-      { label: "Publisher cost (€/£)",                  correctAnswer: -78764, tolerance: 1 },
-      { label: "Marketing & advertising costs (€/£)",   correctAnswer: -28800, tolerance: 0 },
-      { label: "Capital allowance (€/£)",               correctAnswer: -5625,  tolerance: 0 },
-      { label: "Taxable profit (€/£)",                  correctAnswer: 31735,  tolerance: 2 },
-      { label: "Tax (€/£)",                             correctAnswer: -1172,  tolerance: 2 },
-      { label: "Capital allowance add-back (€/£)",      correctAnswer: 5625,   tolerance: 0 },
-      { label: "Net cash flows (€/£)",                  correctAnswer: 36188,  tolerance: 5 },
+      { label: "Revenue — basic subscription (€/£)",   answer: 63024,  tolerance: 1 },
+      { label: "Revenue — premium subscription (€/£)", answer: 81900,  tolerance: 0 },
+      { label: "Publisher cost (€/£)",                  answer: -78764, tolerance: 1 },
+      { label: "Marketing & advertising costs (€/£)",   answer: -28800, tolerance: 0 },
+      { label: "Capital allowance (€/£)",               answer: -5625,  tolerance: 0 },
+      { label: "Taxable profit (€/£)",                  answer: 31735,  tolerance: 2 },
+      { label: "Tax (€/£)",                             answer: -1172,  tolerance: 2 },
+      { label: "Capital allowance add-back (€/£)",      answer: 5625,   tolerance: 0 },
+      { label: "Net cash flows (€/£)",                  answer: 36188,  tolerance: 5 },
     ],
     explanation:
       "<strong>Year 3 workings:</strong><br>" +
@@ -162,8 +162,8 @@ const financeSamplePaper1 = [
       "Your answer should be rounded to the nearest whole number.<br>" +
       "Your answer should be entered as a positive value.",
     parts: [
-      { label: "Development cost sensitivity (%)", correctAnswer: 180, tolerance: 1 },
-      { label: "Raw material costs sensitivity (%)", correctAnswer: 26,  tolerance: 1 },
+      { label: "Development cost sensitivity (%)", answer: 180, tolerance: 1 },
+      { label: "Raw material costs sensitivity (%)", answer: 26,  tolerance: 1 },
     ],
     explanation:
       "<strong>Sensitivity formula:</strong> Sensitivity = NPV / PV of the variable<br><br>" +
@@ -282,8 +282,8 @@ const financeSamplePaper1 = [
       "Calculate the market value of HORACE's ordinary shares and irredeemable bonds.<br>" +
       "Your answer should be rounded to the nearest whole number.",
     parts: [
-      { label: "Ordinary shares market value (€/£)",      correctAnswer: 1680000, tolerance: 0 },
-      { label: "Irredeemable bonds market value (€/£)",   correctAnswer: 780000,  tolerance: 0 },
+      { label: "Ordinary shares market value (€/£)",      answer: 1680000, tolerance: 0 },
+      { label: "Irredeemable bonds market value (€/£)",   answer: 780000,  tolerance: 0 },
     ],
     explanation:
       "Ordinary shares: 300,000 × ex-div price €/£ 5.60 = <strong>€/£ 1,680,000</strong><br>" +
@@ -470,8 +470,8 @@ const financeSamplePaper1 = [
       "Calculate the purchase cost of the order and the value of the average inventory held by PIANA under this proposal.<br>" +
       "Your answer should be rounded to the nearest whole number.",
     parts: [
-      { label: "Purchase cost (€/£)",          correctAnswer: 1463000, tolerance: 0 },
-      { label: "Average inventory value (€/£)", correctAnswer: 951040,  tolerance: 10 },
+      { label: "Purchase cost (€/£)",          answer: 1463000, tolerance: 0 },
+      { label: "Average inventory value (€/£)", answer: 951040,  tolerance: 10 },
     ],
     explanation:
       "Discounted unit price = €/£ 2.80 × (1 − 5%) = €/£ 2.66<br><br>" +
@@ -560,8 +560,8 @@ const financeSamplePaper1 = [
       "Your answers should be entered as positive values.<br>" +
       "Your answers should be rounded to the nearest whole number.",
     parts: [
-      { label: "Sales revenue decrease (€/£)", correctAnswer: 1050, tolerance: 0 },
-      { label: "Finance cost saving (€/£)",    correctAnswer: 1800, tolerance: 0 },
+      { label: "Sales revenue decrease (€/£)", answer: 1050, tolerance: 0 },
+      { label: "Finance cost saving (€/£)",    answer: 1800, tolerance: 0 },
     ],
     explanation:
       "Sales revenue decrease = total receivables × discount rate × % taking discount<br>" +
@@ -729,10 +729,10 @@ const financeSamplePaper1 = [
       "Your answer should be rounded to the nearest whole number.<br>" +
       "Use the minus sign \"-\" to indicate a cash outflow.",
     parts: [
-      { label: "Note 1 — Employment & redundancy (€/£)", correctAnswer: 51200,  tolerance: 0 },
-      { label: "Note 2 — Rental income (€/£)",           correctAnswer: 37440,  tolerance: 0 },
-      { label: "Note 3 — Deposit interest (€/£)",        correctAnswer: 1062,   tolerance: 5 },
-      { label: "Note 4 — Property & expenses (€/£)",     correctAnswer: -40800, tolerance: 0 },
+      { label: "Note 1 — Employment & redundancy (€/£)", answer: 51200,  tolerance: 0 },
+      { label: "Note 2 — Rental income (€/£)",           answer: 37440,  tolerance: 0 },
+      { label: "Note 3 — Deposit interest (€/£)",        answer: 1062,   tolerance: 5 },
+      { label: "Note 4 — Property & expenses (€/£)",     answer: -40800, tolerance: 0 },
     ],
     explanation:
       "<strong>Note 1:</strong><br>" +
