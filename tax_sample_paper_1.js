@@ -40,7 +40,7 @@ const taxSamplePaper1 = [
     parts: [
       { label: "Total Output VAT (€)", answer: 18400, tolerance: 0 },
       { label: "Input VAT: Electronic devices for re-sale from Irish supplier (€)", answer: 3450, tolerance: 0 },
-      { label: "Input VAT: Heating for premises (€)", answerr: 180, tolerance: 0 },
+      { label: "Input VAT: Heating for premises (€)", answer: 180, tolerance: 0 },
       { label: "Input VAT: Advertising for 12 months from 1 October 2025 (€)", answer: 1610, tolerance: 0 },
       { label: "VAT Payable (€)", answer: 13160, tolerance: 0 },
     ],
