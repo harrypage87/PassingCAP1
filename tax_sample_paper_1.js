@@ -725,10 +725,10 @@ const taxSamplePaper1 = [
       "Note: The indexation factor for 1999/00 is 1.144.\n\n" +
       "Calculate Brid's chargeable gain (if any) on the sale of her house in 2025.",
     parts: [
-      { label: "Net sales proceeds (€)", correctAnswer: 350600, tolerance: 0 },
-      { label: "Total purchase cost (indexed) (€)", correctAnswer: 182468, tolerance: 1 },
-      { label: "PPR relief (€)", correctAnswer: 134506, tolerance: 1 },
-      { label: "Net chargeable gain (€)", correctAnswer: 33626, tolerance: 1 },
+      { label: "Net sales proceeds (€)", answer: 350600, tolerance: 0 },
+      { label: "Total purchase cost (indexed) (€)", answer: 182468, tolerance: 1 },
+      { label: "PPR relief (€)", answer: 134506, tolerance: 1 },
+      { label: "Net chargeable gain (€)", answer: 33626, tolerance: 1 },
     ],
   },
 
