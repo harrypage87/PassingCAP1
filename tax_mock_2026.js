@@ -314,22 +314,22 @@ const taxMock2026 = [
       "Calculate the corporation tax liability for LANGLEY for the year ended 30 September 2025.<br>" +
       "All answers should be rounded to the nearest whole number. The corporation tax payable should be entered as a positive value.",
     parts: [
-      { label: "Add-back: Repairs (€)",           correctAnswer: 10200, tolerance: 0 },
-      { label: "Add-back: Professional fees (€)",  correctAnswer: 2000,  tolerance: 0 },
-      { label: "Add-back: Depreciation (€)",       correctAnswer: 14000, tolerance: 0 },
-      { label: "Add-back: Subscriptions (€)",      correctAnswer: 900,   tolerance: 0 },
-      { label: "Add-back: Entertainment (€)",      correctAnswer: 600,   tolerance: 0 },
-      { label: "Add-back: Staff awards (€)",       correctAnswer: 0,     tolerance: 0 },
-      { label: "Total add-backs (€)",              correctAnswer: 27700, tolerance: 0 },
-      { label: "Deduction: Other income (€)",      correctAnswer: 15300, tolerance: 0 },
-      { label: "Deduction: Capital allowances (€)",correctAnswer: 11300, tolerance: 0 },
-      { label: "Case I income (€)",                correctAnswer: 301900,tolerance: 0 },
-      { label: "Case III/IV/V income (€)",         correctAnswer: 5000,  tolerance: 0 },
-      { label: "Total income (€)",                 correctAnswer: 306900,tolerance: 0 },
-      { label: "Chargeable gains grossed up (€)",  correctAnswer: 21912, tolerance: 1 },
-      { label: "CT at 12.5% (€)",                  correctAnswer: 40477, tolerance: 1 },
-      { label: "CT at 25% (€)",                    correctAnswer: 1250,  tolerance: 0 },
-      { label: "Total corporation tax (€)",        correctAnswer: 41727, tolerance: 1 },
+      { label: "Add-back: Repairs (€)",           answer: 10200, tolerance: 0 },
+      { label: "Add-back: Professional fees (€)",  answer: 2000,  tolerance: 0 },
+      { label: "Add-back: Depreciation (€)",       answer: 14000, tolerance: 0 },
+      { label: "Add-back: Subscriptions (€)",      answer: 900,   tolerance: 0 },
+      { label: "Add-back: Entertainment (€)",      answer: 600,   tolerance: 0 },
+      { label: "Add-back: Staff awards (€)",       answer: 0,     tolerance: 0 },
+      { label: "Total add-backs (€)",              answer: 27700, tolerance: 0 },
+      { label: "Deduction: Other income (€)",      answer: 15300, tolerance: 0 },
+      { label: "Deduction: Capital allowances (€)",answer: 11300, tolerance: 0 },
+      { label: "Case I income (€)",                answer: 301900,tolerance: 0 },
+      { label: "Case III/IV/V income (€)",         answer: 5000,  tolerance: 0 },
+      { label: "Total income (€)",                 answer: 306900,tolerance: 0 },
+      { label: "Chargeable gains grossed up (€)",  answer: 21912, tolerance: 1 },
+      { label: "CT at 12.5% (€)",                  answer: 40477, tolerance: 1 },
+      { label: "CT at 25% (€)",                    answer: 1250,  tolerance: 0 },
+      { label: "Total corporation tax (€)",        answer: 41727, tolerance: 1 },
     ],
     explanation:
       "<strong>Add-backs:</strong><br>" +
@@ -477,10 +477,10 @@ const taxMock2026 = [
       "Calculate Ger's total chargeable gains, before the annual exemption, for 2025.<br>" +
       "All answers should be entered as positive values. Your answers should be rounded to the nearest whole number.",
     parts: [
-      { label: "Transaction 1: Net chargeable gain (€)", correctAnswer: 15500,  tolerance: 0 },
-      { label: "Transaction 2: Net chargeable gain (€)", correctAnswer: 191241, tolerance: 1 },
-      { label: "Transaction 3: Net chargeable gain (€)", correctAnswer: 213856, tolerance: 1 },
-      { label: "Total chargeable gain (€)",              correctAnswer: 420597, tolerance: 1 },
+      { label: "Transaction 1: Net chargeable gain (€)", answer: 15500,  tolerance: 0 },
+      { label: "Transaction 2: Net chargeable gain (€)", answer: 191241, tolerance: 1 },
+      { label: "Transaction 3: Net chargeable gain (€)", answer: 213856, tolerance: 1 },
+      { label: "Total chargeable gain (€)",              answer: 420597, tolerance: 1 },
     ],
     explanation:
       "<strong>Transaction 1 (rental property):</strong><br>" +
@@ -540,13 +540,13 @@ const taxMock2026 = [
       "Calculate Fabio's rental income assessable under Schedule D, Case V for the tax year 2025.<br>" +
       "Rental income should be entered as positive values. Expenses should be entered as negative values.",
     parts: [
-      { label: "Property A — rental income (€)",        correctAnswer: 11000, tolerance: 0 },
-      { label: "Property A — allowable expenses (€)",   correctAnswer: 4400,  tolerance: 0 },
-      { label: "Property A — net rental income (€)",    correctAnswer: 6600,  tolerance: 0 },
-      { label: "Property B — rental income (€)",        correctAnswer: 3500,  tolerance: 0 },
-      { label: "Property B — allowable expenses (€)",   correctAnswer: 930,   tolerance: 0 },
-      { label: "Property B — net rental income (€)",    correctAnswer: 2570,  tolerance: 0 },
-      { label: "Total rental income for 2025 (€)",      correctAnswer: 9170,  tolerance: 0 },
+      { label: "Property A — rental income (€)",        answer: 11000, tolerance: 0 },
+      { label: "Property A — allowable expenses (€)",   answer: 4400,  tolerance: 0 },
+      { label: "Property A — net rental income (€)",    answer: 6600,  tolerance: 0 },
+      { label: "Property B — rental income (€)",        answer: 3500,  tolerance: 0 },
+      { label: "Property B — allowable expenses (€)",   answer: 930,   tolerance: 0 },
+      { label: "Property B — net rental income (€)",    answer: 2570,  tolerance: 0 },
+      { label: "Total rental income for 2025 (€)",      answer: 9170,  tolerance: 0 },
     ],
     explanation:
       "<strong>Property A — Income:</strong><br>" +
@@ -888,8 +888,8 @@ const taxMock2026 = [
       "Calculate Yasmin's assessable profits for 2025 and 2024.<br>" +
       "All answers should be entered as positive values. The answer should be rounded to the nearest whole number.",
     parts: [
-      { label: "Assessable profits for 2025 (€)", correctAnswer: 22917, tolerance: 1 },
-      { label: "Assessable profits for 2024 (€)", correctAnswer: 15667, tolerance: 1 },
+      { label: "Assessable profits for 2025 (€)", answer: 22917, tolerance: 1 },
+      { label: "Assessable profits for 2024 (€)", answer: 15667, tolerance: 1 },
     ],
     explanation:
       "<strong>Year of assessment 2025</strong> — profit period 01/01/2025 to 31/12/2025:<br>" +
@@ -994,14 +994,14 @@ const taxMock2026 = [
       "Credits should be entered as positive values (the engine will treat them as deductions).<br>" +
       "The answers should be rounded to the nearest whole number.",
     parts: [
-      { label: "Schedule D — Case IV (gross deposit interest) (€)", correctAnswer: 2657, tolerance: 1 },
-      { label: "Schedule E — widow's pension (€)",                  correctAnswer: 15044,tolerance: 0 },
-      { label: "Schedule F — gross dividends (€)",                  correctAnswer: 6707, tolerance: 1 },
-      { label: "Taxable income (€)",                                correctAnswer: 24408,tolerance: 1 },
-      { label: "Total tax at appropriate rates (€)",                correctAnswer: 5227, tolerance: 1 },
-      { label: "Non-refundable credits (€)",                        correctAnswer: 5227, tolerance: 1 },
-      { label: "Refundable credits — DWT (€)",                      correctAnswer: 1677, tolerance: 1 },
-      { label: "Net tax payable / (refund) — enter refund positive (€)", correctAnswer: 1677, tolerance: 1 },
+      { label: "Schedule D — Case IV (gross deposit interest) (€)", answer: 2657, tolerance: 1 },
+      { label: "Schedule E — widow's pension (€)",                  answer: 15044,tolerance: 0 },
+      { label: "Schedule F — gross dividends (€)",                  answer: 6707, tolerance: 1 },
+      { label: "Taxable income (€)",                                answer: 24408,tolerance: 1 },
+      { label: "Total tax at appropriate rates (€)",                answer: 5227, tolerance: 1 },
+      { label: "Non-refundable credits (€)",                        answer: 5227, tolerance: 1 },
+      { label: "Refundable credits — DWT (€)",                      answer: 1677, tolerance: 1 },
+      { label: "Net tax payable / (refund) — enter refund positive (€)", answer: 1677, tolerance: 1 },
     ],
     explanation:
       "<strong>Gross up income:</strong><br>" +
@@ -1188,8 +1188,8 @@ const taxMock2026 = [
       "Calculate Timmy and Tara's non-refundable and refundable tax credits for 2025.<br>" +
       "The answers should be entered as positive values.",
     parts: [
-      { label: "Non-refundable tax credits (€)", correctAnswer: 6586,  tolerance: 1 },
-      { label: "Refundable tax credits (€)",     correctAnswer: 16830, tolerance: 0 },
+      { label: "Non-refundable tax credits (€)", answer: 6586,  tolerance: 1 },
+      { label: "Refundable tax credits (€)",     answer: 16830, tolerance: 0 },
     ],
     explanation:
       "<strong>Non-refundable tax credits:</strong><br>" +
@@ -1234,11 +1234,11 @@ const taxMock2026 = [
       "Calculate Elsa's taxable Schedule E income for 2025.<br>" +
       "The amounts should be rounded to the nearest whole number. The answers should be entered as positive values.",
     parts: [
-      { label: "Salary & bonus (€)",               correctAnswer: 127000, tolerance: 0 },
-      { label: "Employer loan BIK (€)",             correctAnswer: 2042,   tolerance: 1 },
-      { label: "Free use of apartment BIK (€)",     correctAnswer: 32400,  tolerance: 0 },
-      { label: "Course fees BIK (€)",               correctAnswer: 2600,   tolerance: 0 },
-      { label: "Total taxable Schedule E income (€)",correctAnswer: 164042, tolerance: 1 },
+      { label: "Salary & bonus (€)",               answer: 127000, tolerance: 0 },
+      { label: "Employer loan BIK (€)",             answer: 2042,   tolerance: 1 },
+      { label: "Free use of apartment BIK (€)",     answer: 32400,  tolerance: 0 },
+      { label: "Course fees BIK (€)",               answer: 2600,   tolerance: 0 },
+      { label: "Total taxable Schedule E income (€)",answer: 164042, tolerance: 1 },
     ],
     explanation:
       "<strong>Salary & Bonus:</strong><br>" +
