@@ -95,6 +95,14 @@
         .screen-title { text-align:center; margin-bottom:22px; color:var(--primary); font-size:1.35em; font-weight:700; }
         .btn-list { display:flex; flex-direction:column; gap:12px; }
         .chapter-btn { padding:16px 18px; font-size:1em; font-weight:600; background:var(--white); color:var(--primary); border:1.5px solid var(--border); border-radius:8px; cursor:pointer; text-align:left; transition:background .15s,border-color .15s; font-family:inherit; }
+        /* ── LAW MENU GRID ── */
+        .law-menu-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:24px; }
+        .law-menu-card { background:#f9f9f9; border:1.5px solid var(--border); border-radius:12px; padding:22px 18px; text-align:center; cursor:pointer; transition:all .2s ease; display:flex; flex-direction:column; align-items:center; }
+        .law-menu-card:hover { border-color:var(--primary); box-shadow:0 4px 16px rgba(0,51,102,0.12); transform:translateY(-2px); }
+        .law-menu-card .card-icon { font-size:1.9em; margin-bottom:10px; }
+        .law-menu-card h3 { font-size:1.05em; font-weight:700; color:var(--primary); margin-bottom:6px; }
+        .law-menu-card p { font-size:.82em; color:var(--muted); line-height:1.4; flex-grow:1; }
+        @media(max-width:540px){ .law-menu-grid{grid-template-columns:1fr;} }
         /* ── FA MENU ── */
         :root { --fa-brown:#b5451b; }
         .fa-menu-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:24px; }
@@ -240,18 +248,16 @@
     <div id="law-menu-container" class="hidden">
         <div class="menu-hero"><h2>Law</h2><p>Your interactive study tool for the CA Proficiency 1 exam.</p></div>
         <div class="topic-banner"><span>⚖️ Law</span><button onclick="showTopicSelect()">Change Subject</button></div>
-        <div class="menu-options">
-            <div class="menu-option">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
-                <h3>Practice Questions</h3>
+        <div class="law-menu-grid">
+            <div class="law-menu-card" id="law-practice-btn">
+                <div class="card-icon">📚</div>
+                <h3>Practice by Chapter</h3>
                 <p>Study chapter by chapter with instant feedback after every question.</p>
-                <button id="law-practice-btn" class="btn">Start Practice</button>
             </div>
-            <div class="menu-option">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5z"/><path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"/></svg>
+            <div class="law-menu-card" id="law-mock-btn">
+                <div class="card-icon">⏱️</div>
                 <h3>Mock Exam</h3>
-                <p>A timed exam simulation drawn from the full question bank.</p>
-                <button id="law-mock-btn" class="btn">Start Mock Exam</button>
+                <p>40 random questions, 90 minutes. Simulates real exam conditions.</p>
             </div>
         </div>
     </div>
