@@ -17,6 +17,11 @@ const taxSamplePaper1 = [
       F: "Circumstances giving rise to the realisation of the property",
     },
     correctAnswer: ["A", "C", "D", "F"],
+    explanation:
+      "Subject matter of transaction<br>" +
+      "Length of period of ownership<br>" +
+      "Frequency of transactions<br>" +
+      "Circumstances giving rise to the realisation of the property",
   },
 
   // --- Q2 -------------------------------------------------------------------
@@ -27,23 +32,34 @@ const taxSamplePaper1 = [
     questionText:
       "Compu C Limited (COMPU C) is a trading company which sells electronic devices (liable to VAT at the standard rate). Sales and purchases for the VAT period September/October 2025 for COMPU C are detailed below. All figures are exclusive of VAT:\n\n" +
       "Sales:\n" +
-      "  Sale of electronic devices to customer not VAT registered:    €10,000\n" +
+      "  Sale of electronic devices to customer not VAT registered:      €10,000\n" +
       "  Sale of electronic devices to VAT registered corporate clients: €70,000\n" +
-      "  Total:                                                         €80,000\n\n" +
+      "  Total:                                                          €80,000\n\n" +
       "Purchases:\n" +
-      "  Electronic devices for re-sale from Irish supplier:            €15,000\n" +
-      "  Salaries:                                                      €11,000\n" +
-      "  Heating for premises:                                          €2,000\n" +
-      "  Advertising for 12 months from 1 October 2025:                €7,000\n" +
-      "  Total:                                                         €35,000\n\n" +
+      "  Electronic devices for re-sale from Irish supplier:             €15,000\n" +
+      "  Salaries:                                                       €11,000\n" +
+      "  Heating for premises:                                           €2,000\n" +
+      "  Advertising for 12 months from 1 October 2025:                 €7,000\n" +
+      "  Total:                                                          €35,000\n\n" +
+      "Output VAT should be entered as positive. Input VAT should be entered as negative.\n\n" +
       "Calculate the total VAT payable/refundable for COMPU C for September/October 2025.",
     parts: [
-      { label: "Total Output VAT (€)", answer: 18400, tolerance: 0 },
-      { label: "Input VAT: Electronic devices for re-sale from Irish supplier (€)", answer: 3450, tolerance: 0 },
-      { label: "Input VAT: Heating for premises (€)", answer: 180, tolerance: 0 },
-      { label: "Input VAT: Advertising for 12 months from 1 October 2025 (€)", answer: 1610, tolerance: 0 },
-      { label: "VAT Payable (€)", answer: 13160, tolerance: 0 },
+      { label: "Total output VAT (€)", answer: 18400, tolerance: 0 },
+      { label: "Input VAT — Electronic devices for re-sale (€)", answer: -3450, tolerance: 0 },
+      { label: "Input VAT — Heating for premises (€)", answer: -180, tolerance: 0 },
+      { label: "Input VAT — Advertising (€)", answer: -1610, tolerance: 0 },
+      { label: "Total input VAT (€)", answer: -5240, tolerance: 0 },
+      { label: "VAT payable/(refundable) (€)", answer: 13160, tolerance: 0 },
     ],
+    explanation:
+      "Total output VAT: €2,300 + €16,100 = €18,400<br><br>" +
+      "Input VAT:<br>" +
+      "Electronic devices for re-sale from Irish supplier: €15,000 × 23% = (€3,450)<br>" +
+      "Salaries: Nil<br>" +
+      "Heating for premises: €2,000 × 9% = (€180)<br>" +
+      "Advertising for 12 months from 1 October 2025: €7,000 × 23% = (€1,610)<br>" +
+      "Total input VAT: (€5,240)<br><br>" +
+      "VAT payable: €13,160",
   },
 
   // --- Q3 -------------------------------------------------------------------
@@ -61,6 +77,8 @@ const taxSamplePaper1 = [
       "Calculate Aoibhe's gross cumulative salary to 31 March 2025.",
     correctAnswer: 11250,
     tolerance: 0,
+    explanation:
+      "11,250",
   },
 
   // --- Q4 -------------------------------------------------------------------
@@ -78,6 +96,8 @@ const taxSamplePaper1 = [
       "Calculate Aoibhe's cumulative standard rate cut-off to 31 March 2025 (Month 3).",
     correctAnswer: 11001,
     tolerance: 0,
+    explanation:
+      "11,001",
   },
 
   // --- Q5 -------------------------------------------------------------------
@@ -95,6 +115,18 @@ const taxSamplePaper1 = [
       "Calculate the PAYE to be deducted from Aoibhe's salary in March 2025.",
     correctAnswer: 434,
     tolerance: 1,
+    explanation:
+      "Base Salary March (€45,000 / 12): €3,750<br>" +
+      "Cumulative Salary year-to-date: €7,500<br>" +
+      "Cumulative Gross Salary: €11,250<br>" +
+      "Cumulative SRCOP (€3,667 × 3): €11,001<br><br>" +
+      "Calculation of Tax:<br>" +
+      "Tax at 20% (€11,001 × 20%): €2,200<br>" +
+      "Tax at 40% (Bal × 40%): €100<br>" +
+      "Less Tax Credits: (€999)<br>" +
+      "= €1,301<br>" +
+      "Less Tax Paid to date: (€867)<br>" +
+      "PAYE to be deducted in March: €434",
   },
 
   // --- Q6 -------------------------------------------------------------------
@@ -104,12 +136,25 @@ const taxSamplePaper1 = [
     marks: 2,
     questionText:
       "The results for Diffuse Limited for the year ended 31 December 2025 are as follows:\n\n" +
-      "  Case I income:              €2,800\n" +
+      "  Case I income:                         €2,800\n" +
       "  Chargeable gain (not adjusted for CT): €200\n" +
-      "  Charges: Trade:             (€3,500)\n\n" +
+      "  Charges: Trade:                        (€3,500)\n\n" +
       "Calculate the Case I loss that can be carried forward to 2026 (assuming all available reliefs are claimed in 2025).",
     correctAnswer: 172,
     tolerance: 0,
+    explanation:
+      "Case I Income: €2,800<br>" +
+      "Less: Trade charges: (€2,800)<br>" +
+      "Case I Income: NIL<br><br>" +
+      "Adjusted gain: €200 / 12.5% × 33% = €528<br>" +
+      "CT at 12.5%: €66<br>" +
+      "S243B Excess trade charges: (€66)<br>" +
+      "CT payable: NIL<br><br>" +
+      "Case I loss carried forward to 2026:<br>" +
+      "Trade charge 2025: (€3,500)<br>" +
+      "Case I income 2025: €2,800<br>" +
+      "Chargeable gain 2025: €528<br>" +
+      "Case I loss c/f to 2026: €172",
   },
 
   // --- Q7 -------------------------------------------------------------------
@@ -127,6 +172,13 @@ const taxSamplePaper1 = [
       D: "€210",
     },
     correctAnswer: "C",
+    explanation:
+      "Sales Proceeds: €2,750<br>" +
+      "Base Cost: €780 × 1.232 = (€961)<br>" +
+      "Net Gain: €1,789<br>" +
+      "CGT at 33%: €591<br><br>" +
+      "Or:<br>" +
+      "½ (€2,750 − €2,540) = €105",
   },
 
   // --- Q8 -------------------------------------------------------------------
@@ -144,6 +196,10 @@ const taxSamplePaper1 = [
       D: "A manufacturing trade that commenced in 2020",
     },
     correctAnswer: ["A", "B", "C"],
+    explanation:
+      "A trade that was previously carried on by another person<br>" +
+      "A trade that is an excepted trade<br>" +
+      "A trade that commenced in 2019 that carries out accountancy services",
   },
 
   // --- Q9 -------------------------------------------------------------------
@@ -158,20 +214,36 @@ const taxSamplePaper1 = [
       "Commercial unit 2 — Rental income: €33,300 (includes upfront premium of €22,500)\n" +
       "On 1 March 2025, Peter purchased commercial unit 2 for €690,000, part financed by means of a bank loan. The bank loan interest for the period 1 March 2025 to 31 December 2025 was €8,200. The bank interest accrued evenly over the period. Peter first let the unit on 1 November 2025 on a 13-year lease for €5,400 per month and an upfront premium of €22,500. In addition, on 1 March 2025, Peter paid insurance on the unit of €3,600 for 12 months.\n\n" +
       "Two residential apartments — Rental income: €45,000\n" +
-      "Expenses incurred:\n" +
-      "  Local property tax:          €585\n" +
-      "  Letting agents fees:         €2,500\n" +
-      "  Upgrading of windows:        €17,500\n" +
-      "  Grant received for windows:  (€7,000)\n\n" +
-      "Calculate the total net Case V income for Peter for 2025.",
+      "Local property tax: €585, Letting agents fees: €2,500, Upgrading of windows to triple glazing: €17,500, Grant received for upgrading windows: (€7,000)\n\n" +
+      "Calculate the net Case V income for Peter to be included in his income tax computation for 2025.",
     parts: [
+      { label: "Commercial unit 1 — Rental income (€)", answer: 39000, tolerance: 0 },
+      { label: "Commercial unit 1 — Total allowable deductions (€)", answer: -7450, tolerance: 0 },
       { label: "Commercial unit 1 — Net rental income (€)", answer: 31550, tolerance: 0 },
       { label: "Commercial unit 2 — Monthly rental income (€)", answer: 10800, tolerance: 0 },
-      { label: "Commercial unit 2 — Premium income (€)", answer: 17100, tolerance: 0 },
+      { label: "Commercial unit 2 — Premium (€)", answer: 17100, tolerance: 0 },
+      { label: "Commercial unit 2 — Interest deduction (€)", answer: -1640, tolerance: 0 },
+      { label: "Commercial unit 2 — Insurance deduction (€)", answer: -600, tolerance: 0 },
       { label: "Commercial unit 2 — Net rental income (€)", answer: 25660, tolerance: 0 },
       { label: "Two residential apartments — Net rental income (€)", answer: 42500, tolerance: 0 },
-      { label: "Total Net Case V Income (€)", answer: 99710, tolerance: 0 },
+      { label: "Total rental income (€)", answer: 99710, tolerance: 0 },
     ],
+    explanation:
+      "Commercial unit 1:<br>" +
+      "Rental income: €39,000<br>" +
+      "Total allowable deductions: (€7,000 × 75%) + €2,200 = (€7,450)<br>" +
+      "Net rental income from commercial unit 1: €31,550<br><br>" +
+      "Commercial unit 2:<br>" +
+      "Monthly rental income: €5,400 × 2 = €10,800<br>" +
+      "Premium: €22,500 × (51 − 13) / 50 = €17,100<br>" +
+      "Interest: €8,200 × 2/10 = (€1,640)<br>" +
+      "Insurance: €3,600 × 2/12 = (€600)<br>" +
+      "Net rental income from commercial unit 2: €25,660<br><br>" +
+      "Two residential apartments:<br>" +
+      "Rental income: €45,000<br>" +
+      "Allowable deductions: (€2,500)<br>" +
+      "Net rental income from two residential apartments: €42,500<br><br>" +
+      "Total rental income: €99,710",
   },
 
   // --- Q10 ------------------------------------------------------------------
@@ -192,6 +264,21 @@ const taxSamplePaper1 = [
       D: "2025 NIL, 2024 NIL, 2023 €31,350",
     },
     correctAnswer: "D",
+    explanation:
+      "2025:<br>" +
+      "Capital loss on sale of shares: (€150,000)<br>" +
+      "Capital gain on sale of building: €37,000<br>" +
+      "Net capital loss in 2025: (€113,000)<br><br>" +
+      "Summary:<br>" +
+      "Loss in 2025: (€113,000)<br>" +
+      "Used in 2024: €33,000<br>" +
+      "Used in 2023: €80,000<br>" +
+      "NIL<br><br>" +
+      "Total Gain in 2023:<br>" +
+      "Chargeable gain: €175,000<br>" +
+      "Loss carried back: (€80,000)<br>" +
+      "Net Gain: €95,000<br>" +
+      "CGT 33%: €31,350",
   },
 
   // --- Q11 ------------------------------------------------------------------
@@ -201,12 +288,16 @@ const taxSamplePaper1 = [
     marks: 2,
     questionText:
       "Sinead Buckley bought 15 acres of land on 5 August 1972 at €300 per acre. The market value of the land on 6 April 1974 was €600 per acre. The land has no development value.\n\n" +
-      "On 7 July 2025, Sinead sold four acres of the land as sites to several locals who wished to build residential properties on the sites. Sinead received €25,250 for each of the four sites while the market value of the remaining 11 acres at the date of sale were valued at €202,000 in total.\n\n" +
+      "On 7 July 2025, Sinead sold four acres of the land as sites to several locals. Sinead received €25,250 for each of the four sites while the market value of the remaining 11 acres at the date of sale were valued at €202,000 in total.\n\n" +
       "Sinead made no other disposals in 2025.\n\n" +
       "Calculate Sinead's total allowable cost (including indexation, if appropriate) in her CGT computation on the sale of land in 2025.\n\n" +
       "Note: The indexation factor for 1974/75 is 7.528.",
     correctAnswer: 22584,
-    tolerance: 0,
+    tolerance: 1,
+    explanation:
+      "€600 × 15 = €9,000<br>" +
+      "€9,000 × €101,000 / (€101,000 + €202,000) = €3,000<br>" +
+      "€3,000 × 7.528 = €22,584",
   },
 
   // --- Q12 ------------------------------------------------------------------
@@ -215,21 +306,41 @@ const taxSamplePaper1 = [
     type: "multi_numeric",
     marks: 9,
     questionText:
-      "Sean is married to Denise. Both are Irish resident and domiciled and are jointly assessed for tax purposes. The couple have 2 children, aged 4 and 6. Denise is in receipt of €12,000 in net rental income from a residential property in Clare in 2025. The property is rented out to a third party. Denise has registered the property with the RTB and holds a valid tax clearance cert.\n\n" +
-      "Sean is employed by Design X Limited (DESIGNX), an IT company. During 2025, Sean earned a salary of €98,000 from which PAYE of €24,600 was deducted. In addition to his salary, Sean received the following:\n\n" +
-      "i) A loan of €295,000 made by DESIGNX on 17 August 2016. The balance outstanding on 1 January 2025 was €65,000 and no repayments were made during 2025. This loan was used by Sean for the purchase of the couple's principal private residence in Kerry. The interest on this loan was at a fixed rate of 2.5% per annum.\n\n" +
-      "ii) A loan of €50,000 made by DESIGNX on 1 July 2025. This loan was used by Sean and Denise to carry out an extension on their holiday home in Clare. The interest on this loan was at a fixed rate of 5.5% per annum.\n\n" +
-      "iii) Sean secured a loan of €4,300 from DESIGNX on 1 September 2025 to join the local golf club. There was no interest charged on this loan.\n\n" +
-      "iv) Sean was provided with a company car on 1 January 2025. The car is Category B with an OMV of €48,000. Sean's total business kilometres to 31 December 2025 were 26,300. The company pays all costs associated with the car, but Sean contributes €65 per month to DESIGNX for the car.\n\n" +
-      "Note: Specified rates 2025 — qualifying home loans: 4% | all other loans: 13.5%.\n\n" +
+      "Sean is married to Denise. Both are Irish resident and domiciled and are jointly assessed for tax purposes. Denise is in receipt of €12,000 in net rental income from a residential property in Clare in 2025.\n\n" +
+      "Sean's details for 2025:\n" +
+      "  Salary from DESIGNX:             €98,000 (PAYE deducted: €24,600)\n\n" +
+      "Benefits in kind:\n" +
+      "i)   Preferential loan of €65,000 (balance at 1 Jan 2025) at 2.5% — used for principal private residence. Specified rate: 4%.\n" +
+      "ii)  Preferential loan of €50,000 from 1 July 2025 at 5.5% — used for extension on holiday home in Clare. Specified rate for non-PPR: 13.5%.\n" +
+      "iii) Loan of €4,300 from 1 September 2025 at 0% — used to join golf club. Specified rate: 13.5%.\n" +
+      "iv)  Company car (Category B, OMV €48,000) from 1 January 2025. Business km: 26,300. BIK rate: 21%. Sean contributes €65/month.\n\n" +
       "Calculate the balance of income tax payable/(repayable) by Sean and Denise for 2025.",
     parts: [
+      { label: "Schedule D — Rental income (€)", answer: 12000, tolerance: 0 },
+      { label: "Salary (€)", answer: 98000, tolerance: 0 },
       { label: "BIK — Loan for house in Kerry (€)", answer: 975, tolerance: 0 },
-      { label: "BIK — Loan for holiday home in Clare (€)", answer: 2000, tolerance: 0 },
+      { label: "BIK — Loan for house in Clare (€)", answer: 2000, tolerance: 0 },
       { label: "BIK — Loan for golf membership (€)", answer: 194, tolerance: 1 },
-      { label: "BIK — Car (net of employee contribution) (€)", answer: 7200, tolerance: 0 },
-      { label: "Income Tax Payable/(Repayable) (€)", answer: 4547, tolerance: 0 },
+      { label: "BIK — Car (€)", answer: 7200, tolerance: 0 },
+      { label: "Taxable income (€)", answer: 120369, tolerance: 1 },
+      { label: "Income tax at standard rate (€)", answer: 13000, tolerance: 0 },
+      { label: "Income tax at higher rate (€)", answer: 22147, tolerance: 1 },
+      { label: "Non-refundable tax credits (€)", answer: -6000, tolerance: 0 },
+      { label: "Refundable tax credits / PAYE paid (€)", answer: -24600, tolerance: 0 },
+      { label: "Income tax payable/(refundable) (€)", answer: 4547, tolerance: 1 },
     ],
+    explanation:
+      "Schedule D – Rental income: €12,000<br><br>" +
+      "BIK – Loan for house in Kerry: €65,000 × (4% − 2.5%) = €975<br>" +
+      "BIK – Loan for house in Clare: €50,000 × (13.5% − 5.5%) × 6/12 = €2,000<br>" +
+      "BIK – Loan for golf membership: €4,300 × 13.5% × 4/12 = €194<br>" +
+      "BIK – Car: (€48,000 − €10,000) × 21% = €7,980; Less: €65 × 12 = (€780); Car BIK = €7,200<br><br>" +
+      "Taxable income: €120,369<br><br>" +
+      "Income tax (standard rate): €65,000 × 20% = €13,000<br>" +
+      "Income tax (higher rate): €55,369 × 40% = €22,147<br><br>" +
+      "Non-refundable tax credits: Personal €4,000 + PAYE €2,000 = (€6,000)<br>" +
+      "Refundable tax credits (PAYE paid): (€24,600)<br><br>" +
+      "Income tax payable: €4,547",
   },
 
   // --- Q13 ------------------------------------------------------------------
@@ -240,12 +351,14 @@ const taxSamplePaper1 = [
     questionText:
       "Derek is in the business of bathroom renovations. Derek is registered for VAT in Ireland. He has quoted a customer €6,000 (exclusive of VAT) to renovate their ensuite bathroom.\n\n" +
       "This amount is made up as follows:\n" +
-      "  Materials at 23% (VAT exclusive):    €3,500\n" +
+      "  Materials at 23% (VAT exclusive):   €3,500\n" +
       "  Labour, overheads and profit:        €2,500\n" +
-      "  Total:                               €6,000\n\n" +
+      "  Total:                              €6,000\n\n" +
       "Calculate the VAT Derek should charge for the renovation of the bathroom.",
     correctAnswer: 810,
     tolerance: 0,
+    explanation:
+      "The cost of the materials, €3,500 (ex-VAT) is 58% which is less than two thirds of the full price (VAT exclusive). Therefore, VAT chargeable is €810 (€6,000 × 13.5%).",
   },
 
   // --- Q14 ------------------------------------------------------------------
@@ -255,37 +368,36 @@ const taxSamplePaper1 = [
     marks: 6,
     questionText:
       "You have been provided with the Statement of Profit and Loss for Jules Limited (JULES) for the year ended 31 December 2025. JULES is a company operating in the retail sector.\n\n" +
-      "Gross profit:                €702,000\n\n" +
-      "Expenses:\n" +
-      "  Administration wages and salaries (Note 1):   €243,000\n" +
-      "  Directors' emoluments:                        €157,000\n" +
-      "  Pension contributions (Note 2):               €49,850\n" +
-      "  Premises expenses (Note 3):                   €17,000\n" +
-      "  Travel and subsistence:                       €51,000\n" +
-      "  Repairs (Note 4):                             €35,000\n" +
-      "  Professional fees (Note 5):                   €23,157\n" +
-      "  General expenses (Note 6):                    €17,000\n" +
-      "  Depreciation:                                 €18,000\n" +
-      "  Total expenses:                               (€611,007)\n\n" +
-      "Profit before tax:           €90,993\n\n" +
-      "Notes:\n\n" +
-      "1. Included in administration wages and salaries: Leaving lunch for 3 colleagues €800 | Christmas party with staff and clients €4,500.\n\n" +
-      "2. Pension contributions: Payments made during the year €39,850 | Accrued at 31 December 2025 €10,000.\n\n" +
-      "3. Premises expenses include €5,000 for architects' fees for advice on the proposed extension of an existing premises.\n\n" +
-      "4. JULES has made a provision of €15,000 in repairs for a warehouse heating upgrade. Work has not yet commenced and no formal quotes have been received.\n\n" +
-      "5. Professional fees include a €12,500 legal fee regarding a product liability claim and €1,000 in fines for breach of data protection laws.\n\n" +
-      "6. General expenses include: Interest on late payment of PAYE €650 | Subscriptions to trade magazines €1,000 | Staff training €1,300 | Donation to eligible charity €500.\n\n" +
-      "Calculate the Adjusted Case I Profits for JULES for the year ended 31 December 2025.",
+      "Profit before tax: €90,993\n\n" +
+      "Notes:\n" +
+      "1) Administration wages and salaries include: Leaving lunch for 3 colleagues (€800); Christmas party with staff and clients (€4,500).\n" +
+      "2) Pension contributions: Paid during year €39,850; Accrued at 31 Dec 2025 €10,000. Total €49,850.\n" +
+      "3) Premises expenses include €5,000 architects' fees for advice on a proposed extension.\n" +
+      "4) Repairs include a provision of €15,000 for a warehouse heating upgrade — work not yet commenced, no formal quotes received.\n" +
+      "5) Professional fees include €12,500 legal fee re product liability claim and €1,000 fines for breach of data protection laws.\n" +
+      "6) General expenses include: Interest on late PAYE €650; Subscriptions to trade magazines €1,000; Staff training €1,300; Donation to eligible charity €500.\n\n" +
+      "Calculate the Case I adjusted profits for JULES for the year ended 31 December 2025.",
     parts: [
-      { label: "Add back: Administration wages and salaries (€)", answer: 4500, tolerance: 0 },
-      { label: "Add back: Pension contributions (€)", answer: 10000, tolerance: 0 },
-      { label: "Add back: Premises expenses (€)", answer: 5000, tolerance: 0 },
-      { label: "Add back: Repairs (€)", answer: 15000, tolerance: 0 },
-      { label: "Add back: Professional fees (€)", answer: 13500, tolerance: 0 },
-      { label: "Add back: General expenses (€)", answer: 650, tolerance: 0 },
-      { label: "Add back: Depreciation (€)", answer: 18000, tolerance: 0 },
-      { label: "Adjusted Case I Profits (€)", answer: 157643, tolerance: 0 },
+      { label: "Profit before tax (€)", answer: 90993, tolerance: 0 },
+      { label: "Add back — Administration wages and salaries (€)", answer: 4500, tolerance: 0 },
+      { label: "Add back — Pension contributions (€)", answer: 10000, tolerance: 0 },
+      { label: "Add back — Premises expenses (€)", answer: 5000, tolerance: 0 },
+      { label: "Add back — Repairs provision (€)", answer: 15000, tolerance: 0 },
+      { label: "Add back — Professional fees (€)", answer: 13500, tolerance: 0 },
+      { label: "Add back — General expenses (€)", answer: 650, tolerance: 0 },
+      { label: "Add back — Depreciation (€)", answer: 18000, tolerance: 0 },
+      { label: "Adjusted Case I profits (€)", answer: 157643, tolerance: 0 },
     ],
+    explanation:
+      "Add back — Administration wages and salaries: €4,500 (Christmas party with staff and clients)<br>" +
+      "Add back — Pension contributions: €10,000 (accrual not yet paid)<br>" +
+      "Add back — Premises expenses: €5,000 (architects' fees — capital in nature)<br>" +
+      "Add back — Repairs: €15,000 (provision — no formal quotes received)<br>" +
+      "Add back — Professional fees: €12,500 + €1,000 = €13,500 (product liability legal fee + fines)<br>" +
+      "Add back — General expenses: €650 (interest on late payment of PAYE)<br>" +
+      "Add back — Depreciation: €18,000<br><br>" +
+      "Total addbacks: €66,650<br>" +
+      "Adjusted Case I profits: €157,643",
   },
 
   // --- Q15 ------------------------------------------------------------------
@@ -294,8 +406,8 @@ const taxSamplePaper1 = [
     type: "multi",
     marks: 2,
     questionText:
-      "Taxable persons are obliged to register for VAT if the VAT thresholds are exceeded or are likely to be exceeded in a 12-month period.\n\n" +
-      "Identify which of the following statements are correct with respect to VAT thresholds.\n\nSelect ALL that apply.",
+      "\"Taxable persons\" are obliged to register for VAT if the VAT thresholds are exceeded or are likely to be exceeded in a 12-month period.\n\n" +
+      "Identify which of the following statements are correct with respect to VAT thresholds.\n\nSelect the correct answer(s).",
     options: {
       A: "The VAT threshold for persons supplying a service is €40,000",
       B: "The VAT threshold for persons supplying goods, including persons supplying both goods and services, where 90% or more of sales is derived from supplies of goods is €85,000",
@@ -303,6 +415,9 @@ const taxSamplePaper1 = [
       D: "The VAT threshold for persons making mail order or distance sales into the State is €12,000",
     },
     correctAnswer: ["B", "C"],
+    explanation:
+      "The VAT threshold for persons supplying goods, including persons supplying both goods and services, where 90% or more of sales is derived from supplies of goods is €85,000.<br><br>" +
+      "The VAT threshold for persons supplying goods liable at the 13.5% or 23% rates which they have manufactured or produced from zero-rated materials is €42,500.",
   },
 
   // --- Q16 ------------------------------------------------------------------
@@ -318,12 +433,14 @@ const taxSamplePaper1 = [
       "iv) For taxation purposes a partnership continues no matter how many partners are admitted or leave, provided there are always at least three partners, one of whom was a partner immediately prior to the admission of a new partner.\n\n" +
       "Identify which of the statements is correct.",
     options: {
-      A: "i only",
-      B: "i, ii & iv",
-      C: "i, iii & iv",
-      D: "i & iii",
+      A: "I only",
+      B: "I, ii & iv",
+      C: "I, iii & iv",
+      D: "I & iii",
     },
     correctAnswer: "D",
+    explanation:
+      "i & iii",
   },
 
   // --- Q17 ------------------------------------------------------------------
@@ -348,6 +465,15 @@ const taxSamplePaper1 = [
       { label: "CT at 25% (€)", answer: 11750, tolerance: 0 },
       { label: "Total Corporation Tax Liability (€)", answer: 70100, tolerance: 0 },
     ],
+    explanation:
+      "Case I: €150,000<br>" +
+      "Case III: €20,000 + €3,000 = €23,000<br>" +
+      "Case IV: NIL<br>" +
+      "Case V: €24,000<br>" +
+      "Chargeable gain: €120,000 × 33% / 12.5% = €316,800<br><br>" +
+      "Corporation tax at 12.5%: (€150,000 + €316,800) × 12.5% = €58,350<br>" +
+      "Corporation tax at 25%: (€23,000 + €24,000) × 25% = €11,750<br>" +
+      "Corporation tax liability: €70,100",
   },
 
   // --- Q18 ------------------------------------------------------------------
@@ -364,6 +490,9 @@ const taxSamplePaper1 = [
       D: "The liability date for 2025 is 15 December 2024",
     },
     correctAnswer: ["A", "B"],
+    explanation:
+      "Properties liable to LPT include sheds, outhouses and garages.<br>" +
+      "A property that is not occupied, but is suitable for use as a dwelling, is still a liable property for LPT.",
   },
 
   // --- Q19 ------------------------------------------------------------------
@@ -374,10 +503,10 @@ const taxSamplePaper1 = [
     questionText:
       "Disc Goods Limited (DISC) is an Irish resident company, engaged in the wholesale distribution of electrical goods to retailers throughout Ireland. It prepares financial statements to 31 December annually.\n\n" +
       "The results of DISC for the years ended 31 December 2024 and 2025 are as follows:\n\n" +
-      "                  2024         2025\n" +
-      "Case I:           (€52,000)    €85,000\n" +
-      "Case III:         —            €2,000\n" +
-      "Case V:           (€5,000)     (€9,000)\n\n" +
+      "            2024      2025\n" +
+      "Case I:    (€52,000)  €85,000\n" +
+      "Case III:  —          €2,000\n" +
+      "Case V:    (€5,000)   (€9,000)\n\n" +
       "Calculate the minimum amount of corporation tax payable by DISC for the year ended 31 December 2025.",
     options: {
       A: "€4,625",
@@ -386,6 +515,16 @@ const taxSamplePaper1 = [
       D: "€3,250",
     },
     correctAnswer: "A",
+    explanation:
+      "Case I: €85,000<br>" +
+      "S396(1): (€52,000)<br>" +
+      "Net Case I: €33,000<br>" +
+      "Case III: €2,000<br>" +
+      "Case V: NIL<br>" +
+      "Total profits: €35,000<br><br>" +
+      "CT at 12.5%: €33,000 × 12.5% = €4,125<br>" +
+      "CT at 25%: €2,000 × 25% = €500<br>" +
+      "Total CT for 2025: €4,625",
   },
 
   // --- Q20 ------------------------------------------------------------------
@@ -403,6 +542,10 @@ const taxSamplePaper1 = [
       D: "If the accounting period in which the loss is incurred is shorter than the accounting period to which the loss is to be offset, then only a proportion of the relevant trading income will be available for offset (in the case where the loss is carried back)",
     },
     correctAnswer: ["A", "C", "D"],
+    explanation:
+      "A section 396A claim must be made before a claim under section 396B.<br>" +
+      "There is no time limit for claiming section 396(1) loss relief as the loss can be carried forward indefinitely.<br>" +
+      "If the accounting period in which the loss is incurred is shorter than the accounting period to which the loss is to be offset, then only a proportion of the relevant trading income will be available for offset (in the case where the loss is carried back).",
   },
 
   // --- Q21 ------------------------------------------------------------------
@@ -418,6 +561,11 @@ const taxSamplePaper1 = [
       "Calculate Florence's assessable Case II income for the tax year 2025.",
     correctAnswer: 154000,
     tolerance: 0,
+    explanation:
+      "Year of assessment 2025:<br>" +
+      "€147,000 × 4/12 = €49,000<br>" +
+      "€105,000 for 8 months = €105,000<br>" +
+      "Total: €154,000",
   },
 
   // --- Q22 ------------------------------------------------------------------
@@ -438,6 +586,13 @@ const taxSamplePaper1 = [
       D: "Florence has additional assessable income in 2024 of €98,000 due to the change in accounting dates in 2025",
     },
     correctAnswer: "B",
+    explanation:
+      "12-month accounting period to 30 April 2024: €139,000<br><br>" +
+      "Revise the new accounting period to 01/01/2024 – 31/12/2024:<br>" +
+      "€139,000 × 4/12 = €46,333<br>" +
+      "€147,000 × 8/12 = €98,000<br>" +
+      "Revised 2024 assessment: €144,333<br><br>" +
+      "Additional assessable income 2024: €144,333 − €139,000 = €5,333",
   },
 
   // --- Q23 ------------------------------------------------------------------
@@ -455,6 +610,8 @@ const taxSamplePaper1 = [
       D: "31 October 2026",
     },
     correctAnswer: "D",
+    explanation:
+      "31 October 2026",
   },
 
   // --- Q24 ------------------------------------------------------------------
@@ -471,6 +628,9 @@ const taxSamplePaper1 = [
       D: "USC is calculated after considering relief for pension contributions",
     },
     correctAnswer: ["B", "C"],
+    explanation:
+      "Income subject to DIRT is exempt from USC.<br>" +
+      "All Department of Social Protection payments, including social welfare payments received from abroad are exempt for USC.",
   },
 
   // --- Q25 ------------------------------------------------------------------
@@ -488,6 +648,8 @@ const taxSamplePaper1 = [
       D: "23 August 2025",
     },
     correctAnswer: "D",
+    explanation:
+      "23 August 2025",
   },
 
   // --- Q26 ------------------------------------------------------------------
@@ -497,7 +659,7 @@ const taxSamplePaper1 = [
     marks: 2,
     questionText:
       "A CGT exemption exists, under section 603A TCA 1997, where a parent disposes of a site to their child.\n\n" +
-      "Identify which of the following statements are correct in relation to the CGT exemption on the disposal of a site to a child.\n\nSelect ALL that apply.",
+      "Identify which of the following statement(s) are correct in relation to the CGT exemption on the disposal of a site to a child.\n\nSelect ALL that apply.",
     options: {
       A: "A disposal of a site by a parent to child is exempt from CGT provided the market value of the site at the date of the disposal does not exceed €600,000. This is in addition to other conditions that must also be satisfied.",
       B: "To qualify for the exemption, the site area is limited to two acres (excluding the area of the house to be built).",
@@ -505,6 +667,8 @@ const taxSamplePaper1 = [
       D: "None of the above are correct.",
     },
     correctAnswer: ["D"],
+    explanation:
+      "None of the above are correct.",
   },
 
   // --- Q27 ------------------------------------------------------------------
@@ -521,6 +685,10 @@ const taxSamplePaper1 = [
       D: "The tax written down value (TWDV) of an asset is the cost price (as allowable for tax purposes) less any capital allowance already claimed in previous years",
     },
     correctAnswer: ["A", "C", "D"],
+    explanation:
+      "The qualifying asset must be owned by the taxpayer at the year end to claim capital allowances.<br>" +
+      "In the year of acquisition, a full year's wear and tear allowance is granted, provided the basis period is at least 12 months long.<br>" +
+      "The tax written down value of an asset is the cost price (as allowable for tax purposes) less any capital allowance already claimed in previous years.",
   },
 
   // --- Q28 ------------------------------------------------------------------
@@ -539,6 +707,14 @@ const taxSamplePaper1 = [
       "Calculate the total allowable cost for capital allowances for Gemma for 2025.",
     correctAnswer: 14500,
     tolerance: 0,
+    explanation:
+      "Preparation of site for construction: NIL<br>" +
+      "Building structure: NIL<br>" +
+      "Electrical systems: NIL<br>" +
+      "Bagging machine: €3,000<br>" +
+      "Vacuum sealer machine: €2,000<br>" +
+      "Fixtures & fittings: €9,500<br>" +
+      "Total allowable costs: €14,500",
   },
 
   // --- Q29 ------------------------------------------------------------------
@@ -555,6 +731,8 @@ const taxSamplePaper1 = [
       D: "Underpaying the taxes that fall due when the law clearly states that they must be paid",
     },
     correctAnswer: "B",
+    explanation:
+      "The use of loopholes within tax legislation to reduce the taxpayer's tax liability.",
   },
 
   // --- Q30 ------------------------------------------------------------------
@@ -570,6 +748,14 @@ const taxSamplePaper1 = [
       "Calculate Morris's total chargeable gain for 2025.",
     correctAnswer: 20000,
     tolerance: 0,
+    explanation:
+      "Note 1: Chargeable gain/loss on lotto: NIL<br>" +
+      "Note 2: Chargeable gain/loss on rare piece of jewellery: NIL<br>" +
+      "Note 3: Chargeable gain/loss on property:<br>" +
+      "Sales proceeds: €290,000<br>" +
+      "Base cost: (€270,000)<br>" +
+      "Gain: €20,000<br><br>" +
+      "Total gain: €20,000",
   },
 
   // --- Q31 ------------------------------------------------------------------
@@ -587,6 +773,8 @@ const taxSamplePaper1 = [
       D: "31 January 2026",
     },
     correctAnswer: "C",
+    explanation:
+      "15 December 2025",
   },
 
   // --- Q32 ------------------------------------------------------------------
@@ -604,6 +792,8 @@ const taxSamplePaper1 = [
       D: "31 October 2026",
     },
     correctAnswer: "D",
+    explanation:
+      "31 October 2026",
   },
 
   // --- Q33 ------------------------------------------------------------------
@@ -625,6 +815,8 @@ const taxSamplePaper1 = [
       D: "ii only",
     },
     correctAnswer: "B",
+    explanation:
+      "i only",
   },
 
   // --- Q34 ------------------------------------------------------------------
@@ -642,6 +834,8 @@ const taxSamplePaper1 = [
       E: "Accountancy and Tax Services",
     },
     correctAnswer: ["B"],
+    explanation:
+      "Books",
   },
 
   // --- Q35 ------------------------------------------------------------------
@@ -660,6 +854,13 @@ const taxSamplePaper1 = [
       { label: "Enhancement cost (€)", answer: 50000, tolerance: 0 },
       { label: "Chargeable gain (€)", answer: 99964, tolerance: 1 },
     ],
+    explanation:
+      "Net sales proceeds: €430,000 − €20,000 = €410,000<br><br>" +
+      "Less cost:<br>" +
+      "Current use value of land: €52,000 × 1.193 = (€62,036)<br>" +
+      "Hope value of land: (€198,000)<br>" +
+      "Enhancement cost: (€50,000)<br><br>" +
+      "Chargeable gain: €99,964",
   },
 
   // --- Q36 ------------------------------------------------------------------
@@ -679,6 +880,9 @@ const taxSamplePaper1 = [
       E: "First instalment due 23 November 2025 & second instalment due 23 April 2026",
     },
     correctAnswer: "D",
+    explanation:
+      "First instalment due 23 April 2025 & second instalment due 23 September 2025.<br>" +
+      "Note: TULIP is a large company.",
   },
 
   // --- Q37 ------------------------------------------------------------------
@@ -697,6 +901,13 @@ const taxSamplePaper1 = [
       "Calculate the income tax credit Julie can claim for her medical expenses in 2025.",
     correctAnswer: 740,
     tolerance: 0,
+    explanation:
+      "Doctors and consultants: €700<br>" +
+      "Prescriptions: €280<br>" +
+      "Hearing aids: €3,120<br>" +
+      "Less refund: (€400)<br>" +
+      "Qualifying expenses: €3,700<br><br>" +
+      "Credit at 20%: €740",
   },
 
   // --- Q38 ------------------------------------------------------------------
@@ -713,6 +924,20 @@ const taxSamplePaper1 = [
       { label: "Total Taxable Income (€)", answer: 89000, tolerance: 0 },
       { label: "Total Income Tax Liability (after credits) (€)", answer: 20100, tolerance: 0 },
     ],
+    explanation:
+      "Total income: €90,000 + €26,000 = €116,000<br>" +
+      "Less reliefs and charges: €90,000 × 30% = (€27,000)<br>" +
+      "Total taxable income: €89,000<br><br>" +
+      "Tax payable (before tax credits):<br>" +
+      "€48,000 × 20% = €9,600<br>" +
+      "€41,000 × 40% = €16,400<br>" +
+      "= €26,000<br><br>" +
+      "Non-refundable tax credits:<br>" +
+      "Single credit: (€2,000)<br>" +
+      "Single person child credit: (€1,900)<br>" +
+      "Earned income credit: (€2,000)<br>" +
+      "= (€5,900)<br><br>" +
+      "Total tax liability: €20,100",
   },
 
   // --- Q39 ------------------------------------------------------------------
@@ -730,6 +955,13 @@ const taxSamplePaper1 = [
       { label: "PPR relief (€)", answer: 134506, tolerance: 1 },
       { label: "Net chargeable gain (€)", answer: 33626, tolerance: 1 },
     ],
+    explanation:
+      "Net sales proceeds: €356,000 − €5,400 = €350,600<br><br>" +
+      "Less cost:<br>" +
+      "Total purchase cost (indexed): (€155,000 + €4,500) × 1.144 = (€182,468)<br>" +
+      "Chargeable gain: €168,132<br><br>" +
+      "Principal private residence relief: €168,132 × 80% = (€134,506)<br><br>" +
+      "Net chargeable gain: €33,626",
   },
 
   // --- Q40 ------------------------------------------------------------------
@@ -747,5 +979,12 @@ const taxSamplePaper1 = [
       D: "Relief for trading losses carried forward can be offset against employment income only of the taxpayer.",
     },
     correctAnswer: "B",
+    explanation:
+      "Relief for trading losses carried forward must be used against the first available profits of the same trade.",
   },
+
 ];
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { taxSamplePaper1 };
+}
