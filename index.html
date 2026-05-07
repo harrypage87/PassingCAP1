@@ -832,6 +832,7 @@
 <!-- Question bank scripts -->
 <script src="law_question_bank.js"></script>
 <script src="finance_mock_2026.js"></script>
+<script src="finance_sample_paper_1.js"></script>
 <script src="tax_mock_2026.js"></script>
 <script src="tax_sample_paper_1.js"></script>
 <script src="tax_sample_paper_2.js"></script>
@@ -850,7 +851,8 @@ const allTopicData = {
         ...(typeof taxSamplePaper3 !== 'undefined' ? taxSamplePaper3 : []),
     ],
     finance: [
-        ...(typeof financeMock2026 !== 'undefined' ? financeMock2026 : []),
+        ...(typeof financeMock2026     !== 'undefined' ? financeMock2026     : []),
+        ...(typeof financeSamplePaper1 !== 'undefined' ? financeSamplePaper1 : []),
     ],
     facctg: [],
 };
@@ -863,7 +865,8 @@ const taxPastPapers = [
 ];
 
 const financePastPapers = [
-    { id:'finmock2026', label:'Mock Paper 2026', meta:'44 questions · 2.5 hrs', section:'Finance Mock 2026' },
+    { id:'finmock2026',   label:'Mock Paper 2026',  meta:'44 questions · 2.5 hrs', section:'Finance Mock 2026'      },
+    { id:'finsample1',    label:'Sample Paper 1',   meta:'44 questions · 2.5 hrs', section:'Finance Sample Paper 1' },
 ];
 
 const MOCK_EXAM_QUESTION_COUNT = 40;
