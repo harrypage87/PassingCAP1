@@ -346,11 +346,10 @@
                 <p>Practise full past papers and mock papers with worked solutions.</p>
                 <div class="topic-count" style="color:var(--finance-purple); margin-top:10px;" id="finance-papers-count"></div>
             </div>
-            <div class="finance-menu-card disabled">
+            <div class="finance-menu-card" onclick="startFinanceMock()">
                 <div class="card-icon">⏱️</div>
                 <h3>Mock Exam</h3>
-                <p>40 random questions, 90 minutes. Simulates real exam conditions.</p>
-                <div class="coming-badge">Coming Soon</div>
+                <p>44 questions, timed. Simulates real exam conditions.</p>
             </div>
             <div class="finance-menu-card" onclick="openFinanceRefMat()">
                 <div class="card-icon">📐</div>
@@ -1019,6 +1018,15 @@ function startTaxMock() {
     returnMenuFn = showTaxMenu;
     currentMode = 'mock';
     const shuffled = [...allTopicData.tax]
+        .filter(q => !q.practiceOnly)
+        .sort(() => 0.5 - Math.random());
+    startQuiz(shuffled.slice(0, Math.min(MOCK_EXAM_QUESTION_COUNT, shuffled.length)), true);
+}
+
+function startFinanceMock() {
+    returnMenuFn = showFinanceMenu;
+    currentMode = 'mock';
+    const shuffled = [...allTopicData.finance]
         .filter(q => !q.practiceOnly)
         .sort(() => 0.5 - Math.random());
     startQuiz(shuffled.slice(0, Math.min(MOCK_EXAM_QUESTION_COUNT, shuffled.length)), true);
