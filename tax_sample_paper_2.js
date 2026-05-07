@@ -13,9 +13,9 @@ const taxSamplePaper2 = [
       "Helen is single and has one child, Tom who is aged five.\n\n" +
       "Calculate Helen's Income Tax liability for the tax year 2025.",
     parts: [
-      { label: "BIK: Apartment (€)", correctAnswer: 14500, tolerance: 0 },
-      { label: "BIK: Car (€)", correctAnswer: 2400, tolerance: 0 },
-      { label: "Net Income Tax Payable (€)", correctAnswer: 2900, tolerance: 0 },
+      { label: "BIK: Apartment (€)", answer: 14500, tolerance: 0 },
+      { label: "BIK: Car (€)", answer: 2400, tolerance: 0 },
+      { label: "Net Income Tax Payable (€)", answer: 2900, tolerance: 0 },
     ],
   },
 
@@ -76,14 +76,14 @@ const taxSamplePaper2 = [
       "Complete the table to calculate the VAT liability for HENNESSEY in respect of the May/June 2025 period.\n\n" +
       "Note: Input VAT should be entered as positive values here.",
     parts: [
-      { label: "T1 — VAT on Sales: VAT registered Irish customers (€)", correctAnswer: 71300, tolerance: 0 },
-      { label: "T1 — VAT on Sales: Private Irish customers (€)", correctAnswer: 11960, tolerance: 0 },
-      { label: "T2 — Input VAT: Inventory from Irish supplier (€)", correctAnswer: 32200, tolerance: 0 },
-      { label: "T2 — Input VAT: Diesel for van fleet (€)", correctAnswer: 180, tolerance: 1 },
-      { label: "T2 — Input VAT: Light and heat (€)", correctAnswer: 23, tolerance: 1 },
-      { label: "T2 — Input VAT: Accountancy fees (€)", correctAnswer: 212, tolerance: 1 },
-      { label: "T2 — Input VAT: Company car – Category A (€)", correctAnswer: 690, tolerance: 1 },
-      { label: "Total VAT Payable (€)", correctAnswer: 49955, tolerance: 1 },
+      { label: "T1 — VAT on Sales: VAT registered Irish customers (€)", answer: 71300, tolerance: 0 },
+      { label: "T1 — VAT on Sales: Private Irish customers (€)", answer: 11960, tolerance: 0 },
+      { label: "T2 — Input VAT: Inventory from Irish supplier (€)", answer: 32200, tolerance: 0 },
+      { label: "T2 — Input VAT: Diesel for van fleet (€)", answer: 180, tolerance: 1 },
+      { label: "T2 — Input VAT: Light and heat (€)", answer: 23, tolerance: 1 },
+      { label: "T2 — Input VAT: Accountancy fees (€)", answer: 212, tolerance: 1 },
+      { label: "T2 — Input VAT: Company car – Category A (€)", answer: 690, tolerance: 1 },
+      { label: "Total VAT Payable (€)", answer: 49955, tolerance: 1 },
     ],
   },
 
@@ -218,14 +218,14 @@ const taxSamplePaper2 = [
       "7. Miscellaneous: Donation to local charity €110 | Sponsorship €235 | Sundries (all tax allowable) €80.\n\n" +
       "Complete the table to calculate FLOWER HQ's adjusted Case I profits for the year ended 31 October 2025.",
     parts: [
-      { label: "Add back: Bad debts (€)", correctAnswer: 12500, tolerance: 0 },
-      { label: "Add back: Travel and entertainment (€)", correctAnswer: 1670, tolerance: 0 },
-      { label: "Add back: Salaries (€)", correctAnswer: 5000, tolerance: 0 },
-      { label: "Add back: Finance charges (€)", correctAnswer: 269, tolerance: 1 },
-      { label: "Add back: Repairs (€)", correctAnswer: 400, tolerance: 0 },
-      { label: "Add back: Legal fees (€)", correctAnswer: 930, tolerance: 0 },
-      { label: "Add back: Miscellaneous (€)", correctAnswer: 110, tolerance: 0 },
-      { label: "Adjusted Case I Profits (€)", correctAnswer: 288958, tolerance: 0 },
+      { label: "Add back: Bad debts (€)", answer: 12500, tolerance: 0 },
+      { label: "Add back: Travel and entertainment (€)", answer: 1670, tolerance: 0 },
+      { label: "Add back: Salaries (€)", answer: 5000, tolerance: 0 },
+      { label: "Add back: Finance charges (€)", answer: 269, tolerance: 1 },
+      { label: "Add back: Repairs (€)", answer: 400, tolerance: 0 },
+      { label: "Add back: Legal fees (€)", answer: 930, tolerance: 0 },
+      { label: "Add back: Miscellaneous (€)", answer: 110, tolerance: 0 },
+      { label: "Adjusted Case I Profits (€)", answer: 288958, tolerance: 0 },
     ],
   },
 
@@ -360,14 +360,14 @@ const taxSamplePaper2 = [
       "Case V capital allowances:—                      (€5,000)               (€5,000)\n\n" +
       "Calculate the total taxable income subject to corporation tax for MOBY for the period ended 31 December 2025.",
     parts: [
-      { label: "Case I Income (€)", correctAnswer: 12000, tolerance: 0 },
-      { label: "Case I Loss Relief (€)", correctAnswer: 10000, tolerance: 0 },
-      { label: "Net Case I Income (€)", correctAnswer: 2000, tolerance: 0 },
-      { label: "Case V Income (€)", correctAnswer: 30000, tolerance: 0 },
-      { label: "Case V Capital Allowances (€)", correctAnswer: 5000, tolerance: 0 },
-      { label: "Case V Loss Relief (€)", correctAnswer: 20000, tolerance: 0 },
-      { label: "Net Case V Income (€)", correctAnswer: 5000, tolerance: 0 },
-      { label: "Total Taxable Income (€)", correctAnswer: 7000, tolerance: 0 },
+      { label: "Case I Income (€)", answer: 12000, tolerance: 0 },
+      { label: "Case I Loss Relief (€)", answer: 10000, tolerance: 0 },
+      { label: "Net Case I Income (€)", answer: 2000, tolerance: 0 },
+      { label: "Case V Income (€)", answer: 30000, tolerance: 0 },
+      { label: "Case V Capital Allowances (€)", answer: 5000, tolerance: 0 },
+      { label: "Case V Loss Relief (€)", answer: 20000, tolerance: 0 },
+      { label: "Net Case V Income (€)", answer: 5000, tolerance: 0 },
+      { label: "Total Taxable Income (€)", answer: 7000, tolerance: 0 },
     ],
   },
 
@@ -400,8 +400,8 @@ const taxSamplePaper2 = [
       "  Nine months to 31/05/2025:   Profit €45,000\n\n" +
       "Calculate Dermot's taxable profits for 2024 and 2025.",
     parts: [
-      { label: "Taxable Profits for 2024 (€)", correctAnswer: 52000, tolerance: 0 },
-      { label: "Taxable Profits for 2025 (€)", correctAnswer: 25000, tolerance: 0 },
+      { label: "Taxable Profits for 2024 (€)", answer: 52000, tolerance: 0 },
+      { label: "Taxable Profits for 2025 (€)", answer: 25000, tolerance: 0 },
     ],
   },
 
@@ -518,13 +518,13 @@ const taxSamplePaper2 = [
       "  Irish Dividends – Bairbre (net):                   €4,800\n\n" +
       "Calculate Bairbre and Kenneth's liability to income tax (before PRSI and USC) for the year ended 31 December 2025.",
     parts: [
-      { label: "Schedule D Case II (€)", correctAnswer: 53000, tolerance: 0 },
-      { label: "Schedule D Case IV — deposit interest gross (€)", correctAnswer: 137, tolerance: 1 },
-      { label: "Schedule D Case V (€)", correctAnswer: 7388, tolerance: 0 },
-      { label: "Schedule E (€)", correctAnswer: 38000, tolerance: 0 },
-      { label: "Schedule F — dividends gross (€)", correctAnswer: 6400, tolerance: 0 },
-      { label: "Total Taxable Income (after pension deduction) (€)", correctAnswer: 99925, tolerance: 0 },
-      { label: "Income Tax Payable (€)", correctAnswer: 9115, tolerance: 0 },
+      { label: "Schedule D Case II (€)", answer: 53000, tolerance: 0 },
+      { label: "Schedule D Case IV — deposit interest gross (€)", answer: 137, tolerance: 1 },
+      { label: "Schedule D Case V (€)", answer: 7388, tolerance: 0 },
+      { label: "Schedule E (€)", answer: 38000, tolerance: 0 },
+      { label: "Schedule F — dividends gross (€)", answer: 6400, tolerance: 0 },
+      { label: "Total Taxable Income (after pension deduction) (€)", answer: 99925, tolerance: 0 },
+      { label: "Income Tax Payable (€)", answer: 9115, tolerance: 0 },
     ],
   },
 
