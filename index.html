@@ -838,7 +838,8 @@
 <script src="tax_mock_2026.js"></script>
 <script src="tax_sample_paper_1.js"></script>
 <script src="tax_sample_paper_2.js"></script>
-<script src="tax_sample_paper_3.js"></script>
+<script src="tax_sample_paper_3.js"></script
+<script src="facctg_mock_2026.js"></script>
 
 <script>
 // ═══════════════════════════════════════════════════════
@@ -858,7 +859,9 @@ const allTopicData = {
         ...(typeof financeSamplePaper2 !== 'undefined' ? financeSamplePaper2 : []),
         ...(typeof financeSamplePaper3 !== 'undefined' ? financeSamplePaper3 : []),
     ],
-    facctg: [],
+    facctg: [
+        ...(typeof facctgMock2026 !== 'undefined' ? facctgMock2026 : []),
+    ],
 };
 
 const taxPastPapers = [
@@ -875,6 +878,9 @@ const financePastPapers = [
     { id:'finsample3',    label:'Sample Paper 3',   meta:'44 questions · 2.5 hrs', section:'Finance Sample Paper 3' },
 ];
 
+const facctgPastPapers = [
+    { id:'facctgmock2026', label:'Mock Paper 2026', meta:'42 questions · 2.5 hrs', section:'FA Mock 2026' },
+];
 
 const MOCK_EXAM_QUESTION_COUNT = 40;
 const MOCK_EXAM_DURATION_MINUTES = 90;
