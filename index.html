@@ -659,7 +659,7 @@ function displayQuestion() {
     const qType = q.type || 'multi';
     if (qType === 'multi') { $('question-type-label').textContent = 'Select ALL that apply, then click Submit'; renderMulti(q); }
     else if (qType === 'numeric') { $('question-type-label').textContent = 'Enter your numeric answer (no commas or symbols)'; renderNumeric(q); }
-    else if (qType === 'multi_numeric') { $('question-type-label').textContent = 'Enter all numeric answers below, then click Submit'; renderMultiNumeric(q); }
+    else if (qType === 'multi-numeric' || qType === 'multi_numeric') { $('question-type-label').textContent = 'Enter all numeric answers below, then click Submit'; renderMultiNumeric(q); }
 }
 
 function resetUI() {
