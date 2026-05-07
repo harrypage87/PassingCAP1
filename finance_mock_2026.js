@@ -31,15 +31,15 @@ const financeMock2026 = [
       "Your answer should be rounded to the nearest whole number.<br>" +
       "A cash inflow should be entered as a positive value. A cash outflow should be entered as a negative value.",
     parts: [
-      { label: "Cost/£ savings (€/£)",            correctAnswer: 186624,  tolerance: 1 },
-      { label: "Maintenance and training costs (€/£)", correctAnswer: -72250, tolerance: 1 },
-      { label: "Additional staff (€/£)",           correctAnswer: -84365,  tolerance: 1 },
-      { label: "Marketing (€/£)",                  correctAnswer: -5517,   tolerance: 1 },
-      { label: "Capital allowance (€/£)",          correctAnswer: -12800,  tolerance: 0 },
-      { label: "Taxable profit (€/£)",             correctAnswer: 11692,   tolerance: 2 },
-      { label: "Tax (€/£)",                        correctAnswer: 2171,    tolerance: 2 },
-      { label: "Capital allowance add-back (€/£)", correctAnswer: 12800,   tolerance: 0 },
-      { label: "Net cash flows (€/£)",             correctAnswer: 26663,   tolerance: 5 },
+      { label: "Cost/£ savings (€/£)",            answer: 186624,  tolerance: 1 },
+      { label: "Maintenance and training costs (€/£)", answer: -72250, tolerance: 1 },
+      { label: "Additional staff (€/£)",           answer: -84365,  tolerance: 1 },
+      { label: "Marketing (€/£)",                  answer: -5517,   tolerance: 1 },
+      { label: "Capital allowance (€/£)",          answer: -12800,  tolerance: 0 },
+      { label: "Taxable profit (€/£)",             answer: 11692,   tolerance: 2 },
+      { label: "Tax (€/£)",                        answer: 2171,    tolerance: 2 },
+      { label: "Capital allowance add-back (€/£)", answer: 12800,   tolerance: 0 },
+      { label: "Net cash flows (€/£)",             answer: 26663,   tolerance: 5 },
     ],
     explanation:
       "<strong>Year 3 workings:</strong><br>" +
@@ -400,8 +400,8 @@ const financeMock2026 = [
       "Your answers should be rounded to the nearest whole number.<br>" +
       "All answers should be entered as positive values.",
     parts: [
-      { label: "Ordering costs (€/£)",  correctAnswer: 6390, tolerance: 5 },
-      { label: "Holding costs (€/£)",   correctAnswer: 6390, tolerance: 5 },
+      { label: "Ordering costs (€/£)",  answer: 6390, tolerance: 5 },
+      { label: "Holding costs (€/£)",   answer: 6390, tolerance: 5 },
     ],
     explanation:
       "Ordering costs = ordering cost per order × number of orders<br>" +
@@ -479,8 +479,8 @@ const financeMock2026 = [
       "Your answers should be rounded to the nearest whole number.<br>" +
       "All answers should be entered as positive values.",
     parts: [
-      { label: "Trade receivables finance cost (€/£)", correctAnswer: 420953, tolerance: 100 },
-      { label: "Bad debt (€/£)",                       correctAnswer: 465600, tolerance: 0   },
+      { label: "Trade receivables finance cost (€/£)", answer: 420953, tolerance: 100 },
+      { label: "Bad debt (€/£)",                       answer: 465600, tolerance: 0   },
     ],
     explanation:
       "Average receivables = €/£ 58,200,000 × 48 / 365 = €/£ 7,653,699<br>" +
@@ -526,8 +526,8 @@ const financeMock2026 = [
       "All answers should be entered as positive values.<br>" +
       "A 365-day year should be used for any relevant calculations.",
     parts: [
-      { label: "Total sales (€/£)",              correctAnswer: 59364000, tolerance: 0    },
-      { label: "Trade receivables balance (€/£)", correctAnswer: 5692438, tolerance: 100  },
+      { label: "Total sales (€/£)",              answer: 59364000, tolerance: 0    },
+      { label: "Trade receivables balance (€/£)", answer: 5692438, tolerance: 100  },
     ],
     explanation:
       "Total sales = €/£ 58,200,000 × 1.02 = <strong>€/£ 59,364,000</strong><br><br>" +
@@ -684,11 +684,11 @@ const financeMock2026 = [
       "Your answers should be rounded to the nearest whole number.<br>" +
       "All answers should be entered as positive values.",
     parts: [
-      { label: "Gearing (%)",                                    correctAnswer: 11,  tolerance: 1 },
-      { label: "Return on book value of capital employed (%)",   correctAnswer: 90,  tolerance: 1 },
-      { label: "Earnings per share (cents/pence)",               correctAnswer: 449, tolerance: 1 },
-      { label: "Dividend cover (times)",                         correctAnswer: 3,   tolerance: 1 },
-      { label: "Dividend yield (%)",                             correctAnswer: 4,   tolerance: 0 },
+      { label: "Gearing (%)",                                    answer: 11,  tolerance: 1 },
+      { label: "Return on book value of capital employed (%)",   answer: 90,  tolerance: 1 },
+      { label: "Earnings per share (cents/pence)",               answer: 449, tolerance: 1 },
+      { label: "Dividend cover (times)",                         answer: 3,   tolerance: 1 },
+      { label: "Dividend yield (%)",                             answer: 4,   tolerance: 0 },
     ],
     explanation:
       "<strong>Gearing</strong> = Book value of debt / Market value of equity<br>" +
@@ -717,11 +717,11 @@ const financeMock2026 = [
       "Your answers should be rounded to the nearest whole number.<br>" +
       "All answers should be entered as positive values.",
     parts: [
-      { label: "Revenue (€/£)",          correctAnswer: 430780, tolerance: 0 },
-      { label: "Costs (€/£)",            correctAnswer: 323085, tolerance: 0 },
-      { label: "Operating profit (€/£)", correctAnswer: 107695, tolerance: 0 },
-      { label: "Finance cost (€/£)",     correctAnswer: 6600,   tolerance: 0 },
-      { label: "Profit before tax (€/£)",correctAnswer: 101095, tolerance: 0 },
+      { label: "Revenue (€/£)",          answer: 430780, tolerance: 0 },
+      { label: "Costs (€/£)",            answer: 323085, tolerance: 0 },
+      { label: "Operating profit (€/£)", answer: 107695, tolerance: 0 },
+      { label: "Finance cost (€/£)",     answer: 6600,   tolerance: 0 },
+      { label: "Profit before tax (€/£)",answer: 101095, tolerance: 0 },
     ],
     explanation:
       "Revenue = €/£ 506,800 × (1 − 0.15) = €/£ 506,800 × 0.85 = <strong>€/£ 430,780</strong><br>" +
@@ -839,10 +839,10 @@ const financeMock2026 = [
       "Your answers should be rounded to the nearest whole number.<br>" +
       "A cash inflow should be entered as a positive value. A cash outflow should be entered as a negative value.",
     parts: [
-      { label: "Salary & rental income (€/£)",              correctAnswer: 72000,  tolerance: 0 },
-      { label: "Property & loan payments (€/£)",            correctAnswer: -43200, tolerance: 0 },
-      { label: "Living & non-discretionary expenses (€/£)", correctAnswer: -44400, tolerance: 0 },
-      { label: "Pension contributions (€/£)",               correctAnswer: -4320,  tolerance: 0 },
+      { label: "Salary & rental income (€/£)",              answer: 72000,  tolerance: 0 },
+      { label: "Property & loan payments (€/£)",            answer: -43200, tolerance: 0 },
+      { label: "Living & non-discretionary expenses (€/£)", answer: -44400, tolerance: 0 },
+      { label: "Pension contributions (€/£)",               answer: -4320,  tolerance: 0 },
     ],
     explanation:
       "<strong>Salary & rental income:</strong><br>" +
@@ -963,8 +963,8 @@ const financeMock2026 = [
       "Your answer should be rounded to the nearest whole number.<br>" +
       "All answers should be entered as positive values.",
     parts: [
-      { label: "Average accounting profit (€/£)", correctAnswer: 850000, tolerance: 0 },
-      { label: "Accounting rate of return (%)",   correctAnswer: 57,     tolerance: 1 },
+      { label: "Average accounting profit (€/£)", answer: 850000, tolerance: 0 },
+      { label: "Accounting rate of return (%)",   answer: 57,     tolerance: 1 },
     ],
     explanation:
       "Total cash profit = €/£ 1,500,000 + €/£ 1,400,000 + €/£ 1,300,000 + €/£ 1,200,000 = €/£ 5,400,000<br>" +
@@ -1071,10 +1071,10 @@ const financeMock2026 = [
       "Your answer should be rounded to the nearest whole number.<br>" +
       "A cash increase should be entered as a positive value. Use the minus sign \"-\" to indicate a cash decrease.",
     parts: [
-      { label: "Current bank balance (€/£)",             correctAnswer: 380000,  tolerance: 0 },
-      { label: "Impact of change in inventory days (€/£)", correctAnswer: -350000, tolerance: 0 },
-      { label: "Impact of change in payables days (€/£)", correctAnswer: -75000,  tolerance: 0 },
-      { label: "Expected bank balance (€/£)",             correctAnswer: -45000,  tolerance: 0 },
+      { label: "Current bank balance (€/£)",             answer: 380000,  tolerance: 0 },
+      { label: "Impact of change in inventory days (€/£)", answer: -350000, tolerance: 0 },
+      { label: "Impact of change in payables days (€/£)", answer: -75000,  tolerance: 0 },
+      { label: "Expected bank balance (€/£)",             answer: -45000,  tolerance: 0 },
     ],
     explanation:
       "<strong>Inventory impact:</strong><br>" +
