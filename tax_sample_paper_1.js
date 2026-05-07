@@ -38,11 +38,11 @@ const taxSamplePaper1 = [
       "  Total:                                                         €35,000\n\n" +
       "Calculate the total VAT payable/refundable for COMPU C for September/October 2025.",
     parts: [
-      { label: "Total Output VAT (€)", correctAnswer: 18400, tolerance: 0 },
-      { label: "Input VAT: Electronic devices for re-sale from Irish supplier (€)", correctAnswer: 3450, tolerance: 0 },
-      { label: "Input VAT: Heating for premises (€)", correctAnswer: 180, tolerance: 0 },
-      { label: "Input VAT: Advertising for 12 months from 1 October 2025 (€)", correctAnswer: 1610, tolerance: 0 },
-      { label: "VAT Payable (€)", correctAnswer: 13160, tolerance: 0 },
+      { label: "Total Output VAT (€)", answer: 18400, tolerance: 0 },
+      { label: "Input VAT: Electronic devices for re-sale from Irish supplier (€)", answer: 3450, tolerance: 0 },
+      { label: "Input VAT: Heating for premises (€)", answerr: 180, tolerance: 0 },
+      { label: "Input VAT: Advertising for 12 months from 1 October 2025 (€)", answer: 1610, tolerance: 0 },
+      { label: "VAT Payable (€)", answer: 13160, tolerance: 0 },
     ],
   },
 
@@ -165,12 +165,12 @@ const taxSamplePaper1 = [
       "  Grant received for windows:  (€7,000)\n\n" +
       "Calculate the total net Case V income for Peter for 2025.",
     parts: [
-      { label: "Commercial unit 1 — Net rental income (€)", correctAnswer: 31550, tolerance: 0 },
-      { label: "Commercial unit 2 — Monthly rental income (€)", correctAnswer: 10800, tolerance: 0 },
-      { label: "Commercial unit 2 — Premium income (€)", correctAnswer: 17100, tolerance: 0 },
-      { label: "Commercial unit 2 — Net rental income (€)", correctAnswer: 25660, tolerance: 0 },
-      { label: "Two residential apartments — Net rental income (€)", correctAnswer: 42500, tolerance: 0 },
-      { label: "Total Net Case V Income (€)", correctAnswer: 99710, tolerance: 0 },
+      { label: "Commercial unit 1 — Net rental income (€)", answer: 31550, tolerance: 0 },
+      { label: "Commercial unit 2 — Monthly rental income (€)", answer: 10800, tolerance: 0 },
+      { label: "Commercial unit 2 — Premium income (€)", answer: 17100, tolerance: 0 },
+      { label: "Commercial unit 2 — Net rental income (€)", answer: 25660, tolerance: 0 },
+      { label: "Two residential apartments — Net rental income (€)", answer: 42500, tolerance: 0 },
+      { label: "Total Net Case V Income (€)", answer: 99710, tolerance: 0 },
     ],
   },
 
@@ -224,11 +224,11 @@ const taxSamplePaper1 = [
       "Note: Specified rates 2025 — qualifying home loans: 4% | all other loans: 13.5%.\n\n" +
       "Calculate the balance of income tax payable/(repayable) by Sean and Denise for 2025.",
     parts: [
-      { label: "BIK — Loan for house in Kerry (€)", correctAnswer: 975, tolerance: 0 },
-      { label: "BIK — Loan for holiday home in Clare (€)", correctAnswer: 2000, tolerance: 0 },
-      { label: "BIK — Loan for golf membership (€)", correctAnswer: 194, tolerance: 1 },
-      { label: "BIK — Car (net of employee contribution) (€)", correctAnswer: 7200, tolerance: 0 },
-      { label: "Income Tax Payable/(Repayable) (€)", correctAnswer: 4547, tolerance: 0 },
+      { label: "BIK — Loan for house in Kerry (€)", answer: 975, tolerance: 0 },
+      { label: "BIK — Loan for holiday home in Clare (€)", answer: 2000, tolerance: 0 },
+      { label: "BIK — Loan for golf membership (€)", answer: 194, tolerance: 1 },
+      { label: "BIK — Car (net of employee contribution) (€)", answer: 7200, tolerance: 0 },
+      { label: "Income Tax Payable/(Repayable) (€)", answer: 4547, tolerance: 0 },
     ],
   },
 
@@ -277,14 +277,14 @@ const taxSamplePaper1 = [
       "6. General expenses include: Interest on late payment of PAYE €650 | Subscriptions to trade magazines €1,000 | Staff training €1,300 | Donation to eligible charity €500.\n\n" +
       "Calculate the Adjusted Case I Profits for JULES for the year ended 31 December 2025.",
     parts: [
-      { label: "Add back: Administration wages and salaries (€)", correctAnswer: 4500, tolerance: 0 },
-      { label: "Add back: Pension contributions (€)", correctAnswer: 10000, tolerance: 0 },
-      { label: "Add back: Premises expenses (€)", correctAnswer: 5000, tolerance: 0 },
-      { label: "Add back: Repairs (€)", correctAnswer: 15000, tolerance: 0 },
-      { label: "Add back: Professional fees (€)", correctAnswer: 13500, tolerance: 0 },
-      { label: "Add back: General expenses (€)", correctAnswer: 650, tolerance: 0 },
-      { label: "Add back: Depreciation (€)", correctAnswer: 18000, tolerance: 0 },
-      { label: "Adjusted Case I Profits (€)", correctAnswer: 157643, tolerance: 0 },
+      { label: "Add back: Administration wages and salaries (€)", answer: 4500, tolerance: 0 },
+      { label: "Add back: Pension contributions (€)", answer: 10000, tolerance: 0 },
+      { label: "Add back: Premises expenses (€)", answer: 5000, tolerance: 0 },
+      { label: "Add back: Repairs (€)", answer: 15000, tolerance: 0 },
+      { label: "Add back: Professional fees (€)", answer: 13500, tolerance: 0 },
+      { label: "Add back: General expenses (€)", answer: 650, tolerance: 0 },
+      { label: "Add back: Depreciation (€)", answer: 18000, tolerance: 0 },
+      { label: "Adjusted Case I Profits (€)", answer: 157643, tolerance: 0 },
     ],
   },
 
@@ -318,10 +318,10 @@ const taxSamplePaper1 = [
       "iv) For taxation purposes a partnership continues no matter how many partners are admitted or leave, provided there are always at least three partners, one of whom was a partner immediately prior to the admission of a new partner.\n\n" +
       "Identify which of the statements is correct.",
     options: {
-      A: "I only",
-      B: "I, ii & iv",
-      C: "I, iii & iv",
-      D: "I & iii",
+      A: "i only",
+      B: "i, ii & iv",
+      C: "i, iii & iv",
+      D: "i & iii",
     },
     correctAnswer: "D",
   },
@@ -340,13 +340,13 @@ const taxSamplePaper1 = [
       "  Chargeable gain (not adjusted for CT): €120,000\n\n" +
       "Calculate the corporation tax payable by BLAST for the year ended 30 April 2025.",
     parts: [
-      { label: "Case I (€)", correctAnswer: 150000, tolerance: 0 },
-      { label: "Case III — Foreign interest (€)", correctAnswer: 23000, tolerance: 0 },
-      { label: "Case V (€)", correctAnswer: 24000, tolerance: 0 },
-      { label: "Chargeable gain (adjusted for CT) (€)", correctAnswer: 316800, tolerance: 0 },
-      { label: "CT at 12.5% (€)", correctAnswer: 58350, tolerance: 0 },
-      { label: "CT at 25% (€)", correctAnswer: 11750, tolerance: 0 },
-      { label: "Total Corporation Tax Liability (€)", correctAnswer: 70100, tolerance: 0 },
+      { label: "Case I (€)", answer: 150000, tolerance: 0 },
+      { label: "Case III — Foreign interest (€)", answer: 23000, tolerance: 0 },
+      { label: "Case V (€)", answer: 24000, tolerance: 0 },
+      { label: "Chargeable gain (adjusted for CT) (€)", answer: 316800, tolerance: 0 },
+      { label: "CT at 12.5% (€)", answer: 58350, tolerance: 0 },
+      { label: "CT at 25% (€)", answer: 11750, tolerance: 0 },
+      { label: "Total Corporation Tax Liability (€)", answer: 70100, tolerance: 0 },
     ],
   },
 
@@ -654,11 +654,11 @@ const taxSamplePaper1 = [
       "Note: The indexation factor for 1999/00 is 1.193. The enhancement cost (2001) does not attract indexation.\n\n" +
       "Calculate the chargeable gain on the sale of the land by Kate in 2025.",
     parts: [
-      { label: "Net sales proceeds (€)", correctAnswer: 410000, tolerance: 0 },
-      { label: "Current use value of land (indexed) (€)", correctAnswer: 62036, tolerance: 1 },
-      { label: "Hope value of land (€)", correctAnswer: 198000, tolerance: 0 },
-      { label: "Enhancement cost (€)", correctAnswer: 50000, tolerance: 0 },
-      { label: "Chargeable gain (€)", correctAnswer: 99964, tolerance: 1 },
+      { label: "Net sales proceeds (€)", answer: 410000, tolerance: 0 },
+      { label: "Current use value of land (indexed) (€)", answer: 62036, tolerance: 1 },
+      { label: "Hope value of land (€)", answer: 198000, tolerance: 0 },
+      { label: "Enhancement cost (€)", answer: 50000, tolerance: 0 },
+      { label: "Chargeable gain (€)", answer: 99964, tolerance: 1 },
     ],
   },
 
@@ -708,10 +708,10 @@ const taxSamplePaper1 = [
       "Niall is a vet and is aged 52 in 2025. He is single and has three children under the age of 16. His taxable trading income for the year is €90,000. He has commercial properties in Cavan and Sligo and earned rental income of €26,000 in 2025 from the properties. Niall made contributions into his personal pension scheme of €29,000 for the 2025 tax year.\n\n" +
       "Calculate the total income tax liability for Niall for 2025.",
     parts: [
-      { label: "Total Income (€)", correctAnswer: 116000, tolerance: 0 },
-      { label: "Less: Pension relief (€)", correctAnswer: 27000, tolerance: 0 },
-      { label: "Total Taxable Income (€)", correctAnswer: 89000, tolerance: 0 },
-      { label: "Total Income Tax Liability (after credits) (€)", correctAnswer: 20100, tolerance: 0 },
+      { label: "Total Income (€)", answer: 116000, tolerance: 0 },
+      { label: "Less: Pension relief (€)", answer: 27000, tolerance: 0 },
+      { label: "Total Taxable Income (€)", answer: 89000, tolerance: 0 },
+      { label: "Total Income Tax Liability (after credits) (€)", answer: 20100, tolerance: 0 },
     ],
   },
 
