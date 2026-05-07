@@ -48,12 +48,12 @@ const taxSamplePaper3 = [
     parts: [
       {
         label: "Total non-refundable tax credits",
-        correctAnswer: 9666,
+        answer: 9666,
         tolerance: 0,
       },
       {
         label: "Total refundable tax credits",
-        correctAnswer: 124000,
+        answer: 124000,
         tolerance: 0,
       },
     ],
