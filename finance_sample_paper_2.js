@@ -9,7 +9,8 @@ const financeSamplePaper2 = [
         "label": "Cost of equity (%)",
         "answer": 15.2
       }
-    ]
+    ],
+    "explanation": "Cost of Equity: Ke = D0(1+g) / P0 + g<br>Ke = 0.32 (1.064) / 3.85 + 0.064 = 0.152 or 15.2%"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -21,7 +22,8 @@ const financeSamplePaper2 = [
         "label": "Cost of debentures (%)",
         "answer": 7.6
       }
-    ]
+    ],
+    "explanation": "IRR Formula: Rate 1 + [( NPV Rate 1 / NPV Rate 1 − NPV Rate 2 ) (Rate 2 – Rate 1)]<br>Answer: 3 + [( 23.03 / 23.03 − (11.88) ) (10 – 3)] = 7.62%"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -33,7 +35,8 @@ const financeSamplePaper2 = [
         "label": "Cost of preference shares (%)",
         "answer": 8.8
       }
-    ]
+    ],
+    "explanation": "Formula = D1 / Pp = 0.75 x 8% / 0.68 = 8.8%"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -45,7 +48,8 @@ const financeSamplePaper2 = [
         "label": "Total market value (€/£)",
         "answer": 1088000
       }
-    ]
+    ],
+    "explanation": "Preference shares = 1,200,000 * 68/75 = 1,088,000"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -57,7 +61,8 @@ const financeSamplePaper2 = [
         "label": "Gross profit margin (%)",
         "answer": 31.1
       }
-    ]
+    ],
+    "explanation": "Gross Profit Margin = GP/Sales = 42,000/135,000 = 31.1%"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -69,7 +74,8 @@ const financeSamplePaper2 = [
         "label": "Profit available for distribution (€/£)",
         "answer": 5935
       }
-    ]
+    ],
+    "explanation": "Profit before interest and tax: 9,800<br>Less: Interest (1,920)<br>Profit before tax: 7,880<br>Tax at 12.5%: (985)<br>Profit after tax: 6,895<br>Less: Preference dividend (960)<br>Profits available for distribution: 5,935"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -81,7 +87,8 @@ const financeSamplePaper2 = [
         "label": "Interest cover (times)",
         "answer": 3.4
       }
-    ]
+    ],
+    "explanation": "Interest Cover ( 9,800 / 1,920 + 960 ) = ( 9,800 / 2,880 ) = 3.4 times"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -93,7 +100,8 @@ const financeSamplePaper2 = [
         "label": "Gearing (%)",
         "answer": 65
       }
-    ]
+    ],
+    "explanation": "Gearing ( 355 + 137 / 355 + 137 + 265 ) = ( 492 / 757 ) = 65.0%"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -108,7 +116,8 @@ const financeSamplePaper2 = [
     },
     "correctAnswer": [
       "C"
-    ]
+    ],
+    "explanation": "Preference share capital is prioritised ahead of equity share capital in capital repayment"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -120,7 +129,8 @@ const financeSamplePaper2 = [
         "label": "Year 0 PV (€/£)",
         "answer": -430000
       }
-    ]
+    ],
+    "explanation": "Year 0<br>Capital investment: -300,000<br>Working capital: -130,000<br>Net cash outflow: -430,000<br>Discount Factor (8%): 1.000<br>Discounted cash outflow: -430,000"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -132,7 +142,8 @@ const financeSamplePaper2 = [
         "label": "Year 5 working capital entry (€/£)",
         "answer": 190333
       }
-    ]
+    ],
+    "explanation": "Working Capital Required: T0 130,000 | T1 143,000 | T2 157,300 | T3 173,030 | T4 190,333 | T5 209,366<br>Movement: T0 -130,000 | T1 -13,000 | T2 -14,300 | T3 -15,730 | T4 -17,303 | T5 -19,033<br>Year 5 entry:<br>Working Capital for Year 5: -19,033<br>Recoup Years 0 – 5: +209,366<br>Net entry: 190,333"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -164,19 +175,21 @@ const financeSamplePaper2 = [
         "label": "Net cash flows (€/£)",
         "answer": 217836
       }
-    ]
+    ],
+    "explanation": "Year 2 volume = 24,000 * 1.20 = 28,800<br>Revenue Year 2: Price per unit 13.52 x 1.040 = 14.06 | Volume 28,800 | Revenue 404,951<br>Variable Costs Year 2: Cost per unit 4.12 x 1.030 = 4.24 | Volume 28,800 | Variable Cost 122,216<br>Capital Allowances: Year 1 Op Bal 300,000 CA 75,000 | Year 2 Op Bal 225,000 CA 56,250<br>Tax: Year 1 taxable profit 189,900 x 15% = 28,485 paid in year 2"
   },
   {
     "section": "Finance Sample Paper 2",
     "type": "numeric",
     "marks": 2,
-    "questionText": "Theram Ltd (THERAM) — THERAM has a nominal cost of capital of 8%. THERAM is forecasting a net cash outflow of €/£ 37,216 in Year 6 of the project.<br><br><strong>Question 13:</strong> Calculate the discounted net cash flow for Year 6 of the project.<br>The reference materials provided should be used where relevant.<br>Your answer should be rounded to the nearest whole number. If required, use the minus sign \"-\" to indicate a cash outflow.",
+    "questionText": "Theram Ltd (THERAM) — THERAM has a nominal cost of capital of 8%.<br><br>THERAM is forecasting a net cash outflow of €/£ 37,216 in Year 6 of the project.<br><br><strong>Question 13:</strong> Calculate the discounted net cash flow for Year 6 of the project.<br>The reference materials provided should be used where relevant.<br>Your answer should be rounded to the nearest whole number. If required, use the minus sign \"-\" to indicate a cash outflow.",
     "parts": [
       {
         "label": "Year 6 discounted cash flow (€/£)",
         "answer": -23446
       }
-    ]
+    ],
+    "explanation": "Year 6<br>Net cash outflow: -37,216<br>DF (8%): 0.630<br>DCF: -23,446"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -188,7 +201,8 @@ const financeSamplePaper2 = [
         "label": "Accounting profit Year 2 (€/£)",
         "answer": 110000
       }
-    ]
+    ],
+    "explanation": "Cash profit before depreciation: 200,000<br>Depreciation ((400,000 – 40,000) / 4): (90,000)<br>Total Accounting Profit: 110,000"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -200,7 +214,8 @@ const financeSamplePaper2 = [
         "label": "ARR (%)",
         "answer": 55.7
       }
-    ]
+    ],
+    "explanation": "Average Accounting Profit: (490,000 / 4) = 122,500<br>Average Investment: (400,000 + 40,000) / 2 = 220,000<br>Accounting Rate of Return: 55.7%"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -215,7 +230,8 @@ const financeSamplePaper2 = [
     },
     "correctAnswer": [
       "A"
-    ]
+    ],
+    "explanation": "(1) only"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -231,7 +247,8 @@ const financeSamplePaper2 = [
     "correctAnswer": [
       "C",
       "D"
-    ]
+    ],
+    "explanation": "Bank overdraft costs can include an arrangement fee and a review fee<br>If the agreed bank overdraft limit is breached, the consequences are punitive"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -247,7 +264,8 @@ const financeSamplePaper2 = [
     "correctAnswer": [
       "A",
       "B"
-    ]
+    ],
+    "explanation": "PULTER should add independent non-executive directors to its board<br>The chairperson of the board cannot also chair the remuneration committee"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -262,7 +280,8 @@ const financeSamplePaper2 = [
     },
     "correctAnswer": [
       "A"
-    ]
+    ],
+    "explanation": "(1) only"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -279,7 +298,8 @@ const financeSamplePaper2 = [
       "A",
       "B",
       "D"
-    ]
+    ],
+    "explanation": "There is no connection between historic share prices and today's share price change<br>In a competitive market, shares are priced in accordance with their worth<br>Under strong form efficiency, share prices reflect all historic, publicly available and private information in respect of a company"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -294,7 +314,8 @@ const financeSamplePaper2 = [
     },
     "correctAnswer": [
       "B"
-    ]
+    ],
+    "explanation": "(2) only"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -306,7 +327,8 @@ const financeSamplePaper2 = [
         "label": "Cost of equity (CAPM) (%)",
         "answer": 11.6
       }
-    ]
+    ],
+    "explanation": "CAPM: Ke = Rf + ß(Rm – Rf)<br>Ke = 2 + 1.2(10-2)<br>Ke = 11.6%"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -321,7 +343,8 @@ const financeSamplePaper2 = [
     },
     "correctAnswer": [
       "C"
-    ]
+    ],
+    "explanation": "Both (1) and (2)"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -336,7 +359,8 @@ const financeSamplePaper2 = [
     },
     "correctAnswer": [
       "C"
-    ]
+    ],
+    "explanation": "Both (1) and (2)"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -352,7 +376,8 @@ const financeSamplePaper2 = [
     "correctAnswer": [
       "C",
       "D"
-    ]
+    ],
+    "explanation": "Intermediation involves obtaining finance through financial institutions like commercial banks<br>Disintermediation involves obtaining finance directly from the money markets or the stock exchange"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -368,7 +393,8 @@ const financeSamplePaper2 = [
     "correctAnswer": [
       "A",
       "D"
-    ]
+    ],
+    "explanation": "The financial environment includes the economic environment and the financial markets<br>A bank should consider an entity's going concern status and liquidity position when making a lending decision"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -380,7 +406,8 @@ const financeSamplePaper2 = [
         "label": "Net investment in working capital (€/£)",
         "answer": 51300
       }
-    ]
+    ],
+    "explanation": "Trade receivables: 37,800<br>Inventories: 26,400<br>Trade payables: -12,900<br>Working capital investment: 51,300"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -404,7 +431,8 @@ const financeSamplePaper2 = [
         "label": "Working capital cycle (days)",
         "answer": 63
       }
-    ]
+    ],
+    "explanation": "Trade receivable days: 37,800 / 345,000 x 365 = 40<br>Inventory days: 26,400 / 214,000 x 365 = 45<br>Trade payable days: 12,900 / 214,000 x 365 = -22<br>Working capital cycle: 63"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -428,7 +456,8 @@ const financeSamplePaper2 = [
         "label": "Total cost (€/£)",
         "answer": 15976840
       }
-    ]
+    ],
+    "explanation": "Ordering Costs = 184 x (500,000 / 50,000) = €/£ 1,840<br>Holding Costs = 2.2 x (50,000 / 2) = €/£ 55,000<br>Purchase cost = 32 x 99.5% x 500,000 = 15,920,000"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -440,19 +469,21 @@ const financeSamplePaper2 = [
         "label": "EOQ (units)",
         "answer": 9145
       }
-    ]
+    ],
+    "explanation": "EOQ = √( 2 x 184 x 500,000 / 2.2 ) = 9,145"
   },
   {
     "section": "Finance Sample Paper 2",
     "type": "numeric",
     "marks": 2,
-    "questionText": "Alteb Ltd (ALTEB) produces a computer chip for use in electric scooters. Demand for the chip will exist for the next four years but ALTEB is unsure of how many units it is likely to sell. Based on ALTEB's previous experiences, the company has derived the following estimates of annual demand and their related probabilities:<table><tr><th>Annual Demand (Units)</th><th>Probability</th></tr><tr><td>300,000</td><td>0.30</td></tr><tr><td>500,000</td><td>0.50</td></tr><tr><td>700,000</td><td>0.10</td></tr><tr><td>800,000</td><td>0.10</td></tr></table><strong>Question 31:</strong> Calculate the expected annual demand for the new chip.<br>Your answer should be rounded to the nearest whole number.",
+    "questionText": "Alteb Ltd (ALTEB) produces a computer chip for use in electric scooters. Demand for the chip will exist for the next four years but ALTEB is unsure of how many units it is likely to sell. Based on ALTEB's previous experiences, the company has derived the following estimates of annual demand and their related probabilities.<br><table><tr><th>Annual Demand (Units)</th><th>Probability</th></tr><tr><td>300,000</td><td>0.30</td></tr><tr><td>500,000</td><td>0.50</td></tr><tr><td>700,000</td><td>0.10</td></tr><tr><td>800,000</td><td>0.10</td></tr></table><strong>Question 31:</strong> Calculate the expected annual demand for the new chip.<br>Your answer should be rounded to the nearest whole number.",
     "parts": [
       {
         "label": "Expected annual demand (units)",
         "answer": 490000
       }
-    ]
+    ],
+    "explanation": "300,000 x 0.3 = 90,000<br>500,000 x 0.5 = 250,000<br>700,000 x 0.1 = 70,000<br>800,000 x 0.1 = 80,000<br>Expected annual demand = 490,000"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -467,7 +498,8 @@ const financeSamplePaper2 = [
     },
     "correctAnswer": [
       "C"
-    ]
+    ],
+    "explanation": "Both (1) and (2)"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -479,7 +511,8 @@ const financeSamplePaper2 = [
         "label": "EAC — 5-year cycle (€/£)",
         "answer": 55977
       }
-    ]
+    ],
+    "explanation": "Cost of Plant (T0): (140,000)<br>Costs (T1–5): (25,600) | DF 3.791 | PV (97,050)<br>Residual Value (T5): 40,000 | DF 0.621 | PV 24,840<br>NPV: (212,210)<br>EAC of replacing in year 5 = (212,210) / 3.791 = €/£ 55,977"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -494,7 +527,8 @@ const financeSamplePaper2 = [
     },
     "correctAnswer": [
       "B"
-    ]
+    ],
+    "explanation": "(2) only"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -514,7 +548,8 @@ const financeSamplePaper2 = [
         "label": "Net benefit / cost (€/£)",
         "answer": 9384
       }
-    ]
+    ],
+    "explanation": "Movement in payables balance = €/£ 162,329 (450,000 – 287,671)<br>Cost of movement is €/£ 8,116 (162,329 x 5%).<br>Saving through discount (3,500,000 x 0.5%) €/£ 17,500<br>The net saving will be €/£ 9,384 (17,500 – 8,116)"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -531,13 +566,14 @@ const financeSamplePaper2 = [
       "A",
       "B",
       "D"
-    ]
+    ],
+    "explanation": "A supplier which offers its customers a trade credit period will incur a business finance cost<br>A supplier may recoup the cost of offering trade credit by charging increased prices or charging interest on overdue accounts<br>The loss of potential cash purchase discounts is an opportunity cost of availing of a trade credit period"
   },
   {
     "section": "Finance Sample Paper 2",
     "type": "multi",
     "marks": 2,
-    "questionText": "<strong>Question 37:</strong> Identify which of the following statements is / are true.<br>1) The cash float period is the period of time between the point at which payment is initiated and when the cash is cleared for use in the company's bank account<br>2) A speculative motive for holding cash is where there is a risk that actual cash outflows will exceed expected cash outflows, or actual cash inflows are less than expected cash inflows<br>Select the correct answer.",
+    "questionText": "<strong>Question 37:</strong> Identify which of the following statements is / are true.<br>1) The cash float period is the period of time between the point at which payment is initiated and when the cash is cleared for use in the company's bank account<br>2) A speculative motive for holding cash is where there is a risk that actual cash outflows will exceed expected cash outflows, or actual cash inflows are less than expected cash inflows.<br>Select the correct answer.",
     "options": {
       "A": "(1) only",
       "B": "(2) only",
@@ -546,7 +582,8 @@ const financeSamplePaper2 = [
     },
     "correctAnswer": [
       "A"
-    ]
+    ],
+    "explanation": "(1) only"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -561,7 +598,8 @@ const financeSamplePaper2 = [
     },
     "correctAnswer": [
       "B"
-    ]
+    ],
+    "explanation": "(2) only"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -576,7 +614,8 @@ const financeSamplePaper2 = [
     },
     "correctAnswer": [
       "C"
-    ]
+    ],
+    "explanation": "Public disposable income may fall and demand for AFTRO cinema tickets may fall"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -588,7 +627,8 @@ const financeSamplePaper2 = [
         "label": "WACC (%)",
         "answer": 8.7
       }
-    ]
+    ],
+    "explanation": "Equity Shares: 1,164,000 / 1,245,360 x 9% = 8.41<br>Irredeemable Debentures: 69,360 / 1,245,360 x 4% = 0.22<br>Bank Debt: 12,000 / 1,245,360 x 5% = 0.05<br>WACC: 8.68"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -600,7 +640,8 @@ const financeSamplePaper2 = [
         "label": "Holding costs for buffer inventory (€/£)",
         "answer": 5670
       }
-    ]
+    ],
+    "explanation": "Buffer inventory = (reorder level - usage in lead time)<br>Usage per week (4,000 / 50) = 80<br>Buffer inventory = (300 - (80 x 2)) = 140<br>Holding cost of buffer inventory = 140 * €/£ 40.50 = €/£ 5,670"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -615,23 +656,25 @@ const financeSamplePaper2 = [
     },
     "correctAnswer": [
       "B"
-    ]
+    ],
+    "explanation": "(2) only"
   },
   {
     "section": "Finance Sample Paper 2",
     "type": "multi_numeric",
     "marks": 4,
-    "questionText": "The board of directors of Saple Ltd (SAPLE) have allocated €/£ 500,000 to its capital investment programme. Five investment opportunities have been identified. It should be assumed that all of these investments are divisible.<table><tr><th>Project</th><th>Investment Required (€/£)</th><th>Expected NPV (€/£)</th></tr><tr><td>A</td><td>230,000</td><td>53,000</td></tr><tr><td>B</td><td>240,000</td><td>60,000</td></tr><tr><td>C</td><td>170,000</td><td>38,000</td></tr><tr><td>D</td><td>190,000</td><td>39,500</td></tr><tr><td>E</td><td>220,000</td><td>52,000</td></tr></table><strong>Question 43:</strong> Calculate how much SAPLE should invest in Project A and Project E.<br>Your answers should be rounded to the nearest whole number.",
+    "questionText": "The board of directors of Saple Ltd (SAPLE) have allocated €/£ 500,000 to its capital investment programme. Five investment opportunities have been identified by SAPLE's Finance Manager, details of which are provided below. It should be assumed that all of these investments are divisible.<br><table><tr><th>Project</th><th>Investment Required (€/£)</th><th>Expected NPV (€/£)</th></tr><tr><td>A</td><td>230,000</td><td>53,000</td></tr><tr><td>B</td><td>240,000</td><td>60,000</td></tr><tr><td>C</td><td>170,000</td><td>38,000</td></tr><tr><td>D</td><td>190,000</td><td>39,500</td></tr><tr><td>E</td><td>220,000</td><td>52,000</td></tr></table><strong>Question 43:</strong> Calculate how much SAPLE should invest in Project A and Project E.<br>Your answers should be rounded to the nearest whole number.",
     "parts": [
       {
-        "label": "Investment in Project A (€/£)",
+        "label": "Project A (€/£)",
         "answer": 40000
       },
       {
-        "label": "Investment in Project E (€/£)",
+        "label": "Project E (€/£)",
         "answer": 220000
       }
-    ]
+    ],
+    "explanation": "Profitability Index: A 53,000/230,000 = 1.23 (rank 3) | B 60,000/240,000 = 1.25 (rank 1) | C 38,000/170,000 = 1.22 (rank 4) | D 39,500/190,000 = 1.21 (rank 5) | E 52,000/220,000 = 1.24 (rank 2)<br>The €/£ 500,000 should be invested as follows:<br>B: 240,000 | E: 220,000 | A: 40,000 (balance)<br>*(53,000 x 40,000 / 230,000) = 9,218"
   },
   {
     "section": "Finance Sample Paper 2",
@@ -646,6 +689,7 @@ const financeSamplePaper2 = [
     },
     "correctAnswer": [
       "D"
-    ]
+    ],
+    "explanation": "Neither (1) or (2)"
   }
 ];
